@@ -11553,9 +11553,9 @@ pre .code {
   left: 0;
   right: 0;
   margin: auto;
-  width: 95%;
-  max-width: 1050px;
-  border: 1px solid rgba(234, 240, 252, 0.15);
+  width: 100%;
+  max-width: 1200px;
+  border-bottom: 1px solid rgba(49, 49, 56, 0.15);
   border-radius: 0.2rem;
   z-index: 9999;
   -webkit-transition: all, 0.33s;
@@ -11579,7 +11579,7 @@ pre .code {
   width: 35px;
   height: 3px;
   display: block;
-  background-color: rgba(234, 240, 252, 0.2);
+  background-color: rgba(49, 49, 56, 0.2);
   border-radius: 10px;
 }
 
@@ -11589,7 +11589,7 @@ pre .code {
   display: block;
   height: 3px;
   color: #495057;
-  background-color: rgba(234, 240, 252, 0.2);
+  background-color: rgba(49, 49, 56, 0.2);
 }
 
 .custom-navbar .navbar-toggler span:after {
