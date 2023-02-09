@@ -2342,6 +2342,14 @@ pre code {
   background-color: rgba(255, 255, 255, 0.075);
 }
 
+.coden-image{
+    width: 65px !important;
+}
+
+.coden-group-div{
+    display: flex;
+    margin: 24px 0 0 0;
+}
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;
@@ -2349,6 +2357,14 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+  .coden-image{
+    width: 32px !important;
+  }
+
+  .coden-group-div{
+    display: flex;
+    margin: 0px 0 0 0;
+    }
 
   .table-responsive-sm>.table-bordered {
     border: 0;
@@ -2362,6 +2378,14 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+  .coden-image{
+    width: 50px !important;
+  }
+
+  .coden-group-div{
+    display: flex;
+    margin: 0px 0 0 0;
+    }
 
   .table-responsive-md>.table-bordered {
     border: 0;
