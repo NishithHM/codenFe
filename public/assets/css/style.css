@@ -5675,6 +5675,7 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 576px) {
+    
   .card-group {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -12233,6 +12234,10 @@ p {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
+  .subtitle {
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
 
   .widget .widget-item {
     margin: 15px;
