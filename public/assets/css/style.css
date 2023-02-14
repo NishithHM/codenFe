@@ -5530,6 +5530,7 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
+  box-shadow: 2px 0 10px rgba(52, 58, 64, 0.2);
 }
 
 .card-title {
@@ -13151,4 +13152,7 @@ section .section-title {
 .column {
   flex: 33.33%;
   padding: 5px;
+}
+.text-color2{
+  color: black !important;
 }
