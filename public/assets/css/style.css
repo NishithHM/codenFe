@@ -594,9 +594,11 @@ pre code {
   .container {
     max-width: 960px;
   }
+  
 }
 
 @media (min-width: 1200px) {
+  
   .container {
     max-width: 1140px;
   }
@@ -2342,14 +2344,15 @@ pre code {
   background-color: rgba(255, 255, 255, 0.075);
 }
 
-.coden-image{
-    width: 65px !important;
+.coden-image {
+  width: 65px !important;
 }
 
-.coden-group-div{
-    display: flex;
-    margin: 24px 0 0 0;
+.coden-group-div {
+  display: flex;
+  margin: 24px 0 0 0;
 }
+
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;
@@ -2357,14 +2360,15 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .coden-image{
+
+  .coden-image {
     width: 32px !important;
   }
 
-  .coden-group-div{
+  .coden-group-div {
     display: flex;
     margin: 0px 0 0 0;
-    }
+  }
 
   .table-responsive-sm>.table-bordered {
     border: 0;
@@ -2378,14 +2382,15 @@ pre code {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .coden-image{
+
+  .coden-image {
     width: 50px !important;
   }
 
-  .coden-group-div{
+  .coden-group-div {
     display: flex;
     margin: 0px 0 0 0;
-    }
+  }
 
   .table-responsive-md>.table-bordered {
     border: 0;
@@ -3619,7 +3624,7 @@ fieldset:disabled a.btn {
   color: #f8f9fa;
   background-color: #212529;
   border-color: #212529;
-  
+
 }
 
 .btn-outline-light:focus,
@@ -5525,6 +5530,7 @@ input[type="button"].btn-block {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
+  box-shadow: 2px 0 10px rgba(52, 58, 64, 0.2);
 }
 
 .card-title {
@@ -5675,7 +5681,7 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 576px) {
-    
+
   .card-group {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -12234,10 +12240,11 @@ p {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
+
   .subtitle {
     text-align: center;
     margin: 0 10px 0 10px;
-}
+  }
 
   .widget .widget-item {
     margin: 15px;
@@ -13132,14 +13139,20 @@ section .section-title {
 .bold {
   font-weight: bold;
 }
-.cardStyle{
+
+.cardStyle {
   text-align: justify;
-  padding:0% 5%
+  padding: 0% 5%
 }
+
 .row {
   display: flex;
 }
+
 .column {
   flex: 33.33%;
   padding: 5px;
+}
+.text-color2{
+  color: black !important;
 }
