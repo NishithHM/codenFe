@@ -113,6 +113,13 @@ h6,
 .sticky-top.navbar-light .navbar-brand img {
     max-height: 45px;
 }
+@media (max-width: 400px) {
+
+    .coden-image{
+        max-width: 70px;
+        justify-content:right !important;
+    }
+}
 
 @media (max-width: 991.98px) {
     .mapsIframe{
