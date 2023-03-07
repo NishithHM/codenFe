@@ -1,0 +1,4 @@
+1-coden with c changed in both header and main page - responsive\
+3-add a padding to our services and contact us button and gradient the color
+4-SEO - alttags,title,removeUnnecessary 
+-5 remove padding below and bit above the maps iframe
