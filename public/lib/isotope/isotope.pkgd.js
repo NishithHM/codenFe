@@ -1,20 +1,4 @@
-/*!
- * Isotope PACKAGED v3.0.5
- *
- * Licensed GPLv3 for open source use
- * or Isotope Commercial License for commercial use
- *
- * https://isotope.metafizzy.co
- * Copyright 2017 Metafizzy
- */
 
-/**
- * Bridget makes jQuery widgets
- * v2.0.1
- * MIT license
- */
-
-/* jshint browser: true, strict: true, undef: true, unused: true */
 
 ( function( window, factory ) {
   // universal module definition
@@ -152,11 +136,7 @@ return jQueryBridget;
 
 }));
 
-/**
- * EvEmitter v1.1.0
- * Lil' event emitter
- * MIT License
- */
+
 
 /* jshint unused: true, undef: true, strict: true */
 
@@ -265,14 +245,7 @@ return EvEmitter;
 
 }));
 
-/*!
- * getSize v2.0.2
- * measure size of elements
- * MIT license
- */
 
-/*jshint browser: true, strict: true, undef: true, unused: true */
-/*global define: false, module: false, console: false */
 
 ( function( window, factory ) {
   'use strict';
@@ -475,13 +448,7 @@ return getSize;
 
 });
 
-/**
- * matchesSelector v2.0.2
- * matchesSelector( element, '.selector' )
- * MIT license
- */
 
-/*jshint browser: true, strict: true, undef: true, unused: true */
 
 ( function( window, factory ) {
   /*global define: false, module: false */
@@ -529,12 +496,6 @@ return getSize;
 
 }));
 
-/**
- * Fizzy UI utils v2.0.5
- * MIT license
- */
-
-/*jshint browser: true, undef: true, unused: true, strict: true */
 
 ( function( window, factory ) {
   // universal module definition
@@ -1322,11 +1283,6 @@ return Item;
 
 }));
 
-/*!
- * Outlayer v2.1.0
- * the brains and guts of a layout library
- * MIT license
- */
 
 ( function( window, factory ) {
   'use strict';
@@ -2498,13 +2454,7 @@ return Item;
 
 }));
 
-/*!
- * Masonry v4.2.1
- * Cascading grid layout library
- * https://masonry.desandro.com
- * MIT License
- * by David DeSandro
- */
+
 
 ( function( window, factory ) {
   // universal module definition
@@ -2937,15 +2887,7 @@ return Vertical;
 
 }));
 
-/*!
- * Isotope v3.0.5
- *
- * Licensed GPLv3 for open source use
- * or Isotope Commercial License for commercial use
- *
- * https://isotope.metafizzy.co
- * Copyright 2017 Metafizzy
- */
+
 
 ( function( window, factory ) {
   // universal module definition

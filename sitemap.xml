@@ -4,12 +4,31 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
   <loc>https://codentechnologies.com/</loc>
   <lastmod>2023-02-03T15:37:10+00:00</lastmod>
+</url>
+<url>
+  <loc>https://codentechnologies.com/index.html</loc>
+  <lastmod>2023-03-07T17:02:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/</loc>
+  <lastmod>2023-03-07T17:02:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/about.html</loc>
+  <lastmod>2023-03-07T17:02:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/contact.html</loc>
+  <lastmod>2023-03-07T17:02:50+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 
