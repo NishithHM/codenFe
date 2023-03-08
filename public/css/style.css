@@ -114,26 +114,33 @@ h6,
     max-height: 45px;
 }
 
-@media (max-width: 450px) {
+@media only screen and (min-width: 50px) and (max-width: 450px)  {
     .codenImage {
-        max-width: 30px;
+        max-width: 50px;
         text-align: right;
         padding-right: 3px;
         padding-top: 5px;
     }
 
     .codenText {
-        font-size: 30px;
+        font-size: 50px;
         text-align: left;
     }
 
     .codenMerged {
         display: flex;
         justify-content: center;
+        padding-bottom: 25px;
+    }
+    .codenImageTitle {
+        max-width: 30px;
+        text-align: right;
+        padding-right: 3px;
+        padding-top: 5px;
     }
 }
 
-@media (max-width: 991.98px) {
+@media only screen and (min-width: 450px) and (max-width: 991.98px) {
     .codenImage {
         max-width: 50px;
         text-align: right;
@@ -199,7 +206,7 @@ h6,
 
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
     .codenImage {
         max-width: 70px;
         text-align: right;
