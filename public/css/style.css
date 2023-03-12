@@ -115,6 +115,9 @@ h6,
 }
 
 @media only screen and (min-width: 50px) and (max-width: 450px)  {
+    .servicesButton{
+        margin-right: 10px;
+    }
     .codenImage {
         max-width: 50px;
         text-align: right;
@@ -138,9 +141,18 @@ h6,
         padding-right: 3px;
         padding-top: 5px;
     }
+    .subtitle {
+        text-align: center;
+        /* margin: 0 10px 0 10px;*/
+        font-size: 1.5rem; 
+    }
+     
 }
 
 @media only screen and (min-width: 450px) and (max-width: 991.98px) {
+    .servicesButton{
+        margin-right: 10px;
+    }
     .codenImage {
         max-width: 50px;
         text-align: right;
@@ -173,6 +185,12 @@ h6,
     .topPaddingLarge {
         margin-top: 0px
     }
+    .subtitle {
+        text-align: center;
+        /* margin: 0 10px 0 10px;*/
+        font-size: 2.0rem; 
+    }
+     
 
     .sticky-top.navbar-light {
         position: relative;
@@ -227,21 +245,18 @@ h6,
         font-size: 55px;
         text-align: left;
     }
-
-    
-
+    .subtitle {
+        text-align: center;
+        /* margin: 0 10px 0 10px;*/
+        font-size: 2.2rem; 
+    }
+     
     .codenMerged {
         padding-top: 15px;
         padding-bottom: 25px;
         display: flex;
         justify-content: center;
     }
-
-    .mapsIframe {
-        width: 100%;
-        height: 250px;
-    }
-
     .topPaddingMeduim {
         margin-top: 50px
     }
@@ -638,12 +653,6 @@ h6,
     background: linear-gradient(99deg, rgb(181, 253, 251) 14.7%, rgb(230, 254, 254) 73%);
 }
 
-.subtitle {
-    text-align: center;
-    margin: 0 10px 0 10px;
-    font-size: 2.0rem;
-}
-
 .logo-font {
     font-family: 'Montserrat', sans-serif;
 }
@@ -655,4 +664,8 @@ h6,
 .coden-group-div {
     display: flex;
     margin: 24px 0 0 0;
+}
+.mapsIframe {
+    width: 100%;
+    height: 250px;
 }
