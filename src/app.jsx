@@ -4,6 +4,8 @@ import Landing from "./pages/Landing";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import FallBack from "./pages/fallBackRoute";
+import CustomerReview from "./pages/Loading/Review";
+// https://codentechnologies.com/easy-rev/landing/050d2589-89b5-42f5-9245-f0f1f0800113
 const App = () => {
     return (
         <>
@@ -13,6 +15,7 @@ const App = () => {
                     <Route path='/about' element={<About />} />
                     <Route path='/contact' element={<Contact />} />
                     <Route path="*" element={<FallBack />} />
+                    <Route path="/easy-rev/landing/:id" element={<CustomerReview/>}/>
                 </Routes>
             </BrowserRouter>
         </>
