@@ -56,10 +56,10 @@ const Landing = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto py-0">
-                        <Link to="#home" className="nav-item nav-link active">Home</Link>
-                        <Link to="#Services" className="nav-item nav-link">Service</Link>
+                        <Link to="/" className="nav-item nav-link active">Home</Link>
+                        <Link to="/#Services" className="nav-item nav-link">Service</Link>
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
-                        <Link href="/contact" className="nav-item nav-link">Contact Us</Link>
+                        <Link to="/contact" className="nav-item nav-link">Contact Us</Link>
                     </div>
                 </div>
             </nav>
