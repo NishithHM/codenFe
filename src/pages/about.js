@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import {Link} from 'react-router-dom'
 const About = () => {
     const [isLoad, setLoading] = useState(true)
     useEffect(() => {
@@ -56,10 +56,10 @@ const About = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <div className="navbar-nav ms-auto py-0">
-                            <a href="index.html" className="nav-item nav-link ">Home</a>
-                            <a href="/#Services" className="nav-item nav-link">Service</a>
-                            <a href="/about" className="nav-item nav-link active">About Us</a>
-                            <a href="/contact" className="nav-item nav-link">Contact Us</a>
+                        <Link to="#home" className="nav-item nav-link active">Home</Link>
+                        <Link to="#Services" className="nav-item nav-link">Service</Link>
+                        <Link to="/about" className="nav-item nav-link">About Us</Link>
+                        <Link href="/contact" className="nav-item nav-link">Contact Us</Link>
                         </div>
                     </div>
                 </nav>
