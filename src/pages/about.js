@@ -269,10 +269,10 @@ const About = () => {
                         </div>
                         <div className="col-md-6 col-lg-3">
                             <h5 className="text-white mb-4">Popular Link</h5>
-                            <a className="btn btn-link" href="index.html">Home</a>
+                            <Link className="btn btn-link" to="/">Home</Link>
                             <a className="btn btn-link" href="#AboutUs">About Us</a>
-                            <a className="btn btn-link" href="#Services">Service</a>
-                            <a className="btn btn-link" href="contact.html">Contact Us</a>
+                            <Link className="btn btn-link" to="/#Services">Service</Link>
+                            <Link className="btn btn-link" to="/contact">Contact Us</Link>
                         </div>
                         <div className="col-md-6 col-lg-4">
                             <h5 className="text-white mb-4">Blogs</h5>
@@ -301,11 +301,11 @@ const About = () => {
                     <div className="copyright">
                         <div className="row">
                             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                &copy; <a className="border-bottom" href="index.html">Coden</a>, All Right Reserved.
+                                &copy; <Link className="border-bottom" to="/">Coden</Link>, All Right Reserved.
                             </div>
                             <div className="col-md-6 text-center text-md-end">
                                 <div className="footer-menu">
-                                    <a href="index.html">Home</a>
+                                    <Link to="/">Home</Link>
                                 </div>
                             </div>
                         </div>

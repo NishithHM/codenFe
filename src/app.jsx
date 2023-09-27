@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Landing from "./pages/Landing";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -10,6 +10,7 @@ const App = () => {
     return (
         <>
             <BrowserRouter>
+            <ScrollPage>
                 <Routes>
                     <Route path='/' element={<Landing />} />
                     <Route path='/about' element={<About />} />
@@ -17,9 +18,18 @@ const App = () => {
                     <Route path="/easy-rev/landing/:id" element={<CustomerReview/>}/>
                     <Route path="*" element={<FallBack />} />
                 </Routes>
+                </ScrollPage>
             </BrowserRouter>
         </>
     )
 }
 
 export default App;
+
+const ScrollPage=({children})=>{
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [pathname]);
+    return children
+}
