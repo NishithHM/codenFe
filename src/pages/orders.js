@@ -61,6 +61,7 @@ const Orders = ()=>{
                         <Link to="/#Services" className="nav-item nav-link">Service</Link>
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
                         <Link to="/contact" className="nav-item nav-link">Contact Us</Link>
+                        <Link to="/privacy-policy" className="nav-item nav-link">Privacy Policy</Link>
                     </div>
                 </div>
             </nav>
