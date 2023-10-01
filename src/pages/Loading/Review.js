@@ -88,9 +88,12 @@ const CustomerReview = () => {
   const getReview = () => {
     setLoading(true)
     axios.get(`${url}/add-review/${params.id}`).then((res) => {
-      console.log("RRESD", res.data)
-      setData(res.data)
-      setLoading(false)
+      if(res?.data?.custom){
+        window.location.href = res?.data?.redirectTo
+      }else{
+        setData(res.data)
+        setLoading(false)
+      }
     }).catch(err => {
       console.log(err)
       setError(err?.response?.data || "Oops! Something went wrong, Please Try Again")
