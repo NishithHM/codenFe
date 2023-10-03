@@ -147,7 +147,7 @@ const CustomerReviewTest = () => {
           <h1 className="redirecttext">Redirecting</h1>
         </div>
       ) : (
-        <div className="card" style={{height:'auto'}}>
+        <div className="card">
           <h1>{error.length > 0 ? error : reviews[index]}</h1>
           {console.log(index, 'ind')}
           {
@@ -169,7 +169,7 @@ const CustomerReviewTest = () => {
           </div>
         </div>
       )}
-      <div style={{margin:'20px'}}>
+      {/* <div style={{margin:'20px'}}>
             ABC Software Solutions is a cutting-edge software company that stands at the forefront of innovation and technology. With a rich history spanning over a decade, we have consistently delivered groundbreaking solutions that have reshaped industries and empowered businesses worldwide. At the heart of our company is a passionate team of developers, engineers, and visionaries who share a common goal: to create software that not only meets the needs of today but anticipates the challenges of tomorrow.
 
             Our journey began with a simple yet profound mission: to harness the power of code and technology to solve complex problems. Since our inception, we have stayed true to this mission, evolving and adapting to the ever-changing landscape of the tech industry. We have embraced a wide spectrum of technologies and platforms, from the versatility of Java and Python to the real-time capabilities of Vertx and the seamless user interfaces of React. Our diverse and extensive tech stack allows us to approach projects with a flexible mindset, ensuring that we always have the right tools for the job.
@@ -189,7 +189,7 @@ const CustomerReviewTest = () => {
             Our commitment to excellence extends beyond the delivery of software. We provide comprehensive support and maintenance services to ensure that our solutions continue to perform at their best long after deployment. Our clients can rely on us for timely updates, bug fixes, and enhancements, allowing them to stay ahead in a rapidly evolving digital landscape. We view our clients as partners in success, and their achievements are a testament to the enduring value of our collaborations.
 
             In conclusion, ABC Software Solutions is not just a software company; we are architects of innovation, builders of the future, and partners in progress. Our unwavering dedication to technology, collaboration, and excellence has propelled us to the forefront of the software industry. We are not content to rest on our laurels but continue to push the boundaries of what's possible. With a passion for solving complex problems, a commitment to quality, and a thirst for innovation, we stand ready to tackle the challenges of today and shape the possibilities of tomorrow. Join us on this exciting journey as we continue to redefine the software landscape, one line of code at a time.
-          </div>
+          </div> */}
     </>
   )
 }

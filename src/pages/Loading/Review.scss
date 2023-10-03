@@ -30,7 +30,7 @@ $btnColor : #FFC72C;
 }
 
 .card {
-	height: 90vh;
+	height: '100%';
 	background: $cardbackground;
 	border-radius: 0.15em;
 	box-shadow: $shadow;
@@ -297,9 +297,7 @@ $btnColor : #FFC72C;
 
 	}
 }
-.card {
-	overflow: hidden;
-}
+
   .redirecttext {
 	position: absolute;
 	font-family: 'Open Sans';
