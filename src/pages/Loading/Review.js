@@ -47,10 +47,11 @@ const reviews = [
   "Composing a swift review to give you back some time. Almost there!"
 ]
 
-const url = 'https://apidevreview.codentechnologies.com'
+const url = 'http://localhost:3002'
 
 const CustomerReview = () => {
   const [index, setIndex] = useState(0);
+  const [name, setName] = useState('');
   const [status, setStatus] = useState('Generating Review...')
   const [api, setApi] = useState(false)
   const [isRedirecting, setRedirecting] = useState(false)
@@ -62,7 +63,7 @@ const CustomerReview = () => {
   const navigate = useNavigate()
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 24) + 1;
-    setIndex(randomNumber)
+    setIndex(reviews[randomNumber])
     setApi(true)
   }, [])
 
@@ -93,6 +94,8 @@ const CustomerReview = () => {
       } else {
         setData(res.data)
         setLoading(false)
+        setIndex(`We are delighted to serve you!`)
+        setName(res?.data?.name)
       }
     }).catch(err => {
       console.log(err)
@@ -148,8 +151,8 @@ const CustomerReview = () => {
         </div>
       ) : (
         <div className="card">
-          <h1>{error.length > 0 ? error : reviews[index]}</h1>
-          {console.log(index, 'ind')}
+          <h1>{error.length > 0 ? error : index}</h1>
+          {Boolean(name) && <h1 style={{fontWeight:'bold'}}>-{name}</h1> }
           {
             loading && (
               <div className="loader">
