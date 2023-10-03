@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-const Contact = () => {
+const Privacy = () => {
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
     new WOW().init();
@@ -85,6 +85,9 @@ const Contact = () => {
               <Link to="/contact" className="nav-item nav-link">
                 Contact Us
               </Link>
+              <Link to="/privacy-policy" className="nav-item nav-link">
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </nav>
@@ -100,192 +103,121 @@ const Contact = () => {
                     className="position-relative text-primary ps-4"
                     title="coden's about us "
                   >
-                    Contact Us
+                    Privacy Policy
                   </h6>
                   <h2 className="mt-2">
-                    Ready to take your project to the next level? Contact us
-                    today.
+                    Terms and Conditions for Digital NFC Card and AI-Generated
+                    Review Service.
                   </h2>
                 </div>
                 <p className="mb-4">
-                  We're always here to help. Whether you have a question about
-                  our services, want to discuss a potential project, or simply
-                  need some advice, don't hesitate to get in touch with us.
+                  <strong style={{ color: "#2581C2" }}>
+                    1.Acceptance of Terms
+                  </strong>
+                  <br />
+                  By purchasing and using our digital NFC card and AI-generated
+                  review service, you agree to comply with these terms and
+                  conditions. If you do not agree with these terms, please do
+                  not use our products or services.
                 </p>
-                <div style={{ marginTop: "10px" }}>
-                  <a
-                    href="tel:+91 8277611667"
-                    className="btn btn-outline-primary  px-sm-5 rounded-pill animated fadeIn"
-                  >
-                    tap to call
-                  </a>
-                </div>
-                <div className="d-flex align-items-center mt-4">
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="whatsapp us Now !"
-                    href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
-                  >
-                    <i className="fab fa-whatsapp"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="coden's linkedin"
-                    href="https://www.linkedin.com/company/coden/"
-                    target="_blank"
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="coden's instagram"
-                    href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA=="
-                    target="_blank"
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square"
-                    title="coden's facebook"
-                    href="https://www.facebook.com/profile.php?id=100090469839151"
-                  >
-                    <i className="fab fa-facebook"></i>
-                  </a>
-                </div>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    2. Description of Products and Services
+                  </strong>{" "}
+                  <br />
+                  2.1. Digital NFC Cards: We offer digital NFC cards for sale at
+                  the price mentioned in the Manufacturer's Recommended Price
+                  (MRP). Each card is to be used for the intended purpose of
+                  accessing review services.
+                  <br />
+                  2.2. AI-Generated Reviews: When you scan the NFC card using a
+                  compatible device, you will receive an AI-generated review
+                  free of charge, as of the date of this agreement. Please note
+                  that we reserve the right to charge for this service in the
+                  future, and any such changes will be communicated to users in
+                  advance.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    3. Payment and Pricing
+                  </strong>{" "}
+                  <br />
+                  3.1. The pricing for our digital NFC cards is as specified in
+                  the MRP. Payment is required before we provide you with the
+                  NFC card.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    4. User Responsibilities
+                  </strong>{" "}
+                  <br />
+                  4.1. You are responsible for using the digital NFC card in
+                  accordance with the intended purpose and any applicable laws
+                  and regulations.
+                  <br /> 4.2. You are responsible for any device and
+                  connectivity requirements necessary to access the AI-generated
+                  reviews.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    5. Privacy and Data
+                  </strong>{" "}
+                  <br /> 5.1. We may collect and use data related to your use of
+                  the NFC card and AI-generated review service. Please refer to
+                  our Privacy Policy for more information on how we handle your
+                  data.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    6. Changes to Terms and Services
+                  </strong>{" "}
+                  <br /> 6.1. We reserve the right to modify these terms and
+                  conditions at any time. Any changes will be effective upon
+                  posting the updated terms on our website or notifying you via
+                  email or other means. <br /> 6.2. We also reserve the right to
+                  modify or discontinue the AI-generated review service, with or
+                  without notice.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    7. Disclaimer of Warranties
+                  </strong>{" "}
+                  <br /> 7.1. We provide our products and services on an "as-is"
+                  and "as available" basis. We do not make any warranties or
+                  representations regarding the accuracy, completeness, or
+                  reliability of the AI-generated reviews.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    8. Limitation of Liability{" "}
+                  </strong>{" "}
+                  <br /> 8.1. To the extent permitted by law, we shall not be
+                  liable for any direct, indirect, incidental, consequential, or
+                  special damages arising out of or in connection with the use
+                  of our products or services.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>9. Governing Law</strong>{" "}
+                  <br /> 9.1. These terms and conditions shall be governed by
+                  and construed in accordance with the laws of India.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    10. Contact Information
+                  </strong>{" "}
+                  <br /> 10.1. If you have any questions or concerns about these
+                  terms and conditions, please contact us at
+                  contactus@codentechnologies.com.
+                </p>
               </div>
               <div className="col-lg-4">
-                <img
-                  className="img-fluid wow zoomIn topPaddingLarge"
-                  data-wow-delay="0.5s"
-                  src="img/contactUs.png"
-                  alt="coden about image"
-                  title="coden about us image"
-                />
+                {/* <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s"
+                                    src="img/contactUs.png" alt="coden about image" title="coden about us image" /> */}
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section id="faq">
-        <div
-          className="container-xxl bg-secondary testimonial py-5 my-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-        >
-          <div className="container py-5 px-lg-5">
-            <div
-              className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <h6
-                className="position-relative d-inline text-primary ps-4"
-                title="coden our services"
-              >
-                FAQ
-              </h6>
-              <h4 className="mt-2">Satisfy Your Curiosity !</h4>
-            </div>
-            <div className="owl-carousel testimonial-carousel">
-              <div className="testimonial-item bg-transparent border rounded text-white p-4">
-                <div className="d-flex align-items-center">
-                  <div className="ps-3 ">
-                    <h6 className="text-white mb-1">How it works ?</h6>
-                  </div>
-                </div>
-                <div>
-                  {" "}
-                  <small>Tell us what you want</small>
-                </div>
-                <div>
-                  {" "}
-                  <small>We tailor your needs and provide the design</small>
-                </div>
-                <div>
-                  <small>
-                    Once you finalise, we develop your dream website...
-                  </small>
-                </div>
-              </div>
-              <div className="testimonial-item bg-transparent border rounded text-white p-4">
-                <div className="d-flex align-items-center">
-                  <div className="ps-3 ">
-                    <h6 className="text-white mb-1">How much it cost ?</h6>
-                  </div>
-                </div>
-                <div>
-                  {" "}
-                  <small>Depends on your requirement ! </small>
-                </div>
-                <div>
-                  {" "}
-                  <small>It starts from as low as 8000 INR</small>
-                </div>
-                <div>
-                  <small>
-                    We provide a detailed quote before we start working
-                  </small>
-                </div>
-              </div>
-              <div className="testimonial-item bg-transparent border rounded text-white p-4">
-                <div className="d-flex align-items-center">
-                  <div className="ps-3 ">
-                    <h6 className="text-white mb-1">How long it takes ?</h6>
-                  </div>
-                </div>
-                <div>
-                  {" "}
-                  <small>Also depends on your requirement !</small>
-                </div>
-                <div>
-                  {" "}
-                  <small>We take time and quality as top priority</small>
-                </div>
-                <div>
-                  <small>We also provide time-estimation with quotation</small>
-                </div>
-              </div>
-              <div className="testimonial-item bg-transparent border rounded text-white p-4">
-                <div className="d-flex align-items-center">
-                  <div className="ps-3 ">
-                    <h6 className="text-white mb-1">How secure is it ?</h6>
-                  </div>
-                </div>
-                <div>
-                  {" "}
-                  <small>We use latest tech to ensure the best security </small>
-                </div>
-                <div>
-                  {" "}
-                  <small>Our team uses secure coding practices</small>
-                </div>
-                <div>
-                  <small>We use strict data protection policies</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div
-        className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
-        data-wow-delay="0.1s"
-      >
-        <h6
-          className="position-relative d-inline text-primary ps-4"
-          title="coden our services"
-        >
-          Maps
-        </h6>
-      </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124426.97355474683!2d77.51270386015922!3d12.949894900628076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c29632dc5caa75%3A0x8f90d294e4db522e!2sCoden!5e0!3m2!1sen!2sin!4v1678185401161!5m2!1sen!2sin"
-        className="mapsIframe"
-        style={{ border: 0 }}
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
 
       <div
         className="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn"
@@ -367,7 +299,7 @@ const Contact = () => {
               <Link className="btn btn-link" to="/#Services">
                 Service
               </Link>
-              <Link className="btn btn-link" href="/contact">
+              <Link className="btn btn-link" to="/contact">
                 Contact Us
               </Link>
               <Link className="btn btn-link" to="/privacy-policy">
@@ -445,4 +377,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Privacy;

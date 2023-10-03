@@ -329,6 +329,7 @@ const Landing = () => {
                         <Link className="btn btn-link" to="/about">About Us</Link>
                         <a className="btn btn-link" href="#Services">Service</a>
                         <Link className="btn btn-link" to="/contact">Contact Us</Link>
+                        <Link className="btn btn-link" to="/privacy-policy">Privacy Policy</Link>
                     </div>
                     <div className="col-md-6 col-lg-4">
                         <h5 className="text-white mb-4">Blogs</h5>
