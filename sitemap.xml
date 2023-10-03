@@ -11,25 +11,49 @@
   <lastmod>2023-03-12T06:07:26+00:00</lastmod>
 </url>
 <url>
-  <loc>https://codentechnologies.com/index.html</loc>
-  <lastmod>2023-04-10T06:07:26+00:00</lastmod>
+  <loc>https://codentechnologies.com/index</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://codentechnologies.com/</loc>
-  <lastmod>2023-04-10T06:07:26+00:00</lastmod>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://codentechnologies.com/about.html</loc>
-  <lastmod>2023-04-10T06:07:26+00:00</lastmod>
+  <loc>https://codentechnologies.com/about</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://codentechnologies.com/contact.html</loc>
-  <lastmod>2023-04-10T06:07:26+00:00</lastmod>
+  <loc>https://codentechnologies.com/contact</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
-
+<url>
+  <loc>https://codentechnologies.com/404</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/CertificateOfExcellence</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/MyCertificate</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/orders</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://codentechnologies.com/easy-rev/landing/</loc>
+  <lastmod>2023-10-03T06:07:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>  
 </urlset>
