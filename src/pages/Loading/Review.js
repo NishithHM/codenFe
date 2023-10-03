@@ -47,7 +47,7 @@ const reviews = [
   "Composing a swift review to give you back some time. Almost there!"
 ]
 
-const url = 'http://localhost:3002'
+const url = 'https://apidevreview.codentechnologies.com'
 
 const CustomerReview = () => {
   const [index, setIndex] = useState(0);
