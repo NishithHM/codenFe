@@ -114,6 +114,8 @@ const CustomerReview = () => {
   }
   return (
     <>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7389479959832649"
+     crossorigin="anonymous"></script>
       <ToastContainer
         position="top-center"
         autoClose={3000}
