@@ -60,6 +60,7 @@ const Landing = () => {
                         <Link to="/#Services" className="nav-item nav-link">Service</Link>
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
                         <Link to="/contact" className="nav-item nav-link">Contact Us</Link>
+                        <Link to="/orders" className="nav-item nav-link">Orders</Link>
                     </div>
                 </div>
             </nav>
