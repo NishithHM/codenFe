@@ -88,6 +88,7 @@ const About = () => {
               <Link to="/privacy-policy" className="nav-item nav-link">
                 Privacy Policy
               </Link>
+              <Link to="/orders" className="nav-item nav-link">Orders</Link>
             </div>
           </div>
         </nav>
