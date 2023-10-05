@@ -85,9 +85,6 @@ const Privacy = () => {
               <Link to="/contact" className="nav-item nav-link">
                 Contact Us
               </Link>
-              <Link to="/privacy-policy" className="nav-item nav-link">
-                Privacy Policy
-              </Link>
             </div>
           </div>
         </nav>
@@ -105,109 +102,156 @@ const Privacy = () => {
                   >
                     Privacy Policy
                   </h6>
-                  <h2 className="mt-2">
-                    Terms and Conditions for Digital NFC Card and AI-Generated
-                    Review Service.
-                  </h2>
+                  <h2 className="mt-2">Privacy Policy</h2>
+                  <h4>Last Updated: 05-10-2022</h4>
+                </div>
+                <div>
+                  <p>
+                    Your privacy is important to us. This Privacy Policy
+                    outlines how we collect, use, disclose, and protect the
+                    personal information you provide to us during the payment
+                    process and when using our products and services.
+                  </p>
                 </div>
                 <p className="mb-4">
                   <strong style={{ color: "#2581C2" }}>
-                    1.Acceptance of Terms
+                    1. Information We Collect
                   </strong>
+                  <p>
+                    We may collect the following types of personal information
+                    when you use our services:
+                  </p>
+                  1.1. Personal Identification Information: <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Name <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Business Name (if applicable) <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Mobile Number <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  UPI ID (Unified Payments Interface ID) <br />
+                  1.2. Payment Information:
                   <br />
-                  By purchasing and using our digital NFC card and AI-generated
-                  review service, you agree to comply with these terms and
-                  conditions. If you do not agree with these terms, please do
-                  not use our products or services.
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Billing and payment information necessary for processing
+                  transactions, such as credit card details or other payment
+                  method information. Note that we do not store payment card
+                  information; it is securely processed by our payment service
+                  provider. <br />
+                  1.3. Usage Information: <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Information about how you interact with our products and
+                  services, including the use of NFC cards and AI-generated
+                  reviews. <br />
+                  1.4. Google Business Link: <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Link to your Google Business page. This information is used to
+                  generate reviews for user’s business page.
                 </p>
                 <p className="mb-4">
                   <strong style={{ color: "#2581C2" }}>
-                    2. Description of Products and Services
+                    2. How We Use Your Information
                   </strong>{" "}
                   <br />
-                  2.1. Digital NFC Cards: We offer digital NFC cards for sale at
-                  the price mentioned in the Manufacturer's Recommended Price
-                  (MRP). Each card is to be used for the intended purpose of
-                  accessing review services.
+                  We may use the personal information collected for the
+                  following purposes: <br />
+                  2.1.Transaction Processing: To deliver NFC cards, and provide
+                  access to our AI-generated review service.
                   <br />
-                  2.2. AI-Generated Reviews: When you scan the NFC card using a
-                  compatible device, you will receive an AI-generated review
-                  free of charge, as of the date of this agreement. Please note
-                  that we reserve the right to charge for this service in the
-                  future, and any such changes will be communicated to users in
-                  advance.
+                  2.2.Customer Support: To respond to your inquiries, requests,
+                  and provide customer support.
+                  <br />
+                  2.3. Personalization: To personalise and improve the quality
+                  of AI-generated reviews based on the Google Business Link
+                  provided. <br />
+                  2.4. Communication: To send transaction confirmations,
+                  updates, and important notices regarding our products and
+                  services. <br />
+                  2.5. Legal Compliance: To comply with legal obligations,
+                  including tax reporting and fraud prevention.
                 </p>
                 <p className="mb-4">
                   <strong style={{ color: "#2581C2" }}>
-                    3. Payment and Pricing
+                    3. Sharing Your Information
                   </strong>{" "}
                   <br />
+                  We may share your personal information with third parties in
+                  the following circumstances: <br />
                   3.1. The pricing for our digital NFC cards is as specified in
                   the MRP. Payment is required before we provide you with the
-                  NFC card.
+                  NFC card. <br /> 3.2. Legal Compliance: We may disclose
+                  information when required by law or to protect our rights,
+                  privacy, safety, or property, or that of others.
                 </p>
                 <p className="mb-4">
-                  <strong style={{ color: "#2581C2" }}>
-                    4. User Responsibilities
-                  </strong>{" "}
+                  <strong style={{ color: "#2581C2" }}>4. Data Security</strong>{" "}
                   <br />
-                  4.1. You are responsible for using the digital NFC card in
-                  accordance with the intended purpose and any applicable laws
-                  and regulations.
-                  <br /> 4.2. You are responsible for any device and
-                  connectivity requirements necessary to access the AI-generated
-                  reviews.
+                  We take reasonable measures to protect your personal
+                  information from unauthorised access, use, or disclosure.
+                  However, please be aware that no method of transmitting data
+                  over the internet or electronic storage is entirely secure.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>5. Your Choices</strong>{" "}
+                  <br />
+                  You may have certain rights regarding your personal
+                  information. You can: <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Review and update your personal information by logging into
+                  your account (if applicable). <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Contact us to request access to or correction of your personal
+                  information.
+                  <br />
+                  <strong style={{ color: "#2581C2", fontSize: 20 }}>
+                    .
+                  </strong>{" "}
+                  Opt-out of receiving promotional communications from us by
+                  following the instructions provided in such communications.{" "}
+                  <br />
                 </p>
                 <p className="mb-4">
                   <strong style={{ color: "#2581C2" }}>
-                    5. Privacy and Data
+                    6. Changes to This Privacy Policy
                   </strong>{" "}
-                  <br /> 5.1. We may collect and use data related to your use of
-                  the NFC card and AI-generated review service. Please refer to
-                  our Privacy Policy for more information on how we handle your
-                  data.
+                  <br /> We may update this Privacy Policy from time to time to
+                  reflect changes in our practices or for other operational,
+                  legal, or regulatory reasons. We will notify you of any
+                  material changes either by posting a notice on our website or
+                  through other communication channels.
                 </p>
                 <p className="mb-4">
-                  <strong style={{ color: "#2581C2" }}>
-                    6. Changes to Terms and Services
-                  </strong>{" "}
-                  <br /> 6.1. We reserve the right to modify these terms and
-                  conditions at any time. Any changes will be effective upon
-                  posting the updated terms on our website or notifying you via
-                  email or other means. <br /> 6.2. We also reserve the right to
-                  modify or discontinue the AI-generated review service, with or
-                  without notice.
-                </p>
-                <p className="mb-4">
-                  <strong style={{ color: "#2581C2" }}>
-                    7. Disclaimer of Warranties
-                  </strong>{" "}
-                  <br /> 7.1. We provide our products and services on an "as-is"
-                  and "as available" basis. We do not make any warranties or
-                  representations regarding the accuracy, completeness, or
-                  reliability of the AI-generated reviews.
-                </p>
-                <p className="mb-4">
-                  <strong style={{ color: "#2581C2" }}>
-                    8. Limitation of Liability{" "}
-                  </strong>{" "}
-                  <br /> 8.1. To the extent permitted by law, we shall not be
-                  liable for any direct, indirect, incidental, consequential, or
-                  special damages arising out of or in connection with the use
-                  of our products or services.
-                </p>
-                <p className="mb-4">
-                  <strong style={{ color: "#2581C2" }}>9. Governing Law</strong>{" "}
-                  <br /> 9.1. These terms and conditions shall be governed by
-                  and construed in accordance with the laws of India.
-                </p>
-                <p className="mb-4">
-                  <strong style={{ color: "#2581C2" }}>
-                    10. Contact Information
-                  </strong>{" "}
-                  <br /> 10.1. If you have any questions or concerns about these
-                  terms and conditions, please contact us at
-                  contactus@codentechnologies.com.
+                  <strong style={{ color: "#2581C2" }}>7. Contact Us</strong>{" "}
+                  <br /> If you have any questions or concerns about this
+                  Privacy Policy or the handling of your personal information,
+                  please contact us at{" "}
+                  <a
+                    style={{ color: "#2581C2", fontWeight: 500 }}
+                    href="https://codentechnologies.com/contact"
+                  >
+                    contactus@codentechnologies.com
+                  </a>{" "}
+                  <br />
+                  By using our products and services, you consent to the
+                  practices described in this Privacy Policy.
                 </p>
               </div>
               <div className="col-lg-4">
@@ -304,6 +348,12 @@ const Privacy = () => {
               </Link>
               <Link className="btn btn-link" to="/privacy-policy">
                 Privacy Policy
+              </Link>
+              <Link className="btn btn-link" to="/terms">
+                Terms And Conditions
+              </Link>
+              <Link className="btn btn-link" to="/refund-and-cancellation">
+                Refund And Cancellation
               </Link>
             </div>
             <div className="col-md-6 col-lg-4">

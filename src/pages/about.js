@@ -85,9 +85,6 @@ const About = () => {
               <Link to="/contact" className="nav-item nav-link">
                 Contact Us
               </Link>
-              <Link to="/privacy-policy" className="nav-item nav-link">
-                Privacy Policy
-              </Link>
               <Link to="/orders" className="nav-item nav-link">Orders</Link>
             </div>
           </div>
@@ -475,6 +472,12 @@ const About = () => {
               </Link>
               <Link className="btn btn-link" to="/privacy-policy">
                 Privacy Policy
+              </Link>
+              <Link className="btn btn-link" to="/terms">
+                Terms And Conditions
+              </Link>
+              <Link className="btn btn-link" to="/refund-and-cancellation">
+                Refund And Cancellation
               </Link>
             </div>
             <div className="col-md-6 col-lg-4">
