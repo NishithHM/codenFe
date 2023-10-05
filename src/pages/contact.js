@@ -373,6 +373,12 @@ const Contact = () => {
               <Link className="btn btn-link" to="/privacy-policy">
                 Privacy Policy
               </Link>
+              <Link className="btn btn-link" to="/terms">
+                Terms And Conditions
+              </Link>
+              <Link className="btn btn-link" to="/refund-and-cancellation">
+                Refund And Cancellation
+              </Link>
             </div>
             <div className="col-md-6 col-lg-4">
               <h5 className="text-white mb-4">Blogs</h5>

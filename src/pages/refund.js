@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const Orders = () => {
+const RefundAndCancellation = () => {
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
     new WOW().init();
@@ -40,7 +39,7 @@ const Orders = () => {
       >
         <div
           className="spinner-grow text-primary"
-          style={{ height: "3em", width: "3em" }}
+          style={{ width: "3em", height: "3em" }}
           role="status"
         >
           <span className="sr-only">Loading...</span>
@@ -49,7 +48,7 @@ const Orders = () => {
 
       <div className="container-xxl position-relative p-0">
         <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-          <Link to="" className="navbar-brand p-0">
+          <a href="" className="navbar-brand p-0">
             <div className="codenMerged">
               <div>
                 {" "}
@@ -63,7 +62,7 @@ const Orders = () => {
                 <h1 className=" title logo-font codenTextTitle">oden</h1>
               </div>
             </div>
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -86,76 +85,98 @@ const Orders = () => {
               <Link to="/contact" className="nav-item nav-link">
                 Contact Us
               </Link>
-              <Link to="/privacy-policy" className="nav-item nav-link">
-                Privacy Policy
-              </Link>
-              <Link className="btn btn-link" to="/terms">
-                Terms And Conditions
-              </Link>
             </div>
           </div>
         </nav>
       </div>
 
-      <section id="Services">
+      <section id="AboutUs">
         <div className="container-xxl py-5">
           <div className="container px-lg-5">
-            <div
-              className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <h6
-                className="position-relative d-inline text-primary ps-4"
-                title="coden our services"
-              >
-                Our Products
-              </h6>
-            </div>
-            <a
-              className=""
-              title="whatsapp us to Order !"
-              href="https://api.whatsapp.com/send?text=Hi, I would like to order a review card for my business &phone=8277611667"
-            >
-              <div className="row g-4 justify-content-center" style={{marginTop:'50px'}}>
-                <div
-                  className="col-lg-4 col-md-6 wow zoomIn"
-                  data-wow-delay="0.1s"
-                >
-                  <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                    <div className="service-icon flex-shrink-0">
-                      {/* <i className="fa fa-id-card fa-2x"></i> */}
-                      <img
-                        style={{width:'200px', height:'150px'}}
-                        data-wow-delay="0.5s"
-                        src="img/card.png"
-                        alt="coden about image"
-                        title="coden about us image"
-                      />
-                    </div>
-                    <h5 style={{marginTop:'60px'}} className="mb-3">Review Card</h5>
-                    <p>
-                      Effortlessly gather reviews with our NFC Business Review
-                      Card. Customers tap and leave feedback, boosting your
-                      online presence instantly. Customizable and easy to use.
-                      Elevate your business today!
-                    </p>
-                  </div>
+            <div className="row g-5">
+              <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
+                  <h6
+                    className="position-relative text-primary ps-4"
+                    title="coden's about us "
+                  >
+                    Refund And Cancellation
+                  </h6>
+                  <h2 className="mt-2">Refund and Cancellation Policy</h2>
+                  <h4>Refunds</h4>
                 </div>
+                <p className="mb-4">
+                  We value your satisfaction with our products. However, please
+                  note that we do not accept returns or offer refunds for
+                  products unless there is a manufacturer's defect in the item.
+                  If you believe that you have received a product with a
+                  manufacturing defect, please contact us immediately.
+                </p>
+                <p className="mb-4">Return Process for Defective Products</p>
+                <p className="mb-4">
+                  To initiate a return for a defective product, please follow
+                  these steps:
+                </p>
+                <p className="mb-4">
+                  Contact our customer support team within three (3) business
+                  days of receiving the product to report the issue. Our team
+                  will guide you through the return process, which may include
+                  providing photographic evidence of the defect or other
+                  information as requested. If we determine that the product has
+                  a manufacturing defect, we will provide you with instructions
+                  on how to return the item. Please note that the following
+                  conditions apply to return requests for defective products:
+                </p>
+                <p className="mb-4">
+                  The item must be unused and in the same condition as when you
+                  received it. The item must be in its original packaging. To
+                  complete your return, we will require a receipt or proof of
+                  purchase. Once we receive and inspect the returned item, we
+                  will notify you of the approval or rejection of your refund.
+                  If approved, your refund will be processed, and a credit will
+                  automatically be applied to your original method of payment.
+                </p>
+                <p className="mb-4">Non-Returnable Items</p>
+                <p className="mb-4">
+                  Please be aware that we do not accept returns or offer refunds
+                  for the following:
+                </p>
+                <p className="mb-4">
+                  Any software solutions or services related to the product, as
+                  these are considered non-returnable and non-refundable. Sale
+                  items. Only regular-priced items are eligible for refunds.
+                  Cancellation Policy
+                </p>
+                <p className="mb-4">
+                  We understand that circumstances may change, and you may need
+                  to cancel an order. If you wish to cancel an order, please
+                  contact our customer support team as soon as possible.
+                </p>
+                <p className="mb-4">
+                  Please note the following regarding order cancellations:
+                </p>
+                <p className="mb-4">
+                  Orders can only be cancelled before they are shipped.
+                </p>
+                <p className="mb-4">
+                  Once an order has been shipped, it cannot be cancelled. If an
+                  order is cancelled before shipping, a refund will be issued to
+                  the original method of payment. Gift Returns
+                </p>
+                <p className="mb-4">
+                  If the item in question was marked as a gift when purchased
+                  and shipped directly to you, you will receive a gift credit
+                  for the value of your return. Gift credits are
+                  non-transferable and can only be used for future purchases on
+                  our website.
+                </p>
               </div>
-            </a>
+              <div className="col-lg-4">
+                {/* <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s"
+                                    src="img/contactUs.png" alt="coden about image" title="coden about us image" /> */}
+              </div>
+            </div>
           </div>
-          <p style={{marginTop:'30px'}}>
-            Get Your card now{" "}
-            <p>
-              {" "}
-              <a
-                href="tel:+91 8277611667"
-                className="fa fa-phone-alt me-3 text-blue"
-              >
-                +91 8277611667
-              </a>
-            </p>
-          </p>
         </div>
       </section>
 
@@ -194,10 +215,6 @@ const Orders = () => {
                   contactus@codentechnologies.com
                 </a>
               </p>
-              <p className="fa fa-envelope me-3 text-white">
-                {" "}
-                GSTIN: 29AGWPJ3637Q1ZA
-              </p>
               <div className="d-flex pt-2">
                 <a
                   className="btn btn-outline-light btn-social"
@@ -234,18 +251,27 @@ const Orders = () => {
             </div>
             <div className="col-md-6 col-lg-3">
               <h5 className="text-white mb-4">Popular Link</h5>
-              <a className="btn btn-link" href="index.html">
+              <Link className="btn btn-link" to="/">
                 Home
-              </a>
-              <a className="btn btn-link" href="about.html">
+              </Link>
+              <Link className="btn btn-link" to="/about">
                 About Us
-              </a>
-              <a className="btn btn-link" href="index.html#Services">
+              </Link>
+              <Link className="btn btn-link" to="/#Services">
                 Service
-              </a>
-              <a className="btn btn-link" href="contact.html">
+              </Link>
+              <Link className="btn btn-link" to="/contact">
                 Contact Us
-              </a>
+              </Link>
+              <Link className="btn btn-link" to="/privacy-policy">
+                Privacy Policy
+              </Link>
+              <Link className="btn btn-link" to="/terms">
+                Terms And Conditions
+              </Link>
+              <Link className="btn btn-link" to="/refund-and-cancellation">
+                Refund And Cancellation
+              </Link>
             </div>
             <div className="col-md-6 col-lg-4">
               <h5 className="text-white mb-4">Blogs</h5>
@@ -300,9 +326,9 @@ const Orders = () => {
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 &copy;{" "}
-                <a className="border-bottom" href="#home">
+                <Link className="border-bottom" to="/">
                   Coden
-                </a>
+                </Link>
                 , All Right Reserved.
               </div>
               <div className="col-md-6 text-center text-md-end">
@@ -318,4 +344,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default RefundAndCancellation;

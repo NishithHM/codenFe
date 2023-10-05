@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const Orders = () => {
+const TermsAndConditions = () => {
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
     new WOW().init();
@@ -40,7 +39,7 @@ const Orders = () => {
       >
         <div
           className="spinner-grow text-primary"
-          style={{ height: "3em", width: "3em" }}
+          style={{ width: "3em", height: "3em" }}
           role="status"
         >
           <span className="sr-only">Loading...</span>
@@ -49,7 +48,7 @@ const Orders = () => {
 
       <div className="container-xxl position-relative p-0">
         <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-          <Link to="" className="navbar-brand p-0">
+          <a href="" className="navbar-brand p-0">
             <div className="codenMerged">
               <div>
                 {" "}
@@ -63,7 +62,7 @@ const Orders = () => {
                 <h1 className=" title logo-font codenTextTitle">oden</h1>
               </div>
             </div>
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -86,76 +85,138 @@ const Orders = () => {
               <Link to="/contact" className="nav-item nav-link">
                 Contact Us
               </Link>
-              <Link to="/privacy-policy" className="nav-item nav-link">
-                Privacy Policy
-              </Link>
-              <Link className="btn btn-link" to="/terms">
-                Terms And Conditions
-              </Link>
             </div>
           </div>
         </nav>
       </div>
 
-      <section id="Services">
+      <section id="AboutUs">
         <div className="container-xxl py-5">
           <div className="container px-lg-5">
-            <div
-              className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <h6
-                className="position-relative d-inline text-primary ps-4"
-                title="coden our services"
-              >
-                Our Products
-              </h6>
-            </div>
-            <a
-              className=""
-              title="whatsapp us to Order !"
-              href="https://api.whatsapp.com/send?text=Hi, I would like to order a review card for my business &phone=8277611667"
-            >
-              <div className="row g-4 justify-content-center" style={{marginTop:'50px'}}>
-                <div
-                  className="col-lg-4 col-md-6 wow zoomIn"
-                  data-wow-delay="0.1s"
-                >
-                  <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                    <div className="service-icon flex-shrink-0">
-                      {/* <i className="fa fa-id-card fa-2x"></i> */}
-                      <img
-                        style={{width:'200px', height:'150px'}}
-                        data-wow-delay="0.5s"
-                        src="img/card.png"
-                        alt="coden about image"
-                        title="coden about us image"
-                      />
-                    </div>
-                    <h5 style={{marginTop:'60px'}} className="mb-3">Review Card</h5>
-                    <p>
-                      Effortlessly gather reviews with our NFC Business Review
-                      Card. Customers tap and leave feedback, boosting your
-                      online presence instantly. Customizable and easy to use.
-                      Elevate your business today!
-                    </p>
-                  </div>
+            <div className="row g-5">
+              <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
+                  <h6
+                    className="position-relative text-primary ps-4"
+                    title="coden's about us "
+                  >
+                    Privacy Policy
+                  </h6>
+                  <h2 className="mt-2">
+                  Terms and Conditions for Digital NFC Card Review Service
+                  </h2>
+                  <h4>Last Updated: 05-10-2022</h4>
                 </div>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    1.Acceptance of Terms
+                  </strong>
+                  <br />
+                  By purchasing and using our digital NFC card 
+                  review service, you agree to comply with these terms and
+                  conditions. If you do not agree with these terms, please do
+                  not use our products or services.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    2. Description of Products and Services
+                  </strong>{" "}
+                  <br />
+                  2.1. Digital NFC Cards: We offer digital NFC cards for sale at
+                  the price mentioned in the Manufacturer's Recommended Price
+                  (MRP). Each card is to be used for the intended purpose of
+                  accessing review services.
+                  <br />
+                  2.2. Reviews: When you scan the NFC card using a
+                  compatible device, you will receive a review
+                  free of charge, as of the date of this agreement. Please note
+                  that we reserve the right to charge for this service in the
+                  future, and any such changes will be communicated to users in
+                  advance.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    3. Payment and Pricing
+                  </strong>{" "}
+                  <br />
+                  3.1. The pricing for our digital NFC cards is as specified in
+                  the MRP. Payment is required before we provide you with the
+                  NFC card.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    4. User Responsibilities
+                  </strong>{" "}
+                  <br />
+                  4.1. You are responsible for using the digital NFC card in
+                  accordance with the intended purpose and any applicable laws
+                  and regulations.
+                  <br /> 4.2. You are responsible for any device and
+                  connectivity requirements necessary to access the 
+                  reviews.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    5. Privacy and Data
+                  </strong>{" "}
+                  <br /> 5.1. We may collect and use data related to your use of
+                  the NFC card and AI-generated review service. Please refer to
+                  our Privacy Policy for more information on how we handle your
+                  data.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    6. Changes to Terms and Services
+                  </strong>{" "}
+                  <br /> 6.1. We reserve the right to modify these terms and
+                  conditions at any time. Any changes will be effective upon
+                  posting the updated terms on our website or notifying you via
+                  email or other means. <br /> 6.2. We also reserve the right to
+                  modify or discontinue the AI-generated review service, with or
+                  without notice.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    7. Disclaimer of Warranties
+                  </strong>{" "}
+                  <br /> 7.1. We provide our products and services on an "as-is"
+                  and "as available" basis. We do not make any warranties or
+                  representations regarding the accuracy, completeness, or
+                  reliability of the AI-generated reviews.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    8. Limitation of Liability{" "}
+                  </strong>{" "}
+                  <br /> 8.1. To the extent permitted by law, we shall not be
+                  liable for any direct, indirect, incidental, consequential, or
+                  special damages arising out of or in connection with the use
+                  of our products or services.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>9. Governing Law</strong>{" "}
+                  <br /> 9.1. These terms and conditions shall be governed by
+                  and construed in accordance with the laws of India.
+                </p>
+                <p className="mb-4">
+                  <strong style={{ color: "#2581C2" }}>
+                    10. Contact Information
+                  </strong>{" "}
+                  <br /> 10.1. If you have any questions or concerns about these
+                  terms and conditions, please contact us at <a
+                    style={{ color: "#2581C2", fontWeight: 500 }}
+                    href="https://codentechnologies.com/contact"
+                  >
+                    contactus@codentechnologies.com
+                  </a>{" "}
+                </p>
               </div>
-            </a>
+              <div className="col-lg-4">
+                {/* <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s"
+                                    src="img/contactUs.png" alt="coden about image" title="coden about us image" /> */}
+              </div>
+            </div>
           </div>
-          <p style={{marginTop:'30px'}}>
-            Get Your card now{" "}
-            <p>
-              {" "}
-              <a
-                href="tel:+91 8277611667"
-                className="fa fa-phone-alt me-3 text-blue"
-              >
-                +91 8277611667
-              </a>
-            </p>
-          </p>
         </div>
       </section>
 
@@ -194,10 +255,6 @@ const Orders = () => {
                   contactus@codentechnologies.com
                 </a>
               </p>
-              <p className="fa fa-envelope me-3 text-white">
-                {" "}
-                GSTIN: 29AGWPJ3637Q1ZA
-              </p>
               <div className="d-flex pt-2">
                 <a
                   className="btn btn-outline-light btn-social"
@@ -234,18 +291,27 @@ const Orders = () => {
             </div>
             <div className="col-md-6 col-lg-3">
               <h5 className="text-white mb-4">Popular Link</h5>
-              <a className="btn btn-link" href="index.html">
+              <Link className="btn btn-link" to="/">
                 Home
-              </a>
-              <a className="btn btn-link" href="about.html">
+              </Link>
+              <Link className="btn btn-link" to="/about">
                 About Us
-              </a>
-              <a className="btn btn-link" href="index.html#Services">
+              </Link>
+              <Link className="btn btn-link" to="/#Services">
                 Service
-              </a>
-              <a className="btn btn-link" href="contact.html">
+              </Link>
+              <Link className="btn btn-link" to="/contact">
                 Contact Us
-              </a>
+              </Link>
+              <Link className="btn btn-link" to="/privacy-policy">
+                Privacy Policy
+              </Link>
+              <Link className="btn btn-link" to="/terms">
+                Terms And Conditions
+              </Link>
+              <Link className="btn btn-link" to="/refund-and-cancellation">
+                Refund And Cancellation
+              </Link>
             </div>
             <div className="col-md-6 col-lg-4">
               <h5 className="text-white mb-4">Blogs</h5>
@@ -300,9 +366,9 @@ const Orders = () => {
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 &copy;{" "}
-                <a className="border-bottom" href="#home">
+                <Link className="border-bottom" to="/">
                   Coden
-                </a>
+                </Link>
                 , All Right Reserved.
               </div>
               <div className="col-md-6 text-center text-md-end">
@@ -318,4 +384,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default TermsAndConditions;
