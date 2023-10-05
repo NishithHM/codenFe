@@ -105,7 +105,7 @@ const TermsAndConditions = () => {
                   <h2 className="mt-2">
                   Terms and Conditions for Digital NFC Card Review Service
                   </h2>
-                  <h4>Last Updated: 05-10-2022</h4>
+                  <h4>Last Updated: 05-10-2023</h4>
                 </div>
                 <p className="mb-4">
                   <strong style={{ color: "#2581C2" }}>

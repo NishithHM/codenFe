@@ -103,7 +103,7 @@ const Privacy = () => {
                     Privacy Policy
                   </h6>
                   <h2 className="mt-2">Privacy Policy</h2>
-                  <h4>Last Updated: 05-10-2022</h4>
+                  <h4>Last Updated: 05-10-2023</h4>
                 </div>
                 <div>
                   <p>
