@@ -87,7 +87,7 @@ const CustomerReviewTest = () => {
 
   const getReview = () => {
     setLoading(true)
-    axios.get(`${url}/add-review/${params.id}`).then((res) => {
+    axios.get(`${url}/add-review/1234`).then((res) => {
       if (res?.data?.custom) {
         window.location.href = res?.data?.redirectTo
       } else {
