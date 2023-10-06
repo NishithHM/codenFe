@@ -1,8 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import Input from '../components/Input'
+import Button from '../components/Button'
+import styles from './orders.module.css'
+import {cloneDeep} from 'lodash'
+import { ToastContainer, toast } from "react-toastify";
 const Orders = () => {
+  const formInitial = {
+    name: '',
+    addressOne: '',
+    addressTwo: '',
+    state: '',
+    pincode: '',
+    phoneNumber: '',
+    quantity: '',
+    errorFields: []
+  }
+
+  const [state, setState] = useState(formInitial)
   const [isLoad, setLoading] = useState(true);
+  const inputChangeHandler = (e, id) => {
+    setState((prev) => {
+      return {
+        ...prev,
+        [id]: e.target.value
+      }
+    })
+    console.log(e.target.value)
+  }
+
   useEffect(() => {
     new WOW().init();
     $(".testimonial-carousel").owlCarousel({
@@ -32,7 +58,22 @@ const Orders = () => {
     }, 1000);
   }, []);
   const showclassName = isLoad ? "show" : "";
+  const onSubmitHandler = (e)=>{
+    e.preventDefault()
+    toast.success("Thank you for ordering our product, We have received your order.");
+    setState(cloneDeep(formInitial))
+  }
   return (
+    <>
+    <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        type="success"
+      />
     <div className="container-xxl bg-white p-0">
       <div
         id="spinner"
@@ -74,7 +115,7 @@ const Orders = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav ms-auto py-0">
-              <Link to="/" className="nav-item nav-link active">
+              <Link to="/" className="nav-item nav-link">
                 Home
               </Link>
               <Link to="/#Services" className="nav-item nav-link">
@@ -89,7 +130,7 @@ const Orders = () => {
               <Link to="/privacy-policy" className="nav-item nav-link">
                 Privacy Policy
               </Link>
-              <Link className="btn btn-link" to="/terms">
+              <Link className="nav-item nav-link" to="/terms">
                 Terms And Conditions
               </Link>
             </div>
@@ -116,7 +157,7 @@ const Orders = () => {
               title="whatsapp us to Order !"
               href="https://api.whatsapp.com/send?text=Hi, I would like to order a review card for my business &phone=8277611667"
             >
-              <div className="row g-4 justify-content-center" style={{marginTop:'50px'}}>
+              <div className="row g-4 justify-content-center" style={{ marginTop: '50px' }}>
                 <div
                   className="col-lg-4 col-md-6 wow zoomIn"
                   data-wow-delay="0.1s"
@@ -125,14 +166,14 @@ const Orders = () => {
                     <div className="service-icon flex-shrink-0">
                       {/* <i className="fa fa-id-card fa-2x"></i> */}
                       <img
-                        style={{width:'200px', height:'150px'}}
+                        style={{ width: '200px', height: '150px' }}
                         data-wow-delay="0.5s"
                         src="img/card.png"
                         alt="coden about image"
                         title="coden about us image"
                       />
                     </div>
-                    <h5 style={{marginTop:'60px'}} className="mb-3">Review Card</h5>
+                    <h5 style={{ marginTop: '60px' }} className="mb-3">Review Card</h5>
                     <p>
                       Effortlessly gather reviews with our NFC Business Review
                       Card. Customers tap and leave feedback, boosting your
@@ -144,18 +185,28 @@ const Orders = () => {
               </div>
             </a>
           </div>
-          <p style={{marginTop:'30px'}}>
-            Get Your card now{" "}
-            <p>
-              {" "}
-              <a
-                href="tel:+91 8277611667"
-                className="fa fa-phone-alt me-3 text-blue"
-              >
-                +91 8277611667
-              </a>
-            </p>
-          </p>
+          <div className="mb-3" style={{ textAlign: 'center', fontSize: 20, fontWeight: 500, color: '#302c2c', marginTop: 20 }}>Get this card for RS.<del>999</del> <span style={{ color: "#2581C2" }}>499 only!</span></div>
+          <div className={styles.orderText}>Order Now</div>
+          <div className={styles.inputDiv}>
+            <Input title="Name" id="name" onChange={inputChangeHandler} required value={state.name}/>
+            <Input title="Address Line 1" id="addressOne" onChange={inputChangeHandler}value={state.addressOne} required />
+            <Input title="Address Line 2" id="addressTwo" onChange={inputChangeHandler} value={state.addressTwo} required />
+            <Input title="State" id="state" onChange={inputChangeHandler} value={state.state} required />
+            <Input title="Pincode" type="number" id="pincode" onChange={inputChangeHandler} value={state.pincode} required />
+            <Input title="Phone number" id="phoneNumber" type="number" onChange={inputChangeHandler} value={state.phoneNumber} required />
+            <Input title="Quantity" type="number" id="quantity" onChange={inputChangeHandler} value={state.quantity} required />
+            <div className={styles.checkout}>
+              <Button type="primary" title={"Checkout"} onClick={onSubmitHandler} disabled={
+                state.name.length === 0 ||
+                state.addressOne.length === 0 ||
+                state.addressTwo.length === 0 ||
+                state.phoneNumber.length === 0 ||
+                state.pincode.length === 0 ||
+                state.quantity.length === 0 ||
+                state.state.length === 0
+              } />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -315,6 +366,7 @@ const Orders = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

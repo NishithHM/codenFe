@@ -1,0 +1,50 @@
+.button {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #edeceb;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.primary {
+  color: white;
+  background-color: #3498db;
+  font-weight: 700;
+}
+
+.secondary {
+  color: #302c2c;
+  background-color: #edeceb;
+  font-weight: 700;
+}
+
+.alert {
+  color: #ffffff;
+  background-color: #ff2400;
+}
+
+.disabled {
+  color: #302c2c;
+  background-color: #edeceb;
+  cursor: not-allowed;
+}
+
+@media screen 
+  and (min-device-width: 900px) 
+  and (max-device-width: 1400px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .text {
+        font-size: 16px;
+      }
+}

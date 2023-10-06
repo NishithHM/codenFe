@@ -1,0 +1,16 @@
+.inputDiv {
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 1px 3px 5px 5px;
+    margin: 20px;
+}
+
+.checkout{
+    width: 300px;
+    margin-top: 16px;
+}
+
+.orderText{
+    font-size: 24px;
+    padding-left: 12px;
+    color: #302c2c;
+}
