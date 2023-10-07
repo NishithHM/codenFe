@@ -103,7 +103,7 @@ const TermsAndConditions = () => {
                     Privacy Policy
                   </h6>
                   <h2 className="mt-2">
-                  Terms and Conditions for Digital NFC Card Review Service
+                    Terms and Conditions for Digital NFC Card Review Service
                   </h2>
                   <h4>Last Updated: 05-10-2023</h4>
                 </div>
@@ -112,7 +112,7 @@ const TermsAndConditions = () => {
                     1.Acceptance of Terms
                   </strong>
                   <br />
-                  By purchasing and using our digital NFC card 
+                  By purchasing and using our digital NFC card
                   review service, you agree to comply with these terms and
                   conditions. If you do not agree with these terms, please do
                   not use our products or services.
@@ -152,7 +152,7 @@ const TermsAndConditions = () => {
                   accordance with the intended purpose and any applicable laws
                   and regulations.
                   <br /> 4.2. You are responsible for any device and
-                  connectivity requirements necessary to access the 
+                  connectivity requirements necessary to access the
                   reviews.
                 </p>
                 <p className="mb-4">
@@ -311,6 +311,9 @@ const TermsAndConditions = () => {
               </Link>
               <Link className="btn btn-link" to="/refund-and-cancellation">
                 Refund And Cancellation
+              </Link>
+              <Link className="btn btn-link" to="/sales-policy">
+                Sales Policy
               </Link>
             </div>
             <div className="col-md-6 col-lg-4">

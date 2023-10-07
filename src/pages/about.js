@@ -479,6 +479,9 @@ const About = () => {
               <Link className="btn btn-link" to="/refund-and-cancellation">
                 Refund And Cancellation
               </Link>
+              <Link className="btn btn-link" to="/sales-policy">
+                Sales Policy
+              </Link>
             </div>
             <div className="col-md-6 col-lg-4">
               <h5 className="text-white mb-4">Blogs</h5>

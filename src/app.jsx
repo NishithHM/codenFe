@@ -11,6 +11,7 @@ import Privacy from "./pages/privacy";
 import TermsAndConditions from "./pages/termsAndConditions";
 import RefundAndCancellation from "./pages/refund";
 import TestOrders from "./pages/testOrder";
+import SalesPolicy from "./pages/sales";
 // https://codentechnologies.com/easy-rev/landing/050d2589-89b5-42f5-9245-f0f1f0800113
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                     <Route path='/about' element={<About />} />
                     <Route path='/contact' element={<Contact />} />
                     <Route path="/privacy-policy" element={<Privacy />} />
+                    <Route path="/sales-policy" element={<SalesPolicy/>}/>
                     <Route path="/terms" element={<TermsAndConditions />} />
                     <Route path="/refund-and-cancellation" element={<RefundAndCancellation />} />
                     <Route path="/easy-rev/landing/:id" element={<CustomerReview/>}/>
