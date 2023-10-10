@@ -185,7 +185,7 @@ const Orders = () => {
               </div>
             </a>
           </div>
-          <div className="mb-3" style={{ textAlign: 'center', fontSize: 20, fontWeight: 500, color: '#302c2c', marginTop: 20 }}>Get this card for RS.<del>999</del> <span style={{ color: "#2581C2" }}>499 only!</span></div>
+          <div className="mb-3" style={{ textAlign: 'center', fontSize: 20, fontWeight: 500, color: '#302c2c', marginTop: 20 }}>Get this card for RS.<del>1499</del> <span style={{ color: "#2581C2" }}>999 only!</span></div>
           <div className={styles.orderText}>Order Now</div>
           <div className={styles.inputDiv}>
             <Input title="Name" id="name" onChange={inputChangeHandler} required value={state.name}/>
