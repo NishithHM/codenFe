@@ -12,6 +12,7 @@ import TermsAndConditions from "./pages/termsAndConditions";
 import RefundAndCancellation from "./pages/refund";
 import TestOrders from "./pages/testOrder";
 import SalesPolicy from "./pages/sales";
+import PaymentStatus from "./pages/PaymentStatus";
 // https://codentechnologies.com/easy-rev/landing/050d2589-89b5-42f5-9245-f0f1f0800113
 const App = () => {
     return (
@@ -30,6 +31,7 @@ const App = () => {
                     <Route path="/easy-rev/landing" element={<CustomerReviewTest/>}/>
                     <Route path="/orders" element={<Orders/>}/>
                     <Route path="/orders-test" element={<TestOrders/>}/>
+                    <Route path="/payment-status/:id" element={<PaymentStatus />}/>
                     <Route path="*" element={<FallBack />} />
                 </Routes>
                 </ScrollPage>
