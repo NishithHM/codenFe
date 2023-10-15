@@ -1,0 +1,30 @@
+.container{
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6fefe;
+}
+
+.paymentSuccessText{
+    font-size: 28px;
+    font-weight: 600;
+    color: #2581C2 ;
+    padding: 12px;
+}
+
+.errorText{
+    font-size: 28px;
+    font-weight: 600;
+    padding: 12px;
+    color: #e31743;
+}
+
+.initText{
+    font-size: 28px;
+    font-weight: 600;
+    padding: 12px;
+    color: #757472;
+}
