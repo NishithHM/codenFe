@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import styles from './PaymentStatus.module.css'
 import Loader from 'react-loader-spinner'
 import axios from 'axios';
-
+const urlProd = "https://api.easy-revv.com"
+const urlDev = "https://apidevreview.codentechnologies.com"
 const PaymentStatus = () => {
     const match = useParams()
     const [loading, setLoading] = useState(false)
@@ -12,7 +13,7 @@ const PaymentStatus = () => {
     const checkPaymentStatus = async (int) => {
         setLoading(true)
 
-        const res = await axios.get(`https://apidevreview.codentechnologies.com/payment-status/${match?.id}`).catch(err=> clearInterval(int))
+        const res = await axios.get(`${urlProd}/payment-status/${match?.id}`).catch(err=> clearInterval(int))
         console.log(res.data)
         if (res.data.status === "SUCCESS") {
             clearInterval(int)
