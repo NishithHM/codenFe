@@ -10,7 +10,7 @@ const CustomerReview = () => {
     if(devIds.includes(match?.id)){
       window.location.href = `https://dev.easy-revv.com/easy-rev/landing/${match?.id}`
     }else{
-      window.location.href = `https://prod.easy-revv.com/easy-rev/landing/${match?.id}`
+      window.location.href = `https://rev.easy-revv.com/easy-rev/landing/${match?.id}`
     }
      
   }, [match?.id])
