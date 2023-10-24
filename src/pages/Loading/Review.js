@@ -173,7 +173,7 @@ const CustomerReview = () => {
   }
 
   const match = useParams()
-  const devIds = []
+  const devIds = ['7c9eb572-cdb6-4de3-aa3a-7d5a54dee2db', '589cc289-8cac-492d-8c96-f2b4417f40f8']
   useEffect(()=>{
     if(devIds.includes(match?.id)){
       window.location.href = `https://dev.easy-revv.com/easy-rev/landing/${match?.id}`
