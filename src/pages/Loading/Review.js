@@ -242,7 +242,7 @@ const CustomerReview = () => {
                   client="ca-pub-7389479959832649"
                   slot="2475814081"
                   style={{ display: 'block'  }}
-                  format="auto"
+                  format="rectangle"
                   className='adsbygoogle'
                   responsive='true'
                 />
