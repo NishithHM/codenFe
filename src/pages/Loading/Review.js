@@ -243,7 +243,7 @@ const CustomerReview = () => {
                   slot="2475814081"
                   style={{ display: 'block', width:'100%', height: '100px' }}
                   format="rectangle"
-                  className='adsbygoogle'
+                  className='adsbygoogle add-box-small'
                   responsive='true'
                 />
               </div>
