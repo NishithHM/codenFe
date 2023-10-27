@@ -237,7 +237,7 @@ const CustomerReview = () => {
                 <div style={{ position: 'fixed', bottom: '50%', left: '50%' }}>
                   <ConfettiExplosion zIndex={-1} duration={4000} particleCount={400} particleSize={16} force={1} height={1000} width={1000} />
                 </div>}
-              <div className="add-box-small">
+              {/* <div className="add-box-small">
               <AdSense.Google
                   client="ca-pub-7389479959832649"
                   slot="2475814081"
@@ -246,7 +246,7 @@ const CustomerReview = () => {
                   className='adsbygoogle add-box-small'
                   responsive='true'
                 />
-              </div>
+              </div> */}
               <h1>{error.length > 0 ? error : index}</h1>
               <h1 style={{ fontWeight: 'bold' }}>{userResponse?.name}</h1>
               {
