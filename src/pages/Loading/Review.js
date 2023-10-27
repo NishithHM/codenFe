@@ -57,6 +57,12 @@ const CustomerReview = () => {
   const [explosion, setExplosion] = useState(false);
   const params = useParams()
   const id = params?.id
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      window.scroll(0, 50)
+    }, 1000)
+  }, [])
   // const location = useLocation()
   // const navigate = useNavigate()
 
