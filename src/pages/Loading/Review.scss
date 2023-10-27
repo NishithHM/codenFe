@@ -797,3 +797,18 @@ body {
 	transform-origin: center;
 	animation: line-animation 2s infinite;
   }
+
+  .modal-overlay{
+	background-color: rgba(115, 115, 115, 0.617);
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	z-index: -1;
+  }
+
+  .blur-card{
+	filter: blur(8px);
+	height: '100vh';
+  }

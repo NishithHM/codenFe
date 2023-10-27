@@ -115,10 +115,12 @@ const CustomerReview = () => {
     setRedirecting(true);
     if (data.review && data.review.length > 0) {
       setTimeout(() => {
-        navigate('?session=expired')
         setRedirecting(false)
         window.location.href = url
-      }, 1000);
+      }, 500);
+      setTimeout(()=>{
+        navigate('?session=expired')
+      }, 2000)
     }
   }
 
@@ -219,7 +221,7 @@ const CustomerReview = () => {
       ) : (
         <>
         {session!=="expired" ?
-        <div id="cardid" className="card" style={{zIndex:explosion? -1 : 1}}>
+        <div id="cardid" className={cx("card", {'blur-card':explosion})} style={{zIndex:explosion? -1 : 1}}>
           <Modal
             isOpen={modalOpen}
             onRequestClose={() => setModalOpen(false)}
