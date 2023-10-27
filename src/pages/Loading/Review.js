@@ -241,7 +241,7 @@ const CustomerReview = () => {
               <AdSense.Google
                   client="ca-pub-7389479959832649"
                   slot="2475814081"
-                  style={{ display: 'block'  }}
+                  style={{ display: 'block', width:'100%', height: '100px' }}
                   format="rectangle"
                   className='adsbygoogle'
                   responsive='true'
