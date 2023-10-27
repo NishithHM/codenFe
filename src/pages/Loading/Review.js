@@ -45,7 +45,6 @@ const url = process.env.REACT_APP_BASE_URL
 
 const CustomerReview = () => {
   const [index, setIndex] = useState("Loading...");
-  const [height, setHeight] = useState("100vh");
   const [userResponse, setUserResponse] = useState("");
   const [selectedKeyword, setSelectedKayword] = useState([]);
   const [btnText, setBtnText] = useState("")
@@ -182,22 +181,6 @@ const CustomerReview = () => {
      
   }, [match?.id])
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      const card = document.getElementById('cardid')
-      card.click()
-      card.click()
-      card.click()
-      card.click()
-      card.click()
-      window.scroll(0, 100)
-      setTimeout(()=>{
-        window.scroll(0, 0)
-        setHeight('unset')
-      }, 100)
-     }, 1000)
-  }, [])
-
 
   return (
     <>
@@ -236,7 +219,7 @@ const CustomerReview = () => {
       ) : (
         <>
         {session!=="expired" ?
-        <div id="cardid" className="card" style={{zIndex:explosion? -1 : 1, height}}>
+        <div id="cardid" className="card" style={{zIndex:explosion? -1 : 1}}>
           <Modal
             isOpen={modalOpen}
             onRequestClose={() => setModalOpen(false)}
