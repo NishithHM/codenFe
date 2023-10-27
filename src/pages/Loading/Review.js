@@ -143,6 +143,7 @@ const CustomerReview = () => {
         setTimeout(() => {
           setExplosion(false);
           setModalOpen(false);
+          window.scroll(0, 0)
         }, 5000);
       }else{
         setLoading(false)
