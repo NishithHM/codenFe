@@ -43,7 +43,6 @@ body {
 	font-size: $master;
 	position: relative;
 	text-align: center;
-	margin-top: 50px;
 
 	// .content {
 	// 	top: 50%;
@@ -810,4 +809,17 @@ body {
 
   .blur-card{
 	filter: blur(8px);
+  }
+
+  .add-box{
+	width: 100%;
+	height: 300px;
+	margin-top: 20px;
+  }
+
+  .add-box-small{
+	width: 100%;
+	height: 100px;
+	margin-top: 20px;
+	background-color: #000;
   }

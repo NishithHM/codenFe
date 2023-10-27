@@ -29,13 +29,13 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor:'#27AE61',
+    backgroundColor: '#27AE61',
     width: 400,
-    borderRadius : "40px",
+    borderRadius: "40px",
     zIndex: 999,
-    textAlign:'center',
+    textAlign: 'center',
     fontWeight: 'bold',
-    color:'white',
+    color: 'white',
     padding: 0
   },
 };
@@ -58,11 +58,6 @@ const CustomerReview = () => {
   const params = useParams()
   const id = params?.id
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      window.scroll(0, 50)
-    }, 1000)
-  }, [])
   // const location = useLocation()
   // const navigate = useNavigate()
 
@@ -83,7 +78,7 @@ const CustomerReview = () => {
     customStyles.content.borderRadius = "10px"; // Adjust border radius for smaller screens
   }
 
-  const [query] =useSearchParams()
+  const [query] = useSearchParams()
   const session = query.get('session');
   const location = useLocation()
   const navigate = useNavigate()
@@ -97,9 +92,9 @@ const CustomerReview = () => {
       keywords: res.data.keywords,
       redirectTo: res.data?.redirectTo
     })
-    if(res.data?.keywords?.length >0){
+    if (res.data?.keywords?.length > 0) {
       setBtnText("Write Review for me!")
-    }else{
+    } else {
       setBtnText("loading .....")
     }
   }
@@ -108,13 +103,13 @@ const CustomerReview = () => {
   }, [])
 
   useEffect(() => {
-    if (api && session!=='expired') {
+    if (api && session !== 'expired') {
       getReview()
       getUserName()
     }
   }, [api, session])
 
-  const handleCopy = (e,url) => {
+  const handleCopy = (e, url) => {
     e.preventDefault();
     unsecuredCopyToClipboard({ review: data.review })
     // toast.success("Copied to Clipboard !");
@@ -124,7 +119,7 @@ const CustomerReview = () => {
         setRedirecting(false)
         window.location.href = url
       }, 500);
-      setTimeout(()=>{
+      setTimeout(() => {
         navigate('?session=expired')
       }, 2000)
     }
@@ -138,7 +133,7 @@ const CustomerReview = () => {
     }).then((res) => {
       if (res?.data?.custom) {
         window.location.href = res?.data?.redirectTo
-      } else if(res?.data?.review) {
+      } else if (res?.data?.review) {
         setModalOpen(true);
         setExplosion(true);
         setData(res.data)
@@ -151,7 +146,7 @@ const CustomerReview = () => {
           setModalOpen(false);
           window.scroll(0, 0)
         }, 5000);
-      }else{
+      } else {
         setLoading(false)
       }
     }).catch(err => {
@@ -183,11 +178,11 @@ const CustomerReview = () => {
 
   const match = useParams()
   const devIds = ['7c9eb572-cdb6-4de3-aa3a-7d5a54dee2db', '589cc289-8cac-492d-8c96-f2b4417f40f8']
-  useEffect(()=>{
-    if(devIds.includes(match?.id)){
+  useEffect(() => {
+    if (devIds.includes(match?.id)) {
       window.location.href = `https://dev.easy-revv.com/easy-rev/landing/${match?.id}`
     }
-     
+
   }, [match?.id])
 
 
@@ -227,113 +222,141 @@ const CustomerReview = () => {
         </div>
       ) : (
         <>
-        {session!=="expired" ?
-        <div id="cardid" className={cx("card", {'blur-card':explosion})} style={{zIndex:explosion? -1 : 1}}>
-          <Modal
-            isOpen={modalOpen}
-            onRequestClose={() => setModalOpen(false)}
-            style={customStyles}
-            overlayClassName={'modal-overlay'}
-          >
-            <h3>Copied to Clipboard !!  &#10004;</h3>
-          </Modal>
-          {explosion  &&
-          <div style={{position:'fixed', bottom:'50%', left:'50%'}}>
-          <ConfettiExplosion zIndex={-1} duration={4000} particleCount={400} particleSize={16} force={1} height={1000} width={1000}/>
-          </div> }
-          <h1>{error.length > 0 ? error : index}</h1>
-           <h1 style={{ fontWeight: 'bold' }}>{userResponse?.name}</h1>
-          {
-            userResponse?.keywords?.length > 0&& (
-              <div className="form__containers">
-                {userResponse?.keywords?.length > 0 && <p className="impress-text">What you ❤️ at {userResponse.name}?</p> }
-                {
-                  selectedKeyword.length > 0 && (
-                    <>
-                      <div className="keywordcontainer">
-                        {
-                          selectedKeyword.map((singleKeyword) => (
-                            <div key={singleKeyword} className="selected_keyword">
-                              <div>
-                                <span>{singleKeyword}</span>
-                                <span className="cross" onClick={() => removeKeyword(singleKeyword)}> ❌</span>
-                              </div>
-                            </div>
-                          ))
-                        }
-                      </div>
-                      <div className="single_line"></div>
-                    </>
-                  )
-                }
-                <div className="keywordcontainer">
-                  {
-                    userResponse.keywords !== undefined && userResponse.keywords.length > 0 &&  userResponse.keywords.map((singleKeyword) => (
-                      <div key={singleKeyword} className={cx("single_keyword",{'disabled-keyword': selectedKeyword.length ===3} )} onClick={() => addKeyword(singleKeyword)}>
-                        <span>{singleKeyword}</span>
-                      </div>
-                    ))
-                  }
+          {session !== "expired" ?
+            <div id="cardid" className={cx("card", { 'blur-card': explosion })} style={{ zIndex: explosion ? -1 : 1 }}>
+              <Modal
+                isOpen={modalOpen}
+                onRequestClose={() => setModalOpen(false)}
+                style={customStyles}
+                overlayClassName={'modal-overlay'}
+              >
+                <h3>Copied to Clipboard !!  &#10004;</h3>
+              </Modal>
+              {explosion &&
+                <div style={{ position: 'fixed', bottom: '50%', left: '50%' }}>
+                  <ConfettiExplosion zIndex={-1} duration={4000} particleCount={400} particleSize={16} force={1} height={1000} width={1000} />
+                </div>}
+                <div className="add-box-small">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7389479959832649"
+                  crossOrigin="anonymous"></script>
+                {/* <!-- SquareAd-RapidReview --> */}
+                <ins className="adsbygoogle"
+                  style={{display:'block'}}
+                  data-ad-client="ca-pub-7389479959832649"
+                  data-ad-slot="2475814081"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({ });
+                </script>
                 </div>
-              </div>
-            )
-          }
-         {userResponse?.keywords?.length > 0 && btnText === "Write Review for me!" && <div className="btn__container">
-            <button className={cx(
-              loading ? "disabled" : "copy"
-            )} style={{ cursor: loading && "no-drop" , height:'40px'}} disabled={loading} onClick={btnText === `Go to Review` ? (e)=>handleCopy(e): getReview}>
+              <h1>{error.length > 0 ? error : index}</h1>
+              <h1 style={{ fontWeight: 'bold' }}>{userResponse?.name}</h1>
               {
-                loading ? (
-                  <div className="bouncing-loader">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                userResponse?.keywords?.length > 0 && (
+                  <div className="form__containers">
+                    {userResponse?.keywords?.length > 0 && <p className="impress-text">What you ❤️ at {userResponse.name}?</p>}
+                    {
+                      selectedKeyword.length > 0 && (
+                        <>
+                          <div className="keywordcontainer">
+                            {
+                              selectedKeyword.map((singleKeyword) => (
+                                <div key={singleKeyword} className="selected_keyword">
+                                  <div>
+                                    <span>{singleKeyword}</span>
+                                    <span className="cross" onClick={() => removeKeyword(singleKeyword)}> ❌</span>
+                                  </div>
+                                </div>
+                              ))
+                            }
+                          </div>
+                          <div className="single_line"></div>
+                        </>
+                      )
+                    }
+                    <div className="keywordcontainer">
+                      {
+                        userResponse.keywords !== undefined && userResponse.keywords.length > 0 && userResponse.keywords.map((singleKeyword) => (
+                          <div key={singleKeyword} className={cx("single_keyword", { 'disabled-keyword': selectedKeyword.length === 3 })} onClick={() => addKeyword(singleKeyword)}>
+                            <span>{singleKeyword}</span>
+                          </div>
+                        ))
+                      }
+                    </div>
                   </div>
-                ) : `${btnText}`
+                )
               }
-            </button>
-          </div> }
-          {btnText !== "Write Review for me!" && userResponse?.redirectTo?.map(ele=>(
-            <div key={ele?.url} className="btn__container">
-            <button className={cx(
-              loading ? "disabled" : "copy"
-            )} style={{ cursor: loading && "no-drop" , height:'40px'}} disabled={loading} onClick={(e)=>handleCopy(e, ele.url)}>
+              {userResponse?.keywords?.length > 0 && btnText === "Write Review for me!" && <div className="btn__container">
+                <button className={cx(
+                  loading ? "disabled" : "copy"
+                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={btnText === `Go to Review` ? (e) => handleCopy(e) : getReview}>
+                  {
+                    loading ? (
+                      <div className="bouncing-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    ) : `${btnText}`
+                  }
+                </button>
+              </div>}
+              {btnText !== "Write Review for me!" && userResponse?.redirectTo?.map(ele => (
+                <div key={ele?.url} className="btn__container">
+                  <button className={cx(
+                    loading ? "disabled" : "copy"
+                  )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={(e) => handleCopy(e, ele.url)}>
+                    {
+                      loading ? (
+                        <div className="bouncing-loader">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      ) : `Go to ${ele.type} Review`
+                    }
+                  </button>
+                </div>
+              ))}
+
               {
-                loading ? (
-                  <div className="bouncing-loader">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                ) : `Go to ${ele.type} Review`
-              }
-            </button>
-          </div>
-          ))}
-          
-          {
-            loading && (
-              // <div className="loader">
-              //   <div className="spin"></div>
-              //   <div className="bounce"></div>
-              // </div>
-              <div style={{marginTop: '20px'}}>
+                loading && (
+                  // <div className="loader">
+                  //   <div className="spin"></div>
+                  //   <div className="bounce"></div>
+                  // </div>
+                  <div style={{ marginTop: '20px' }}>
                     writing
 
-                  <div class="pencil">
-                    <div class="pencil__ball-point"></div>
-                    <div class="pencil__cap"></div>
-                    <div class="pencil__cap-base"></div>
-                    <div class="pencil__middle"></div>
-                    <div class="pencil__eraser"></div>
-                  </div>
-                  <div class="line"/>
+                    <div className="pencil">
+                      <div className="pencil__ball-point"></div>
+                      <div className="pencil__cap"></div>
+                      <div className="pencil__cap-base"></div>
+                      <div className="pencil__middle"></div>
+                      <div className="pencil__eraser"></div>
+                    </div>
+                    <div className="line" />
                   </div>
 
-            )
-          }
-        </div>
-        : <h1 style={{textAlign:'center'}}>We are very much pleased with your review, Have a great day!!</h1>}
+                )
+              }
+              <div className="add-box">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7389479959832649"
+                  crossOrigin="anonymous"></script>
+                {/* <!-- SquareAd-RapidReview --> */}
+                <ins className="adsbygoogle"
+                  style={{display:'block'}}
+                  data-ad-client="ca-pub-7389479959832649"
+                  data-ad-slot="2475814081"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({ });
+                </script>
+              </div>
+            </div>
+            : <h1 style={{ textAlign: 'center' }}>We are very much pleased with your review, Have a great day!!</h1>}
         </>
       )}
     </>
