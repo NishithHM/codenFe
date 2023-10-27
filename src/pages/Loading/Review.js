@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import AdSense from 'react-adsense'
 import { useLocation, useMatch, useParams, useNavigate, useSearchParams } from "react-router-dom";
 import cx from 'classnames'
 import './Review.scss'
@@ -236,20 +237,16 @@ const CustomerReview = () => {
                 <div style={{ position: 'fixed', bottom: '50%', left: '50%' }}>
                   <ConfettiExplosion zIndex={-1} duration={4000} particleCount={400} particleSize={16} force={1} height={1000} width={1000} />
                 </div>}
-                <div className="add-box-small">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7389479959832649"
-                  crossOrigin="anonymous"></script>
-                {/* <!-- SquareAd-RapidReview --> */}
-                <ins className="adsbygoogle"
-                  style={{display:'block'}}
-                  data-ad-client="ca-pub-7389479959832649"
-                  data-ad-slot="2475814081"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({ });
-                </script>
-                </div>
+              <div className="add-box-small">
+              <AdSense.Google
+                  client="ca-pub-7389479959832649"
+                  slot="2475814081"
+                  style={{ display: 'block'  }}
+                  format="auto"
+                  className='adsbygoogle'
+                  responsive='true'
+                />
+              </div>
               <h1>{error.length > 0 ? error : index}</h1>
               <h1 style={{ fontWeight: 'bold' }}>{userResponse?.name}</h1>
               {
@@ -342,18 +339,15 @@ const CustomerReview = () => {
                 )
               }
               <div className="add-box">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7389479959832649"
-                  crossOrigin="anonymous"></script>
-                {/* <!-- SquareAd-RapidReview --> */}
-                <ins className="adsbygoogle"
-                  style={{display:'block'}}
-                  data-ad-client="ca-pub-7389479959832649"
-                  data-ad-slot="2475814081"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({ });
-                </script>
+                <AdSense.Google
+                  client="ca-pub-7389479959832649"
+                  slot="2475814081"
+                  style={{ display: 'block'  }}
+                  format="auto"
+                  className='adsbygoogle'
+                  responsive='true'
+                />
+               
               </div>
             </div>
             : <h1 style={{ textAlign: 'center' }}>We are very much pleased with your review, Have a great day!!</h1>}
