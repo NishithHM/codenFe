@@ -8,6 +8,19 @@ import ConfettiExplosion from 'react-confetti-explosion';
 import { ToastContainer, toast } from "react-toastify";
 import Modal from "react-modal";
 import 'react-toastify/dist/ReactToastify.css';
+import zomato from '../../icons/zomato.png'
+import google from '../../icons/google.png'
+import facebook from '../../icons/facebook.png'
+import instagram from '../../icons/instagram.png'
+import swiggy from '../../icons/swiggy.jpg'
+const icons={
+  zomato,
+  google,
+  facebook,
+  instagram,
+  swiggy
+}
+
 export function unsecuredCopyToClipboard({ review }) {
   const textArea = document.createElement("textarea");
   textArea.value = review;
@@ -37,11 +50,12 @@ const customStyles = {
     textAlign: 'center',
     fontWeight: 'bold',
     color: 'white',
-    padding: 0
+    padding: 0,
+    borderColor:'#27AE61'
   },
 };
 
-const url = process.env.REACT_APP_BASE_URL
+const url = "http://localhost:3002"
 
 
 const CustomerReview = () => {
@@ -252,7 +266,7 @@ const CustomerReview = () => {
               {
                 userResponse?.keywords?.length > 0 && (
                   <div className="form__containers">
-                    {userResponse?.keywords?.length > 0 && <p className="impress-text">What you ❤️ at {userResponse.name}?</p>}
+                    {userResponse?.keywords?.length > 0 && <p className="impress-text">What did you ❤️ at {userResponse.name}?</p>}
                     {
                       selectedKeyword.length > 0 && (
                         <>
@@ -284,8 +298,8 @@ const CustomerReview = () => {
                   </div>
                 )
               }
-              {userResponse?.keywords?.length > 0 && btnText === "Write Review for me!" && <div className="btn__container">
-                <button className={cx(
+              {userResponse?.keywords?.length > 0 && btnText === "Write Review for me!" && <div  className="btn__container">
+                <button className={cx('btn-shine', 'btn-alt',
                   loading ? "disabled" : "copy"
                 )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={btnText === `Go to Review` ? (e) => handleCopy(e) : getReview}>
                   {
@@ -300,10 +314,10 @@ const CustomerReview = () => {
                 </button>
               </div>}
               {btnText !== "Write Review for me!" && userResponse?.redirectTo?.map(ele => (
-                <div key={ele?.url} className="btn__container">
-                  <button className={cx(
+                <div key={ele?.url} className="">
+                  <button  className={cx( 'btn-shine', 'btn-alt',
                     loading ? "disabled" : "copy"
-                  )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={(e) => handleCopy(e, ele.url)}>
+                  )} style={{ cursor: loading && "no-drop", height: '40px', ...ele.styles }} disabled={loading} onClick={(e) => handleCopy(e, ele.url)}>
                     {
                       loading ? (
                         <div className="bouncing-loader">
@@ -311,7 +325,14 @@ const CustomerReview = () => {
                           <div></div>
                           <div></div>
                         </div>
-                      ) : `Go to ${ele.type} Review`
+                      ) : 
+                      <>
+                     {icons[ele.type] && 
+                     <div style={{background:"white"}}> 
+                     <img  className="image-logo" src={icons[ele.type]}/>
+                     </div> }
+                      {`Go to ${ele.type} Review`}
+                      </>
                     }
                   </button>
                 </div>

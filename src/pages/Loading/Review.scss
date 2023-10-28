@@ -9,6 +9,8 @@ $hovershadow: 0 4px 6px rgba(0,0,0,0.2);
 $btnColor : #FFC72C;
 $pencil-green: #FFC72C;
 $pencil-dark: #232123;
+$anim-duration: 0.5; // in seconds
+$anim-speed: 2; // in seconds
 
 // html, body {
 // 	background: $background;
@@ -21,6 +23,24 @@ $pencil-dark: #232123;
 body {
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 1px;
+	--btn-border: 1px solid rgba(255, 255, 255, 0.2);
+	--btn-bg: transparent; // #333
+	--btn-shadow: 1px 1px 25px 10px rgba(255, 255, 255, 0.5);
+	--btn-text-color: black;
+   
+	--shine-degree: 120deg;
+	--shine-color: rgba(255, 255, 255, 0.8);
+	--shine-effect: linear-gradient(
+	  var(--shine-degree),
+	  transparent,
+	  var(--shine-color),
+	  transparent
+	);
+	--shine-transition: all #{$anim-speed}s ease-in-out;
+}
+
+h1{
+	margin: 5px 0;
 }
 
 // *,
@@ -71,7 +91,6 @@ body {
 			margin-bottom: 10px;
 		}
 		.keywordcontainer {
-			width: 350px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -104,8 +123,8 @@ body {
 				flex-direction: row;
 				div {
 					margin-left: 4px;
-					background-color: $btnColor;
-					color: #FFF;
+					color: $btnColor;
+					border: 1px solid $btnColor;
 					border-radius: 16px;
 					box-shadow: $shadow;
 					padding: 5px 10px;
@@ -116,6 +135,7 @@ body {
 						margin-left: 3px;
 						cursor: pointer;
 						font-size: 10px;
+						border-radius: 5px;
 					}
 				}
 			}
@@ -349,18 +369,6 @@ body {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-
-		button {
-			font-size: 16px;
-			font-weight: bold;
-			font-family: 'Quicksand', sans-serif;
-			padding: 10px;
-			border-radius: 10px;
-			cursor: pointer;
-			border: none;
-			outline: none;
-			margin-top: 22px;
-		}
 		
 		.disabled {
 			color: grey;
@@ -822,3 +830,146 @@ body {
 	height: 100px;
 	margin-top: 20px;
   }
+.btm-shine{
+  position: relative;
+  overflow: hidden; // debug
+  background-color: #ffcc00;
+
+  // last element should not have margin
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+
+  border-radius: 4px;
+  text-decoration: none;
+  border: var(--btn-border);
+  color: var(--btn-text-color);
+  background: #ffcc00;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--shine-effect);
+  }
+}
+
+.btn-hover {
+  &::before {
+    left: -100%;
+    transition: var(--shine-transition);
+  }
+
+  &:hover {
+    box-shadow: var(--btn-shadow);
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.btn-anim {
+  &::before {
+    animation: shine #{$anim-duration}s ease-in-out infinite;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    transition-property: left;
+  }
+  #{($anim-speed / ($anim-duration + $anim-speed) * 100%)},
+  100% {
+    left: 100%;
+    transition-property: left;
+  }
+}
+
+.btn-alt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  width: 90%;
+  margin: auto;
+  border-radius: 11px !important;
+  position: relative;
+  text-transform: capitalize;
+  overflow: hidden; // debug
+
+  // last element should not have margin
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  border-radius: 4px;
+  text-decoration: none;
+  border: var(--btn-border);
+  color: var(--btn-text-color);
+  background: var(--btn-bg);
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+  &:before {
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    left: 0;
+    filter: blur(30px);
+    animation: shine-alt1 #{$anim-duration}s ease-in-out infinite;
+  }
+  &:after {
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    left: 30px;
+    filter: blur(5px);
+    animation: shine-alt2 #{$anim-duration}s ease-in-out infinite;
+  }
+}
+
+@keyframes shine-alt1 {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-100px) skewX(-15deg);
+    transition-property: opacity, transform;
+  }
+  #{($anim-speed / ($anim-duration + $anim-speed) * 100%)},
+  100% {
+    opacity: 0.6;
+    transform: translateX(300px) skewX(-15deg);
+    transition-property: opacity, transform;
+  }
+}
+
+@keyframes shine-alt2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) skewX(-15deg);
+    transition-property: opacity, transform;
+  }
+  #{($anim-speed / ($anim-duration + $anim-speed) * 100%)},
+  100% {
+    opacity: 1;
+    transform: translateX(300px) skewX(-15deg);
+    transition-property: opacity, transform;
+  }
+}
+
+.image-logo{
+	height: 41px;
+    margin: -11px 5px;
+    position: absolute;
+    left: -5px;
+}
+
+
