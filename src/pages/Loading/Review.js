@@ -55,7 +55,7 @@ const customStyles = {
   },
 };
 
-const url = "http://localhost:3002"
+const url = process.env.REACT_APP_BASE_URL
 
 
 const CustomerReview = () => {
