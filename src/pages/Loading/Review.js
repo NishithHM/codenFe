@@ -94,7 +94,7 @@ const CustomerReview = () => {
     if (res.data?.keywords?.length > 0) {
       setBtnText("Write Review for me!")
     } else {
-      onButtonClick()
+      onButtonClick(false)
     }
   }
   useEffect(() => {
@@ -184,11 +184,11 @@ const CustomerReview = () => {
     )
   }
 
-  const onButtonClick = () => {
+  const onButtonClick = (isInitial) => {
     if (progress === 1) {
       setBtnText('Writing review for you !')
       setProgress(2)
-      getReview(true)
+      getReview(isInitial)
     }
   }
   return (
@@ -276,7 +276,7 @@ const CustomerReview = () => {
               {!Boolean(data.review) && <div className="btn__container">
                 <button className={cx('btn-shine', 'btn-alt',
                   'copy'
-                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={onButtonClick}>
+                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={()=>onButtonClick(true)}>
                   {btnText} {
                     progress === 2 && loading && (
                       <div className="bouncing-loader">
