@@ -5,7 +5,6 @@ import { useLocation, useMatch, useParams, useNavigate, useSearchParams } from "
 import cx from 'classnames'
 import './Review.scss'
 import ConfettiExplosion from 'react-confetti-explosion';
-import { ToastContainer, toast } from "react-toastify";
 import Modal from "react-modal";
 import 'react-toastify/dist/ReactToastify.css';
 import zomato from '../../icons/zomato.png'
@@ -13,7 +12,8 @@ import google from '../../icons/google.png'
 import facebook from '../../icons/facebook.png'
 import instagram from '../../icons/instagram.png'
 import swiggy from '../../icons/swiggy.jpg'
-const icons={
+import copy from '../../icons/copy.jpg'
+const icons = {
   zomato,
   google,
   facebook,
@@ -51,15 +51,16 @@ const customStyles = {
     fontWeight: 'bold',
     color: 'white',
     padding: 0,
-    borderColor:'#27AE61'
+    borderColor: '#27AE61'
   },
 };
 
 const url = process.env.REACT_APP_BASE_URL
+// const url = "http://localhost:3002"
 
 
 const CustomerReview = () => {
-  const [index, setIndex] = useState("Loading...");
+  const [progress, setProgress] = useState(1)
   const [userResponse, setUserResponse] = useState("");
   const [selectedKeyword, setSelectedKayword] = useState([]);
   const [btnText, setBtnText] = useState("")
@@ -68,24 +69,9 @@ const CustomerReview = () => {
   const [data, setData] = useState({})
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const [modalOpen, setModalOpen] = useState(false);
-  const [explosion, setExplosion] = useState(false);
   const params = useParams()
   const id = params?.id
 
-  // const location = useLocation()
-  // const navigate = useNavigate()
-
-  // const reviews = [
-  //   `Sit tight while we create a review for ${name}`,
-  //   `We're writing a review for ${name}. Your patience is appreciated.`,
-  //   `We're working on your review for ${name}`,
-  //   `In the process of crafting a review for ${name}`,
-  //   `Hang in there while we prepare a review for ${name}`,
-  //   `Your review for ${name} is being generated. Stay tuned.`,
-  //   `Generating a review for ${name} to save your valuable time.`,
-  //   `Your review for ${name} is in progress. Thank you for waiting and saving time.`
-  // ]
 
 
   if (window.innerWidth <= 768) {
@@ -99,9 +85,7 @@ const CustomerReview = () => {
   const navigate = useNavigate()
   const getUserName = async () => {
     setLoading(true)
-    setIndex("Loading...")
     const res = await axios.get(`${url}/client/${id}`);
-    setIndex("Hope you had good time at")
     setUserResponse({
       name: res.data.name,
       keywords: res.data.keywords,
@@ -110,7 +94,7 @@ const CustomerReview = () => {
     if (res.data?.keywords?.length > 0) {
       setBtnText("Write Review for me!")
     } else {
-      setBtnText("loading .....")
+      onButtonClick()
     }
   }
   useEffect(() => {
@@ -126,17 +110,18 @@ const CustomerReview = () => {
 
   const handleCopy = (e, url) => {
     e.preventDefault();
+    setProgress(3)
     unsecuredCopyToClipboard({ review: data.review })
     // toast.success("Copied to Clipboard !");
     setRedirecting(true);
     if (data.review && data.review.length > 0) {
       setTimeout(() => {
         setRedirecting(false)
-        window.location.href = url
+        window.open(url, '_blank')
       }, 500);
-      setTimeout(() => {
+      setTimeout(()=>{
         navigate('?session=expired')
-      }, 2000)
+      }, 1000)
     }
   }
 
@@ -149,18 +134,10 @@ const CustomerReview = () => {
       if (res?.data?.custom) {
         window.location.href = res?.data?.redirectTo
       } else if (res?.data?.review) {
-        setModalOpen(true);
-        setExplosion(true);
         setData(res.data)
         setLoading(false)
-        setBtnText("Go to Review")
-        setIndex(`Hope you had good time at`)
+        setBtnText("Copy and Post")
         unsecuredCopyToClipboard({ review: res.data.review })
-        setTimeout(() => {
-          setExplosion(false);
-          setModalOpen(false);
-          window.scroll(0, 0)
-        }, 5000);
       } else {
         setLoading(false)
       }
@@ -173,23 +150,15 @@ const CustomerReview = () => {
   }
 
   const addKeyword = (keyword) => {
-    const filteredKeyword = userResponse.keywords.filter((singleKeyword) => singleKeyword !== keyword);
-    setSelectedKayword([...selectedKeyword, keyword]);
+    if (selectedKeyword.includes(keyword)) {
+      const filteredKeyword = selectedKeyword.filter((singleKeyword) => singleKeyword !== keyword);
+      setSelectedKayword(filteredKeyword)
+    } else {
+      setSelectedKayword([...selectedKeyword, keyword]);
+    }
     console.log(keyword)
-    setUserResponse({
-      ...userResponse,
-      keywords: filteredKeyword
-    })
   }
 
-  const removeKeyword = (keyword) => {
-    const filteredKeyword = selectedKeyword.filter((singleKeyword) => singleKeyword !== keyword);
-    setSelectedKayword(filteredKeyword)
-    setUserResponse({
-      ...userResponse,
-      keywords: [...userResponse.keywords, keyword]
-    })
-  }
 
   const match = useParams()
   const devIds = ['7c9eb572-cdb6-4de3-aa3a-7d5a54dee2db', '589cc289-8cac-492d-8c96-f2b4417f40f8']
@@ -200,20 +169,33 @@ const CustomerReview = () => {
 
   }, [match?.id])
 
+  const Progress = ({ progress }) => {
+    const statges = [1, 2, 3]
+    return (
+      <div className="progress-parent">
+        <div className="progress-line"></div>
+        {statges.map(ele => (
+          <div className="progress-child">
+            <span className={cx({ 'active': ele === progress, 'completed': ele < progress })}>{progress > ele ? <>&#10003;</> : ele}</span>
+          </div>
+        ))}
 
+      </div>
+    )
+  }
+
+  const onButtonClick = () => {
+    if (progress === 1) {
+      setBtnText('Writing review for you !')
+      setProgress(2)
+      getReview(true)
+    }
+  }
   return (
     <>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        type="success"
-      />
       {isRedirecting ? (
         <div className="card" style={{ height: '100vh' }}>
+          <Progress progress={progress} />
           <div className="loaderbody">
             <span>
               <span></span>
@@ -238,58 +220,25 @@ const CustomerReview = () => {
       ) : (
         <>
           {session !== "expired" ?
-            <div id="cardid" className={cx("card", { 'blur-card': explosion })} style={{ zIndex: explosion ? -1 : 1 }}>
-              <Modal
-                isOpen={modalOpen}
-                onRequestClose={() => setModalOpen(false)}
-                style={customStyles}
-                overlayClassName={'modal-overlay'}
-              >
-                <h3>Copied to Clipboard !!  &#10004;</h3>
-              </Modal>
-              {explosion &&
-                <div style={{ position: 'fixed', bottom: '50%', left: '50%' }}>
-                  <ConfettiExplosion zIndex={-1} duration={4000} particleCount={400} particleSize={16} force={1} height={1000} width={1000} />
-                </div>}
-              {/* <div className="add-box-small">
-              <AdSense.Google
-                  client="ca-pub-7389479959832649"
-                  slot="2475814081"
-                  style={{ display: 'block', width:'100%', height: '100px' }}
-                  format="rectangle"
-                  className='adsbygoogle add-box-small'
-                  responsive='true'
-                />
-              </div> */}
-              <h1>{error.length > 0 ? error : index}</h1>
-              <h1 style={{ fontWeight: 'bold' }}>{userResponse?.name}</h1>
-              {
+            <div id="cardid" className={cx("card")}>
+              <Progress progress={progress} />
+              <h1>{error.length > 0 && error}</h1>
+              {progress === 1 &&
                 userResponse?.keywords?.length > 0 && (
                   <div className="form__containers">
-                    {userResponse?.keywords?.length > 0 && <p className="impress-text">What did you ❤️ at {userResponse.name}?</p>}
-                    {
-                      selectedKeyword.length > 0 && (
-                        <>
-                          <div className="keywordcontainer">
-                            {
-                              selectedKeyword.map((singleKeyword) => (
-                                <div key={singleKeyword} className="selected_keyword">
-                                  <div>
-                                    <span>{singleKeyword}</span>
-                                    <span className="cross" onClick={() => removeKeyword(singleKeyword)}> ❌</span>
-                                  </div>
-                                </div>
-                              ))
-                            }
-                          </div>
-                          <div className="single_line"></div>
-                        </>
-                      )
-                    }
+                    {userResponse?.keywords?.length > 0 &&
+                      <>
+                        <p className="impress-text">What did you ❤️ at </p>
+                        <h1>{userResponse.name}?</h1>
+                      </>}
                     <div className="keywordcontainer">
                       {
                         userResponse.keywords !== undefined && userResponse.keywords.length > 0 && userResponse.keywords.map((singleKeyword) => (
-                          <div key={singleKeyword} className={cx("single_keyword", { 'disabled-keyword': selectedKeyword.length === 3 })} onClick={() => addKeyword(singleKeyword)}>
+                          <div key={singleKeyword}
+                            className={cx("single_keyword",
+                              { 'disabled-keyword': selectedKeyword.length === 3 && !selectedKeyword.includes(singleKeyword) },
+                              { 'selected-keyword': selectedKeyword.includes(singleKeyword) })}
+                            onClick={() => addKeyword(singleKeyword)}>
                             <span>{singleKeyword}</span>
                           </div>
                         ))
@@ -298,55 +247,10 @@ const CustomerReview = () => {
                   </div>
                 )
               }
-              {userResponse?.keywords?.length > 0 && btnText === "Write Review for me!" && <div  className="btn__container">
-                <button className={cx('btn-shine', 'btn-alt',
-                  loading ? "disabled" : "copy"
-                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={btnText === `Go to Review` ? (e) => handleCopy(e) : getReview}>
-                  {
-                    loading ? (
-                      <div className="bouncing-loader">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                      </div>
-                    ) : `${btnText}`
-                  }
-                </button>
-              </div>}
-              {btnText !== "Write Review for me!" && userResponse?.redirectTo?.map(ele => (
-                <div key={ele?.url} className="">
-                  <button  className={cx( 'btn-shine', 'btn-alt',
-                    loading ? "disabled" : "copy"
-                  )} style={{ cursor: loading && "no-drop", height: '40px', ...ele.styles }} disabled={loading} onClick={(e) => handleCopy(e, ele.url)}>
-                    {
-                      loading ? (
-                        <div className="bouncing-loader">
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                      ) : 
-                      <>
-                     {icons[ele.type] && 
-                     <div style={{background:"white"}}> 
-                     <img  className="image-logo" src={icons[ele.type]}/>
-                     </div> }
-                      {`Go to ${ele.type} Review`}
-                      </>
-                    }
-                  </button>
-                </div>
-              ))}
-
-              {
-                loading && (
-                  // <div className="loader">
-                  //   <div className="spin"></div>
-                  //   <div className="bounce"></div>
-                  // </div>
-                  <div style={{ marginTop: '20px' }}>
+              {progress === 2 && loading &&
+                (
+                  <div className="pen-loader">
                     writing
-
                     <div className="pencil">
                       <div className="pencil__ball-point"></div>
                       <div className="pencil__cap"></div>
@@ -356,19 +260,62 @@ const CustomerReview = () => {
                     </div>
                     <div className="line" />
                   </div>
-
                 )
+              }
+              {progress === 2 && !loading &&
+                <>
+                  <span className="paste-text">
+                    Remember to <strong>Paste</strong> the review in next step!
+                  </span>
+                  <textarea className="review-text" value={data.review} onChange={e=> setData({...data, review: e?.target.value})} />
+                  <div className="paste-sub-text">
+                    We've crafted a review to save your time😀 modify as needed !
+                  </div>
+                </>
+              }
+              {!Boolean(data.review) && <div className="btn__container">
+                <button className={cx('btn-shine', 'btn-alt',
+                  'copy'
+                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={onButtonClick}>
+                  {btnText} {
+                    progress === 2 && loading && (
+                      <div className="bouncing-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    )
+                  }
+                </button>
+              </div>
+              }
+              {Boolean(data.review) &&
+                data?.redirectTo?.map((ele) => (
+                  <div className="btn__container multi-button">
+                    <div style={{flex:9}}>
+                      <button className={cx('btn-shine', 'btn-alt',
+                        'copy'
+                      )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={(e) => handleCopy(e, ele.url)}>
+                        <img className="copy-image" src={copy} />{btnText}
+                      </button>
+                    </div>
+                    <div style={{flex:1, margin: '0 25px 0 -25px'}}>
+                      <img height={"40px"} src={icons[ele.type]} />
+                    </div>
+                  </div>
+                ))
+
               }
               <div className="add-box">
                 <AdSense.Google
                   client="ca-pub-7389479959832649"
                   slot="2475814081"
-                  style={{ display: 'block'  }}
+                  style={{ display: 'block' }}
                   format="auto"
                   className='adsbygoogle'
                   responsive='true'
                 />
-               
+
               </div>
             </div>
             : <h1 style={{ textAlign: 'center' }}>We are very much pleased with your review, Have a great day!!</h1>}
