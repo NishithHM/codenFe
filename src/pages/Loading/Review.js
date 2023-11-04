@@ -11,8 +11,12 @@ import zomato from '../../icons/zomato.png'
 import google from '../../icons/google.png'
 import facebook from '../../icons/facebook.png'
 import instagram from '../../icons/instagram.png'
-import swiggy from '../../icons/swiggy.jpg'
-import copy from '../../icons/copy.jpg'
+import swiggy from '../../icons/swiggy.png'
+import copy from '../../icons/copy.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons'
+
+
 const icons = {
   zomato,
   google,
@@ -58,6 +62,13 @@ const customStyles = {
 const url = process.env.REACT_APP_BASE_URL
 // const url = "http://localhost:3002"
 
+const COLORS = {
+  "zomato": "#db3542",
+  "swiggy": "#ef841e",
+  "google": "#3B7DED",
+  "facebook": "#1773ea",
+  "instagram": "#614dc4"
+}
 
 const CustomerReview = () => {
   const [progress, setProgress] = useState(1)
@@ -176,7 +187,9 @@ const CustomerReview = () => {
         <div className="progress-line"></div>
         {statges.map(ele => (
           <div className="progress-child">
-            <span className={cx({ 'active': ele === progress, 'completed': ele < progress })}>{progress > ele ? <>&#10003;</> : ele}</span>
+            <span className={cx({ 'active': ele === progress, 'completed': ele < progress })}>{progress > ele ? <>
+              <FontAwesomeIcon style={{fontSize:'20px', verticalAlign:'baseline'}} icon={faCheck} color="#fff"/>
+            </> : ele}</span>
           </div>
         ))}
 
@@ -243,6 +256,9 @@ const CustomerReview = () => {
                           </div>
                         ))
                       }
+                      <div className="hr-line">
+
+                      </div>
                     </div>
                   </div>
                 )
@@ -263,44 +279,52 @@ const CustomerReview = () => {
                 )
               }
               {progress === 2 && !loading &&
-                <>
+                <div className="paste-box">
                   <span className="paste-text">
                     Remember to <strong>Paste</strong> the review in next step!
                   </span>
-                  <textarea className="review-text" value={data.review} onChange={e=> setData({...data, review: e?.target.value})} />
+                  <textarea className="review-text" value={data.review} onChange={e => setData({ ...data, review: e?.target.value })} />
                   <div className="paste-sub-text">
                     We've crafted a review to save your time😀 modify as needed !
                   </div>
-                </>
+                  <div className="hr-line">
+
+                  </div>
+                </div>
               }
+
               {!Boolean(data.review) && <div className="btn__container">
                 <button className={cx('btn-shine', 'btn-alt',
                   'copy'
-                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={()=>onButtonClick(true)}>
+                )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={() => onButtonClick(true)}>
                   {btnText} {
                     progress === 2 && loading && (
-                      <div className="bouncing-loader">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                      <div style={{
+                        marginLeft: "1rem"
+                      }}>
+                        <FontAwesomeIcon icon={faSpinner} spin color="#fff" />
                       </div>
                     )
+
                   }
                 </button>
+
               </div>
               }
               {Boolean(data.review) &&
                 data?.redirectTo?.map((ele) => (
                   <div className="btn__container multi-button">
-                    <div style={{flex:9}}>
+                    <div style={{ flex: 9 }}>
                       <button className={cx('btn-shine', 'btn-alt',
                         'copy'
                       )} style={{ cursor: loading && "no-drop", height: '40px' }} disabled={loading} onClick={(e) => handleCopy(e, ele.url)}>
-                        <img className="copy-image" src={copy} />{btnText}
+                        <div className="copy-image">
+                        <img width={"24px"} height={"24px"} src={copy} />
+                        </div>{btnText}
                       </button>
                     </div>
-                    <div style={{flex:1, margin: '0 25px 0 -25px'}}>
-                      <img height={"40px"} src={icons[ele.type]} />
+                    <div style={{backgroundColor : COLORS[ele.type]}} className="social-icons">
+                      <img height={"25px"}  src={icons[ele.type]} />
                     </div>
                   </div>
                 ))
