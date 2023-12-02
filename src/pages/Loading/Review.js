@@ -331,6 +331,7 @@ const CustomerReview = () => {
 
               }
               <div className="add-box">
+                <span style={{fontSize: '20px'}}>Displaying Ad</span>
                 <AdSense.Google
                   client="ca-pub-7389479959832649"
                   slot="2475814081"
@@ -339,7 +340,6 @@ const CustomerReview = () => {
                   className='adsbygoogle'
                   responsive='true'
                 />
-
               </div>
             </div>
             : <h1 style={{ textAlign: 'center' }}>We are very much pleased with your review, Have a great day!!</h1>}
