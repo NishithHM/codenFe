@@ -83,6 +83,9 @@ const CustomerReview = () => {
   const params = useParams()
   const id = params?.id
 
+  const timeRef = useRef()
+  const timeRef2 = useRef()
+
 
 
   if (window.innerWidth <= 768) {
@@ -110,7 +113,12 @@ const CustomerReview = () => {
   }
   useEffect(() => {
     setApi(true)
+    timeRef.current = setTimeout(()=>{
+      onButtonClick(true)
+    }, 20* 1000)
   }, [])
+
+  console.log(timeRef.current)
 
   useEffect(() => {
     if (api && session !== 'expired') {
@@ -125,6 +133,7 @@ const CustomerReview = () => {
     unsecuredCopyToClipboard({ review: data.review })
     // toast.success("Copied to Clipboard !");
     setRedirecting(true);
+    console.log(data, url)
     if (data.review && data.review.length > 0) {
       setTimeout(() => {
         setRedirecting(false)
@@ -202,8 +211,23 @@ const CustomerReview = () => {
       setBtnText('Writing review for you !')
       setProgress(2)
       getReview(isInitial)
+      clearTimeout(timeRef.current)
+      
     }
   }
+
+  useEffect(()=>{
+    if(selectedKeyword.length === 3 && progress ===1){
+      onButtonClick(true)
+    }
+    // console.log(data?.redirectTo?.[0]?.url)
+
+    // if(progress === 2 && data?.redirectTo?.[0]?.url){
+    //   timeRef2.current = setTimeout(()=>{
+    //     handleCopy({preventDefault:()=> null}, data?.redirectTo[0]?.url )
+    //   }, 10000)
+    // }
+  }, [progress, JSON.stringify(selectedKeyword)])
   return (
     <>
       {isRedirecting ? (
