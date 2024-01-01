@@ -15,6 +15,7 @@ import swiggy from '../../icons/swiggy.png'
 import copy from '../../icons/copy.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import paste from '../../icons/paste.gif'
 
 
 const icons = {
@@ -138,7 +139,7 @@ const CustomerReview = () => {
       setTimeout(() => {
         setRedirecting(false)
         window.open(url, '_blank')
-      }, 500);
+      }, 3000);
       setTimeout(()=>{
         navigate('?session=expired')
       }, 1000)
@@ -253,6 +254,7 @@ const CustomerReview = () => {
             <span></span>
           </div>
           <h1 className="redirecttext">Redirecting</h1>
+          <img style={{height:'40%', width:'100%'}} src={paste} alt="loading..." />
         </div>
       ) : (
         <>
