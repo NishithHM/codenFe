@@ -139,7 +139,7 @@ const CustomerReview = () => {
       setTimeout(() => {
         setRedirecting(false)
         window.open(url, '_blank')
-      }, 6000);
+      }, 4000);
       setTimeout(()=>{
         navigate('?session=expired')
       }, 1000)
