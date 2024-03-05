@@ -138,7 +138,7 @@ const CustomerReview = () => {
     if (data.review && data.review.length > 0) {
       setTimeout(() => {
         setRedirecting(false)
-        window.open(url, '_blank')
+        window.open(url, '_self')
       }, 4000);
       setTimeout(()=>{
         navigate('?session=expired')
