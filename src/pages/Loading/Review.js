@@ -113,7 +113,8 @@ const CustomerReview = () => {
       const contact = res.data?.redirectTo?.filter((ele)=> ele.type ==='contact')?.[0]
       console.log(contact)
       
-      const vcfContent = "BEGIN:VCARD\nVERSION:3.0\nN:"+res.data.name+"\nFN:"+res.data.name+"\nTEL;TYPE=CELL:"+contact.url+"\nEND:VCARD"
+      const vcfContent = "BEGIN:VCARD\nVERSION:3.0\nN:"+res?.data?.name+"\nFN:"+res?.data?.name+"\nTEL;TYPE=CELL:"+contact?.url+"\nEND:VCARD"
+
       setBtnText("Write Review for me!")
       if(contact){
         setContact(vcfContent)
@@ -124,9 +125,9 @@ const CustomerReview = () => {
   }
   useEffect(() => {
     setApi(true)
-    // timeRef.current = setTimeout(()=>{
-    //   onButtonClick(true)
-    // }, 20* 1000)
+    timeRef.current = setTimeout(()=>{
+      onButtonClick(true)
+    }, 20* 1000)
   }, [])
 
   console.log(timeRef.current)
