@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import { saveAs } from 'file-saver';
 import AdSense from 'react-adsense'
 import { useLocation, useMatch, useParams, useNavigate, useSearchParams } from "react-router-dom";
 import cx from 'classnames'
@@ -81,6 +82,7 @@ const CustomerReview = () => {
   const [data, setData] = useState({})
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+  const [contact, setContact] = useState('')
   const params = useParams()
   const id = params?.id
 
@@ -107,7 +109,17 @@ const CustomerReview = () => {
       redirectTo: res.data?.redirectTo
     })
     if (res.data?.keywords?.length > 0) {
+      console.log(res.data)
+      const contact = res.data?.redirectTo?.filter((ele)=> ele.type ==='contact')?.[0]
+      console.log(contact)
+      const vcfContent = `BEGIN:VCARD
+      VERSION:3.0
+      N:${res.data.name};;;
+      FN:${res.data.name}
+      TEL;TYPE=CELL:${contact.url}
+      END:VCARD`;
       setBtnText("Write Review for me!")
+      setContact(vcfContent)
     } else {
       onButtonClick(false)
     }
@@ -229,6 +241,10 @@ const CustomerReview = () => {
     //   }, 10000)
     // }
   }, [progress, JSON.stringify(selectedKeyword)])
+  const onSaveContact=()=>{
+    const blob = new Blob([contact], { type: 'text/vcard;charset=utf-8' });
+    saveAs(blob, `${userResponse?.name}.vcf`);
+  }
   return (
     <>
       {isRedirecting ? (
@@ -337,8 +353,17 @@ const CustomerReview = () => {
 
               </div>
               }
+              {!Boolean(data.review) && contact && <div className="btn__container">
+                <button className={cx('btn-shine', 'btn-alt',
+                  'copy'
+                )} style={{ cursor: loading && "no-drop", height: '40px', marginTop:'20px' }} disabled={loading} onClick={() => onSaveContact(true)}>
+                  Save Contact
+                </button>
+
+              </div>
+              }
               {Boolean(data.review) &&
-                data?.redirectTo?.map((ele) => (
+                data?.redirectTo?.filter(ele=>ele?.type!=='contact')?.map((ele) => (
                   <div className="btn__container multi-button">
                     <div style={{ flex: 9 }}>
                       <button className={cx('btn-shine', 'btn-alt',
