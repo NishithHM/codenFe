@@ -367,7 +367,7 @@ const CustomerReview = () => {
                 />
               </div>
             </div>
-            : <h1 style={{ textAlign: 'center' }}>We are very much pleased with your review, Have a great day!!</h1>}
+            : <h1 style={{ textAlign: 'center' }}></h1>}
         </>
       )}
     </>
