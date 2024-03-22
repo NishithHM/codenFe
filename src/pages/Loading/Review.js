@@ -112,23 +112,21 @@ const CustomerReview = () => {
       console.log(res.data)
       const contact = res.data?.redirectTo?.filter((ele)=> ele.type ==='contact')?.[0]
       console.log(contact)
-      const vcfContent = `BEGIN:VCARD
-      VERSION:3.0
-      N:${res.data.name};;;
-      FN:${res.data.name}
-      TEL;TYPE=CELL:${contact.url}
-      END:VCARD`;
+      
+      const vcfContent = "BEGIN:VCARD\nVERSION:3.0\nN:"+res.data.name+"\nFN:"+res.data.name+"\nTEL;TYPE=CELL:"+contact.url+"\nEND:VCARD"
       setBtnText("Write Review for me!")
-      setContact(vcfContent)
+      if(contact){
+        setContact(vcfContent)
+      }
     } else {
       onButtonClick(false)
     }
   }
   useEffect(() => {
     setApi(true)
-    timeRef.current = setTimeout(()=>{
-      onButtonClick(true)
-    }, 20* 1000)
+    // timeRef.current = setTimeout(()=>{
+    //   onButtonClick(true)
+    // }, 20* 1000)
   }, [])
 
   console.log(timeRef.current)
@@ -242,7 +240,7 @@ const CustomerReview = () => {
     // }
   }, [progress, JSON.stringify(selectedKeyword)])
   const onSaveContact=()=>{
-    const blob = new Blob([contact], { type: 'text/vcard;charset=utf-8' });
+    const blob = new Blob([contact], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, `${userResponse?.name}.vcf`);
   }
   return (
