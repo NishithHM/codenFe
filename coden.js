@@ -11,9 +11,10 @@ app.use(express.static('build'));
 
 app.get('/blogs/:id', async(req, res) => {
   console.log('here')
-  const response = await axios.get(`https://api.easy-revv.com/api/coden/blog/${req?.params.id}`);
-  const htmlCode = response?.data?.htmlCode
-  res.send(htmlCode)      
+  const response = await fetch(`https://api.easy-revv.com/api/coden/blog/${req?.params.id}`);
+  const data = await response.json();
+  const htmlCode = data?.htmlCode;
+  res.send(htmlCode);
 });
 
 
@@ -23,21 +24,22 @@ res.sendFile(path.resolve('./build/index.html'));
 
 console.log('server started on port:',3012);
 app.listen(3012, async()=>{
-    axios.get('https://api.easy-revv.com/api/coden/sitemapxml')
-      .then(async(response) => {
-        const xml = response.data
-                const fs = require('fs');
-                const xmlFilePath = path.join(__dirname, 'build', 'sitemap.xml');
-                
-                fs.writeFile(xmlFilePath, xml, (err) => {
-                  if (err) {
-                    console.error('Error writing XML file:', err);
-                  } else {
-                    console.log('XML file created successfully in build folder');
-                  }
-                });
-        })
-      .catch((error) => {
-        console.error('Error fetching XML:', error);
+    fetch('https://api.easy-revv.com/api/coden/sitemapxml')
+      .then(response => response.text())
+      .then(async(xml) => {
+        const fs = require('fs');
+        const xmlFilePath = path.join(__dirname, 'build', 'sitemap.xml');
+        
+        fs.writeFile(xmlFilePath, xml, (err) => {
+          if (err) {
+            console.error('Error writing XML file:', err);
+          } else {
+            console.log('XML file created successfully in build folder');
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching sitemap:', error);
       });
+      
 });
