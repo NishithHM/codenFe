@@ -11,5 +11,5 @@ app.get('*', (req, res) => {
 res.sendFile(path.resolve('./build/index.html'));
 });
 
-console.log('server started on port:',3004);
-app.listen(3004);
+console.log('server started on port:',3012);
+app.listen(3012);
