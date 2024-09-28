@@ -22,14 +22,14 @@ app.get('/sitemap.xml', async (req, res)=>{
   .then(response => response.text())
   .then(async(xml) => {
     const fs = require('fs');
-    const xmlFilePath = path.join(__dirname, 'build', 'sitemap.xml');
+    const xmlFilePath = path.join(__dirname, 'build', 'sitemapdata.xml');
     
     fs.writeFile(xmlFilePath, xml, (err) => {
       if (err) {
         console.error('Error writing XML file:', err);
       } else {
         console.log('XML file created successfully in build folder');
-        res.sendFile(path.join(__dirname, 'build', 'sitemap.xml'))
+        res.sendFile(path.join(__dirname, 'build', 'sitemapdata.xml'))
       }
     });
   })
