@@ -29,6 +29,7 @@ app.get('/sitemap.xml', async (req, res)=>{
         console.error('Error writing XML file:', err);
       } else {
         console.log('XML file created successfully in build folder');
+        res.sendFile(path.join(__dirname, 'build', 'sitemap.xml'))
       }
     });
   })
