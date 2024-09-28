@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Landing from "./pages/Landing";
 import About from "./pages/about";
@@ -15,14 +15,31 @@ import SalesPolicy from "./pages/sales";
 import PaymentStatus from "./pages/PaymentStatus";
 // https://codentechnologies.com/easy-rev/landing/050d2589-89b5-42f5-9245-f0f1f0800113
 const App = () => {
+
+  const [activeTab, setActiveTab] = useState("home");
+  
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    if (activeTab === 'services') {
+      scrollToSection('Services');
+    }
+  }, [activeTab]);
+
+  
     return (
         <>
             <BrowserRouter>
             <ScrollPage>
                 <Routes>
-                    <Route path='/' element={<Landing />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path='/contact' element={<Contact />} />
+                    <Route path='/' element={<Landing  activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />} />
+                    <Route path='/about' element={<About activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />} />
+                    <Route path='/contact' element={<Contact activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection}/>} />
                     <Route path="/privacy-policy" element={<Privacy />} />
                     <Route path="/sales-policy" element={<SalesPolicy/>}/>
                     <Route path="/terms" element={<TermsAndConditions />} />

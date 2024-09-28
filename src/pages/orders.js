@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import styles from './orders.module.css'
 import {cloneDeep} from 'lodash'
 import { ToastContainer, toast } from "react-toastify";
-const Orders = () => {
+const Orders = ({activeTab, setActiveTab, scrollToSection}) => {
   const formInitial = {
     name: '',
     addressOne: '',
@@ -354,7 +354,7 @@ const Orders = () => {
                 <a className="border-bottom" href="#home">
                   Coden
                 </a>
-                , All Right Reserved.
+                , All Right Reserved. 2024
               </div>
               <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
