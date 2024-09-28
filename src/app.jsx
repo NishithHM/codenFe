@@ -13,7 +13,6 @@ import RefundAndCancellation from "./pages/refund";
 import TestOrders from "./pages/testOrder";
 import SalesPolicy from "./pages/sales";
 import PaymentStatus from "./pages/PaymentStatus";
-// https://codentechnologies.com/easy-rev/landing/050d2589-89b5-42f5-9245-f0f1f0800113
 const App = () => {
 
   const [activeTab, setActiveTab] = useState("home");

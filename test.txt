@@ -1,0 +1,11 @@
+<VirtualHost _default_:443>
+  ServerName codentechnologies.com
+  <Directory "/opt/bitnami/apache/htdocs">
+Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+  </Directory>
+  SSLEngine on
+  SSLCertificateFile "/opt/bitnami/apache/conf/codentechnologies.com.crt"
+  SSLCertificateKeyFile "/opt/bitnami/apache/conf/codentechnologies.com.key"
+</VirtualHost>
