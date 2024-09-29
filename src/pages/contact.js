@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet";
 const Contact = ({activeTab, setActiveTab, scrollToSection}) => {
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
@@ -34,6 +34,11 @@ const Contact = ({activeTab, setActiveTab, scrollToSection}) => {
   }, []);
   const showclassName = isLoad ? "show" : "";
   return (
+    <>
+    <Helmet>
+        <title>Contact Coden Technologies | Software & IT Services in Bangalore</title>
+        <meta name="description" content="Contact Coden Technologies - Your Trusted Software Development Partner in Bangalore" />
+      </Helmet>
     <div className="container-xxl bg-white p-0">
       <div
         id="spinner"
@@ -77,82 +82,50 @@ const Contact = ({activeTab, setActiveTab, scrollToSection}) => {
         </nav>
       </div>
 
-      <section id="AboutUs">
-        <div className="container-xxl py-5">
-          <div className="container px-lg-5">
+      <section id="ContactUs">
+    <div className="container-xxl py-5">
+        <div className="container px-lg-5">
             <div className="row g-5">
-              <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
-                  <h6
-                    className="position-relative text-primary ps-4"
-                    title="coden's about us "
-                  >
-                    Contact Us
-                  </h6>
-                  <h2 className="mt-2">
-                    Ready to take your project to the next level? Contact us
-                    today.
-                  </h2>
+                <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                    <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
+                        <h6 className="position-relative text-primary ps-4" title="Contact Coden Technologies for services">
+                            Contact Us
+                        </h6>
+                        <h2 className="mt-2">
+                            Ready to elevate your project with expert solutions? Get in touch today.
+                        </h2>
+                    </div>
+                    <p className="mb-4">
+                        Need help with your next big project or want to discuss our web development, mobile app development, or custom software services? We're here to assist you. Contact Coden Technologies today for a free consultation, and let's take your business to new heights.
+                    </p>
+                    <div style={{ marginTop: "10px" }}>
+                        <a href="tel:+91 8277611667" className="btn btn-outline-primary px-sm-5 rounded-pill animated fadeIn">
+                            Tap to Call
+                        </a>
+                    </div>
+                    <div className="d-flex align-items-center mt-4">
+                        <a className="btn btn-outline-primary btn-square me-3" title="WhatsApp Coden Technologies Now!" href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667">
+                            <i className="fab fa-whatsapp"></i>
+                        </a>
+                        <a className="btn btn-outline-primary btn-square me-3" title="Connect with Coden Technologies on LinkedIn" href="https://www.linkedin.com/company/coden/" target="_blank">
+                            <i className="fab fa-linkedin-in"></i>
+                        </a>
+                        <a className="btn btn-outline-primary btn-square me-3" title="Follow Coden Technologies on Instagram" href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA==" target="_blank">
+                            <i className="fab fa-instagram"></i>
+                        </a>
+                        <a className="btn btn-outline-primary btn-square" title="Like Coden Technologies on Facebook" href="https://www.facebook.com/profile.php?id=100090469839151">
+                            <i className="fab fa-facebook"></i>
+                        </a>
+                    </div>
                 </div>
-                <p className="mb-4">
-                  We're always here to help. Whether you have a question about
-                  our services, want to discuss a potential project, or simply
-                  need some advice, don't hesitate to get in touch with us.
-                </p>
-                <div style={{ marginTop: "10px" }}>
-                  <a
-                    href="tel:+91 8277611667"
-                    className="btn btn-outline-primary  px-sm-5 rounded-pill animated fadeIn"
-                  >
-                    tap to call
-                  </a>
+                <div className="col-lg-4">
+                    <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s" src="img/contactUs.png" alt="Contact Coden Technologies" title="Get in touch with Coden Technologies" />
                 </div>
-                <div className="d-flex align-items-center mt-4">
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="whatsapp us Now !"
-                    href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
-                  >
-                    <i className="fab fa-whatsapp"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="coden's linkedin"
-                    href="https://www.linkedin.com/company/coden/"
-                    target="_blank"
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="coden's instagram"
-                    href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA=="
-                    target="_blank"
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square"
-                    title="coden's facebook"
-                    href="https://www.facebook.com/profile.php?id=100090469839151"
-                  >
-                    <i className="fab fa-facebook"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <img
-                  className="img-fluid wow zoomIn topPaddingLarge"
-                  data-wow-delay="0.5s"
-                  src="img/contactUs.png"
-                  alt="coden about image"
-                  title="coden about us image"
-                />
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
+
 
       <section id="faq">
         <div
@@ -276,6 +249,7 @@ const Contact = ({activeTab, setActiveTab, scrollToSection}) => {
 
       <Footer/>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Services from "../components/Services";
+import { Helmet } from "react-helmet";
 const About = ({activeTab, setActiveTab, scrollToSection}) => {
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
@@ -34,6 +36,11 @@ const About = ({activeTab, setActiveTab, scrollToSection}) => {
   }, []);
   const showclassName = isLoad ? "show" : "";
   return (
+    <>
+    <Helmet>
+        <title>About Us | Leading Software Development Company in Bangalore</title>
+        <meta name="description" content="Learn more about the software services offered by Coden Technologies, a leading provider of IT solutions in Bangalore." />
+      </Helmet>
     <div className="container-xxl bg-white p-0">
       <div
         id="spinner"
@@ -77,200 +84,46 @@ const About = ({activeTab, setActiveTab, scrollToSection}) => {
       </div>
 
       <section id="AboutUs">
-        <div className="container-xxl py-5">
-          <div className="container px-lg-5">
-            <div className="row g-5">
-              <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
-                  <h6
-                    className="position-relative text-primary ps-4"
-                    title="coden's about us "
-                  >
-                    About Us
-                  </h6>
-                  <h2 className="mt-2">
-                    We help business of every size - from Entrepreneurs to
-                    Iconic brand
-                  </h2>
-                </div>
-                <p className="mb-4">
-                  CODEN delivers high-quality and secure applications that meet
-                  the needs of our clients. Our experienced developers follow
-                  industry best practices and use the latest tools and
-                  technologies to ensure that our applications are not only
-                  user-friendly, but also reliable and secure !. We conduct
-                  rigorous testing and quality assurance procedures to ensure
-                  that our applications meet the highest standards of
-                  performance and security. Trust us to deliver a top-quality
-                  solution that meets your needs and exceeds your expectations.
-                </p>
-
-                <div className="d-flex align-items-center mt-4">
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="whatsapp us Now !"
-                    href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
-                  >
-                    <i className="fab fa-whatsapp"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="coden's linkedin"
-                    href="https://www.linkedin.com/company/coden/"
-                    target="_blank"
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square me-3"
-                    title="coden's instagram"
-                    href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA=="
-                    target="_blank"
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    className="btn btn-outline-primary btn-square"
-                    title="coden's facebook"
-                    href="https://www.facebook.com/profile.php?id=100090469839151"
-                  >
-                    <i className="fab fa-facebook"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <img
-                  className="img-fluid wow zoomIn topPaddingLarge"
-                  data-wow-delay="0.5s"
-                  src="img/AboutCoden.png"
-                  alt="coden about image"
-                  title="coden about us image"
-                />
-              </div>
-            </div>
+  <div className="container-xxl py-5">
+    <div className="container px-lg-5">
+      <div className="row g-5">
+        <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+          <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
+            <h6 className="position-relative text-primary ps-4" title="Coden's about us">
+              About Us
+            </h6>
+            <h2 className="mt-2">
+              Helping Businesses of All Sizes—From Startups to Global Brands
+            </h2>
+          </div>
+          <p className="mb-4">
+            <strong>Coden Technologies</strong> is a trusted <strong>IT service provider</strong> known for delivering top-notch, secure, and scalable solutions. Whether you're a <strong>small business</strong>, a startup, or an established <strong>enterprise</strong>, we offer <strong>end-to-end IT services</strong>, including <strong>custom software development</strong>, <strong>web development</strong>, and <strong>mobile application development</strong>. Our experienced team uses cutting-edge technologies and industry best practices to ensure your product is reliable, secure, and exceeds your expectations. Our rigorous testing and quality assurance guarantee high performance, security, and user-friendly experiences. Partner with us for <strong>business growth</strong> and <strong>digital transformation</strong>.
+          </p>
+          <div className="d-flex align-items-center mt-4">
+            {/* <a className="btn btn-outline-primary btn-square me-3" title="WhatsApp us now!" href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667">
+              <i className="fab fa-whatsapp"></i>
+            </a> */}
+            <a className="btn btn-outline-primary btn-square me-3" title="Coden's LinkedIn" href="https://www.linkedin.com/company/coden/" target="_blank">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a className="btn btn-outline-primary btn-square me-3" title="Coden's Instagram" href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA==" target="_blank">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a className="btn btn-outline-primary btn-square" title="Coden's Facebook" href="https://www.facebook.com/profile.php?id=100090469839151">
+              <i className="fab fa-facebook"></i>
+            </a>
           </div>
         </div>
-      </section>
-
-      <section id="Services">
-        <div className="container-xxl py-5">
-          <div className="container px-lg-5">
-            <div
-              className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <h6
-                className="position-relative d-inline text-primary ps-4"
-                title="coden our services"
-              >
-                Our Services
-              </h6>
-              <h2 className="mt-2">What Solutions We Provide</h2>
-            </div>
-            <div className="row g-4">
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.1s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-paint-brush fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">UX/UI Design</h5>
-                  <p>
-                    We design a simple and elegant application to fuel your
-                    brand, which carries the brand culture to the end-users. We
-                    listen to problems, brainstorm solutions, and bring the
-                    design.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.3s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-laptop fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Website Development</h5>
-                  <p>
-                    Our guild of developers is highly professional and has
-                    collectively invested at least 6,000+ human hours in
-                    development, delivering pixel-perfect results and highly
-                    performant APIs..
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.6s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-mobile fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">App Development</h5>
-                  <p>
-                    We deliver iOS and Android apps using hybrid technologies,
-                    ensuring 'One Code, Any Platform' approach. Our bundled apps
-                    can run on a wide range of devices, providing a consistent
-                    experience.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.1s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-cloud fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Cloud Management</h5>
-                  <p>
-                    We provide cloud resources with a powerful orchestration
-                    engine that automates actions across multiple cloud servers
-                    and cloud services.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.3s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-server fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Domains and SEO</h5>
-                  <p>
-                    With our website hosting services, you can provide your
-                    visitors with the fastest browsing experience possible,
-                    thanks to our complete SSD servers.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.6s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-wrench  fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Support and Maintenance</h5>
-                  <p>
-                    We provide a dedicated support team that is available 24/7
-                    to answer any queries after deployment and guide you in
-                    maintaining your website.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="col-lg-4">
+          <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s" src="img/AboutCoden.png" alt="Coden IT Services" title="Coden IT Solutions Image" />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <Services/>
 
       <section id="faq">
         <div
@@ -374,6 +227,7 @@ const About = ({activeTab, setActiveTab, scrollToSection}) => {
 
       <Footer/>
     </div>
+    </>
   );
 };
 

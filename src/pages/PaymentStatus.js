@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from './PaymentStatus.module.css'
-import Loader from 'react-loader-spinner'
+import { Oval } from 'react-loader-spinner'
 import axios from 'axios';
 const urlProd = "https://api.easy-revv.com"
 const urlDev = "https://apidevreview.codentechnologies.com"
@@ -67,7 +67,7 @@ const PaymentStatus = () => {
                     Payment Initiating... Please Wait...
                 </div>
                 <div>
-                    <Loader
+                    <Oval
                         type="Puff"
                         color="#00BFFF"
                         height={100}
