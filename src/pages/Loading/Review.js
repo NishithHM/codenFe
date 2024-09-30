@@ -23,6 +23,7 @@ import copy from "../../icons/copy.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import paste from "../../icons/paste.gif";
+import { Helmet } from "react-helmet";
 
 const icons = {
   zomato,
@@ -281,6 +282,16 @@ const CustomerReview = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>
+        Google Review Cards | Easy-Rev by Coden Technologies
+
+        </title>
+        <meta
+          name="description"
+          content="Easy-Rev by Coden Technologies offers the best platform for managing customer feedback with Google Review Cards. Whether you're looking to boost reviews or streamline customer testimonials, Easy-Rev provides a simple, effective solution to enhance your online reputation."
+        />
+      </Helmet>
       {isRedirecting ? (
         <div className="card" style={{ height: "100vh" }}>
           <Progress progress={progress} />
@@ -385,24 +396,28 @@ const CustomerReview = () => {
               )}
 
               {progress === 2 && !loading && !data.review && (
-                <div className="accordion-header">
-                  <b>Card is not activated yet</b>
+                <div className="accordion-header" 
+                style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px'}}>
+                  <b style={{fontSize: '24px'}}>Card is not activated yet</b>
 
-                  <a href="https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-76be73c3-3acd-4cae-bc93-3d697007aed5" 
-      target="_blank" 
-      rel="noopener noreferrer">
-                  <button
-                    className={cx("btn-shine", "btn-alt")}
-                    style={{
-                      backgroundColor: "#FFC72C",
-                      color: "#000000",
-                      boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 18px",
-                      height: "40px",
-                      height: "40px",
-                    }}
+                  <a
+                    href="https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-76be73c3-3acd-4cae-bc93-3d697007aed5"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Click to Activate it
-                  </button>
+                    <button
+                      className={cx("btn-shine", "btn-alt")}
+                      style={{
+                        backgroundColor: "#FFC72C",
+                        width: 'max-content',
+                        color: "#000000",
+                        boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 18px",
+                        height: "40px",
+                        textWrap: 'nowrap'
+                      }}
+                    >
+                      Click to Activate it
+                    </button>
                   </a>
                 </div>
               )}
@@ -465,12 +480,12 @@ const CustomerReview = () => {
                           {btnText}
                         </button>
                       </div>
-                      <div
+                      {ele.type === 'google' && <div
                         style={{ backgroundColor: COLORS[ele.type] }}
                         className="social-icons"
                       >
                         <img height={"25px"} src={icons[ele.type]} />
-                      </div>
+                      </div>}
                     </div>
                   ))}
               <div className="add-box">
