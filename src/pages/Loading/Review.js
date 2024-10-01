@@ -256,7 +256,7 @@ const CustomerReview = () => {
   };
 
   const onButtonClick = (isInitial) => {
-    if (progress === 1 && data.review) {
+    if (progress === 1) {
       setBtnText("Writing review for you !");
       setProgress(2);
       getReview(isInitial);
@@ -423,7 +423,7 @@ const CustomerReview = () => {
                 </div>
               )}
 
-              {!Boolean(data.review) && btnText !== '' && (
+              {!Boolean(data.review) && (
                 <div className="btn__container">
                   <button
                     className={cx("btn-shine", "btn-alt", "copy")}
