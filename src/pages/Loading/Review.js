@@ -401,7 +401,7 @@ const CustomerReview = () => {
                   <b style={{fontSize: '24px'}}>Card is not activated yet</b>
 
                   <a
-                    href="https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-76be73c3-3acd-4cae-bc93-3d697007aed5"
+                    href={`https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-${params?.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
