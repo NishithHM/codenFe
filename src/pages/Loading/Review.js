@@ -325,6 +325,7 @@ const CustomerReview = () => {
         <>
           {session !== "expired" ? (
             <div id="cardid" className={cx("card")}>
+              <div className="reviewContainer">
               {data?.review && <Progress progress={progress} />}
               <h1>{error.length > 0 && error}</h1>
               {progress === 1 && userResponse?.keywords?.length > 0 && (
@@ -480,14 +481,16 @@ const CustomerReview = () => {
                           {btnText}
                         </button>
                       </div>
-                      {ele.type === 'google' && <div
-                        style={{ backgroundColor: COLORS[ele.type] }}
+                      <div
+                        style={{ backgroundColor: COLORS[ele.type], opacity: ele.type === 'google' ? 1 : 0, visibility:  ele.type === 'google' ? 'visible' : 'hidden'
+                         }}
                         className="social-icons"
                       >
                         <img height={"25px"} src={icons[ele.type]} />
-                      </div>}
+                      </div>
                     </div>
                   ))}
+              </div>
               <div className="add-box">
                 <AdSense.Google
                   client="ca-pub-7389479959832649"
