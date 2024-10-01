@@ -68,7 +68,7 @@ const customStyles = {
 };
 
 const url = process.env.REACT_APP_BASE_URL;
-// const url = "http://localhost:3002"
+// const url = "http://localhost:3004"
 
 const COLORS = {
   zomato: "#db3542",
@@ -325,7 +325,7 @@ const CustomerReview = () => {
         <>
           {session !== "expired" ? (
             <div id="cardid" className={cx("card")}>
-              {data.review && <Progress progress={progress} />}
+              {data?.review && <Progress progress={progress} />}
               <h1>{error.length > 0 && error}</h1>
               {progress === 1 && userResponse?.keywords?.length > 0 && (
                 <div className="form__containers">
@@ -422,7 +422,7 @@ const CustomerReview = () => {
                 </div>
               )}
 
-              {!Boolean(data.review) && data.review && (
+              {!Boolean(data.review) && (
                 <div className="btn__container">
                   <button
                     className={cx("btn-shine", "btn-alt", "copy")}
