@@ -423,7 +423,7 @@ const CustomerReview = () => {
                 </div>
               )}
 
-              {!Boolean(data.review) && (
+              {!Boolean(data.review) && !error && (
                 <div className="btn__container">
                   <button
                     className={cx("btn-shine", "btn-alt", "copy")}
