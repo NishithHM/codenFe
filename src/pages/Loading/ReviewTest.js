@@ -5,6 +5,7 @@ import cx from 'classnames'
 import './Review.scss'
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 export function unsecuredCopyToClipboard({ review }) {
   const textArea = document.createElement("textarea");
   textArea.value = review;
@@ -114,6 +115,15 @@ const CustomerReviewTest = () => {
   }
   return (
     <>
+    <Helmet>
+        <title>
+        Boost Trust with Easy-Rev Google Review Cards | Coden Technologies
+        </title>
+        <meta
+          name="description"
+          content="Enhance your business's online reputation with Easy-Rev's Google Review Cards. Designed by Coden Technologies, our innovative solution helps you effortlessly collect and showcase customer reviews. With customizable templates and seamless integration, you can boost customer trust and engagement. Start leveraging the power of positive feedback today and transform your online presence."
+        />
+      </Helmet>
       <ToastContainer
         position="top-center"
         autoClose={3000}

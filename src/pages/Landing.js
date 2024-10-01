@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./landing.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
+import Services from "../components/Services";
+import { Helmet } from 'react-helmet';
+const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
   const [isLoad, setLoading] = useState(true);
-  
-
 
   useEffect(() => {
     new WOW().init();
@@ -38,6 +38,11 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
   }, []);
   const showClass = isLoad ? "show" : "";
   return (
+    <>
+    <Helmet>
+        <title>Software Company in Bangalore | Coden Technology</title>
+        <meta name="description" content="Coden Technologies is a leading software company in Bangalore, providing custom app development, website design, and IT consulting services." />
+      </Helmet>
     <div className="container-xxl bg-white p-0">
       <div
         id="spinner"
@@ -76,7 +81,11 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
           >
             <span className="fa fa-bars"></span>
           </button>
-          <Navbar activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection}/>
+          <Navbar
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            scrollToSection={scrollToSection}
+          />
         </nav>
         <section id="home">
           <div className="container-xxl py-5 bg-primary home-backround mb-5">
@@ -113,7 +122,7 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
                     <Link
                       to="/contact"
                       className="btn btn-outline-secondary  px-sm-5 rounded-pill animated fadeIn"
-                      onClick={() => setActiveTab('contact')}
+                      onClick={() => setActiveTab("contact")}
                     >
                       Contact Us
                     </Link>
@@ -125,7 +134,7 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
         </section>
       </div>
 
-      <section id="AboutUs">
+      <section id="AboutUs" aria-label="Coden IT Services Overview">
         <div className="container-xxl py-5">
           <div className="container px-lg-5">
             <div className="row g-5">
@@ -133,69 +142,76 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
                 <div className="section-title position-relative mb-4 pb-2">
                   <h6
                     className="position-relative text-primary ps-4"
-                    title="coden's about us "
+                    title="About Coden IT Services"
                   >
                     About Us
                   </h6>
                   <h2 className="mt-2">
-                    Coden India's well trusted end to end IT service company{" "}
+                    Coden India: Trusted End-to-End IT Services & Software
+                    Solutions
                   </h2>
                 </div>
                 <p className="mb-4">
-                  Coden is a leading software service company who provide
-                  End-to-end IT Solutions, specialized in consulting,
-                  Application development and Website development.
+                  Coden is a leading software service provider offering
+                  comprehensive End-to-End IT Solutions. Specializing in IT
+                  Consulting, Application Development, Website Design, and
+                  Digital Transformation, we help businesses grow and stay
+                  competitive in today’s digital landscape.
                 </p>
                 <div className="row g-3">
                   <div className="col-sm-6">
                     <h6 className="mb-3">
-                      <i className="fa fa-check text-primary me-2"></i>Business
-                      Oriented
+                      <i className="fa fa-check text-primary me-2"></i>
+                      Business-Focused Solutions
                     </h6>
                     <h6 className="mb-0">
                       <i className="fa fa-check text-primary me-2"></i>
-                      Professional Staff
+                      Experienced Professionals
                     </h6>
                   </div>
                   <div className="col-sm-6">
                     <h6 className="mb-3">
-                      <i className="fa fa-check text-primary me-2"></i>24/7
-                      Support
+                      <i className="fa fa-check text-primary me-2"></i>24/7 IT
+                      Support Services
                     </h6>
                     <h6 className="mb-0">
-                      <i className="fa fa-check text-primary me-2"></i>Well
-                      Trusted
+                      <i className="fa fa-check text-primary me-2"></i>Trusted
+                      by Global Clients
                     </h6>
                   </div>
                 </div>
                 <div className="d-flex align-items-center mt-4">
-                  <a
+                  {/* <a
                     className="btn btn-outline-primary btn-square me-3"
-                    title="whatsapp us Now !"
-                    href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
+                    title="Contact us via WhatsApp for IT Services"
+                    href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services&phone=8277611667"
+                    aria-label="WhatsApp Coden for IT Services"
                   >
                     <i className="fab fa-whatsapp"></i>
-                  </a>
+                  </a> */}
                   <a
                     className="btn btn-outline-primary btn-square me-3"
-                    title="coden's linkedin"
+                    title="Coden's LinkedIn Profile"
                     href="https://www.linkedin.com/company/coden/"
                     target="_blank"
+                    aria-label="Follow Coden on LinkedIn"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     className="btn btn-outline-primary btn-square me-3"
-                    title="coden's instagram"
+                    title="Follow Coden on Instagram"
                     href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA=="
                     target="_blank"
+                    aria-label="Follow Coden on Instagram"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
                   <a
                     className="btn btn-outline-primary btn-square"
-                    title="coden's facebook"
+                    title="Like Coden on Facebook"
                     href="https://www.facebook.com/profile.php?id=100090469839151"
+                    aria-label="Follow Coden on Facebook"
                   >
                     <i className="fab fa-facebook"></i>
                   </a>
@@ -206,8 +222,9 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
                   className="img-fluid wow zoomIn"
                   data-wow-delay="0.5s"
                   src="img/about.jpg"
-                  alt="coden about image"
-                  title="coden about us image"
+                  alt="Coden India providing IT solutions"
+                  title="Coden IT Services and Solutions"
+                  aria-hidden="true"
                 />
               </div>
             </div>
@@ -215,125 +232,7 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
         </div>
       </section>
 
-      <section id="Services">
-        <div className="container-xxl py-5">
-          <div className="container px-lg-5">
-            <div
-              className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <h6
-                className="position-relative d-inline text-primary ps-4"
-                title="coden our services"
-              >
-                Our Services
-              </h6>
-              <h2 className="mt-2">What Solutions We Provide</h2>
-            </div>
-            <div className="row g-4">
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.1s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-paint-brush fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">UX/UI Design</h5>
-                  <p>
-                    We design a simple and elegant application to fuel your
-                    brand, which carries the brand culture to the end-users. We
-                    listen to problems, brainstorm solutions, and bring the
-                    design.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.3s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-laptop fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Website Development</h5>
-                  <p>
-                    Our guild of developers is highly professional and has
-                    collectively invested at least 6,000+ human hours in
-                    development, delivering pixel-perfect results and highly
-                    performant APIs..
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.6s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-mobile fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">App Development</h5>
-                  <p>
-                    We deliver iOS and Android apps using hybrid technologies,
-                    ensuring 'One Code, Any Platform' approach. Our bundled apps
-                    can run on a wide range of devices, providing a consistent
-                    experience.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.1s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-cloud fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Cloud Management</h5>
-                  <p>
-                    We provide cloud resources with a powerful orchestration
-                    engine that automates actions across multiple cloud servers
-                    and cloud services.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.3s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-server fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Domains and SEO</h5>
-                  <p>
-                    With our website hosting services, you can provide your
-                    visitors with the fastest browsing experience possible,
-                    thanks to our complete SSD servers.
-                  </p>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow zoomIn"
-                data-wow-delay="0.6s"
-              >
-                <div className="service-item d-flex flex-column justify-content-center text-center rounded">
-                  <div className="service-icon flex-shrink-0">
-                    <i className="fa fa-wrench  fa-2x"></i>
-                  </div>
-                  <h5 className="mb-3">Support and Maintenance</h5>
-                  <p>
-                    We provide a dedicated support team that is available 24/7
-                    to answer any queries after deployment and guide you in
-                    maintaining your website.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Services />
 
       <section id="testimonial">
         <div
@@ -464,8 +363,9 @@ const Landing = ({activeTab, setActiveTab, scrollToSection}) => {
         </div>
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
+    </>
   );
 };
 

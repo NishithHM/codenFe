@@ -2,4 +2,8 @@
     .custom-navbar{
         background-color: white;
     }
+
+    .service-item {
+        height: max-content;
+    }
 }

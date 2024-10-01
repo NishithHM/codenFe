@@ -1,66 +1,34 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({activeTab, setActiveTab, scrollToSection}) => {
-  
+const Navbar = ({ activeTab, setActiveTab, scrollToSection }) => {
+  const navItems = [
+    { name: "Home", path: "/", tab: "home", scrollTo: "home" },
+    { name: "Service", path: "/", tab: "services", scrollTo: "Services" },
+    { name: "About Us", path: "/about", tab: "about" },
+    { name: "Contact Us", path: "/contact", tab: "contact" },
+  ];
+
   return (
-    <div className="collapse navbar-collapse" id="navbarCollapse">
-            <div className="navbar-nav ms-auto py-0">
-              <Link
-                to="/"
-                className={`nav-item nav-link ${
-                  activeTab === "home" ? "active" : ""
-                }`}
-                onClick={() => {
-                    setActiveTab("home")
-                    scrollToSection("home")
+    <nav aria-label="Main Navigation" className="collapse navbar-collapse" id="navbarCollapse">
+      <div className="navbar-nav ms-auto py-0">
+        {navItems.map(({ name, path, tab, scrollTo }) => (
+          <Link
+            key={tab}
+            to={path}
+            className={`nav-item nav-link ${activeTab === tab ? "active" : ""}`}
+            onClick={() => {
+              setActiveTab(tab);
+              if (scrollTo) scrollToSection(scrollTo);
             }}
-              >
-                Home
-              </Link>
-              <Link
-                to="/"
-                className={`nav-item nav-link ${
-                  activeTab === "services" ? "active" : ""
-                }`}
-                onClick={() => {
-                  setActiveTab("services");
-                  scrollToSection("Services");
+            title={name}
+          >
+            {name}
+          </Link>
+        ))}
+      </div>
+    </nav>
+  );
+};
 
-                }}
-              >
-                Service
-              </Link>
-              <Link
-                to="/about"
-                className={`nav-item nav-link ${
-                  activeTab === "about" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("about")}
-              >
-                About Us
-              </Link>
-              <Link
-                to="/contact"
-                className={`nav-item nav-link ${
-                  activeTab === "contact" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("contact")}
-              >
-                Contact Us
-              </Link>
-              {/* <Link
-                to="/orders"
-                className={`nav-item nav-link ${
-                  activeTab === "orders" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("orders")}
-              >
-                Orders
-              </Link> */}
-            </div>
-          </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
