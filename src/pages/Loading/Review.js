@@ -408,6 +408,7 @@ const CustomerReview = () => {
                     </b>
 
                     <a
+                      className={cx("btn-shine", "btn-alt", "copy")}
                       href={`https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-${params?.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -416,7 +417,6 @@ const CustomerReview = () => {
                         className={cx("btn-shine", "btn-alt")}
                         style={{
                           backgroundColor: "#FFC72C",
-                          width: "max-content",
                           color: "#000000",
                           boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 18px",
                           height: "40px",
