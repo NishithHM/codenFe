@@ -89,6 +89,7 @@ const CustomerReview = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [contact, setContact] = useState("");
+  const [isCardActivated, setIsCardActivated] = useState(false)
   const params = useParams();
   const id = params?.id;
 
@@ -144,6 +145,17 @@ const CustomerReview = () => {
   }, []);
 
   console.log(timeRef.current);
+
+
+  useEffect(() => {
+    
+    if(data?.review){
+      setIsCardActivated(true)
+    }
+    else{
+      setIsCardActivated(false)
+    }
+  }, [data?.review]);
 
   useEffect(() => {
     if (api && session !== "expired") {
@@ -423,7 +435,7 @@ const CustomerReview = () => {
                 </div>
               )}
 
-              {!Boolean(data.review) && !error && (
+              {!Boolean(data.review)  && isCardActivated && (
                 <div className="btn__container">
                   <button
                     className={cx("btn-shine", "btn-alt", "copy")}
@@ -478,7 +490,7 @@ const CustomerReview = () => {
                           <div className="copy-image">
                             <img width={"24px"} height={"24px"} src={copy} />
                           </div>
-                          {btnText}
+                          <p>{btnText}</p>
                         </button>
                       </div>
                       <div
