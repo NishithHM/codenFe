@@ -89,7 +89,6 @@ const CustomerReview = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [contact, setContact] = useState("");
-  const [isCardActivated, setIsCardActivated] = useState(false)
   const params = useParams();
   const id = params?.id;
 
@@ -129,7 +128,6 @@ const CustomerReview = () => {
         contact?.url +
         "\nEND:VCARD";
 
-      setBtnText("Write Review for me!");
       if (contact) {
         setContact(vcfContent);
       }
@@ -145,17 +143,6 @@ const CustomerReview = () => {
   }, []);
 
   console.log(timeRef.current);
-
-
-  useEffect(() => {
-    
-    if(data?.review){
-      setIsCardActivated(true)
-    }
-    else{
-      setIsCardActivated(false)
-    }
-  }, [data?.review]);
 
   useEffect(() => {
     if (api && session !== "expired") {
@@ -295,10 +282,7 @@ const CustomerReview = () => {
   return (
     <>
       <Helmet>
-        <title>
-        Google Review Cards | Easy-Rev by Coden Technologies
-
-        </title>
+        <title>Google Review Cards | Easy-Rev by Coden Technologies</title>
         <meta
           name="description"
           content="Easy-Rev by Coden Technologies offers the best platform for managing customer feedback with Google Review Cards. Whether you're looking to boost reviews or streamline customer testimonials, Easy-Rev provides a simple, effective solution to enhance your online reputation."
@@ -338,170 +322,196 @@ const CustomerReview = () => {
           {session !== "expired" ? (
             <div id="cardid" className={cx("card")}>
               <div className="reviewContainer">
-              {data?.review && <Progress progress={progress} />}
-              <h1>{error.length > 0 && error}</h1>
-              {progress === 1 && userResponse?.keywords?.length > 0 && (
-                <div className="form__containers">
-                  {userResponse?.keywords?.length > 0 && (
-                    <>
-                      <p className="impress-text">What did you ❤️ at </p>
-                      <h1>{userResponse.name}?</h1>
-                    </>
-                  )}
-                  <div className="keywordcontainer">
-                    {userResponse.keywords !== undefined &&
-                      userResponse.keywords.length > 0 &&
-                      userResponse.keywords.map((singleKeyword) => (
-                        <div
-                          key={singleKeyword}
-                          className={cx(
-                            "single_keyword",
-                            {
-                              "disabled-keyword":
-                                selectedKeyword.length === 3 &&
-                                !selectedKeyword.includes(singleKeyword),
-                            },
-                            {
-                              "selected-keyword":
-                                selectedKeyword.includes(singleKeyword),
-                            }
-                          )}
-                          onClick={() => addKeyword(singleKeyword)}
-                        >
-                          <span>{singleKeyword}</span>
-                        </div>
-                      ))}
+                {data?.review && <Progress progress={progress} />}
+                <h1>{error.length > 0 && error}</h1>
+                {progress === 1 && userResponse?.keywords?.length > 0 && (
+                  <div className="form__containers">
+                    {userResponse?.keywords?.length > 0 && (
+                      <>
+                        <p className="impress-text">What did you ❤️ at </p>
+                        <h1>{userResponse.name}?</h1>
+                      </>
+                    )}
+                    <div className="keywordcontainer">
+                      {userResponse.keywords !== undefined &&
+                        userResponse.keywords.length > 0 &&
+                        userResponse.keywords.map((singleKeyword) => (
+                          <div
+                            key={singleKeyword}
+                            className={cx(
+                              "single_keyword",
+                              {
+                                "disabled-keyword":
+                                  selectedKeyword.length === 3 &&
+                                  !selectedKeyword.includes(singleKeyword),
+                              },
+                              {
+                                "selected-keyword":
+                                  selectedKeyword.includes(singleKeyword),
+                              }
+                            )}
+                            onClick={() => addKeyword(singleKeyword)}
+                          >
+                            <span>{singleKeyword}</span>
+                          </div>
+                        ))}
+                      <div className="hr-line"></div>
+                    </div>
+                  </div>
+                )}
+                {progress === 2 && loading && (
+                  <div className="pen-loader">
+                    writing
+                    <div className="pencil">
+                      <div className="pencil__ball-point"></div>
+                      <div className="pencil__cap"></div>
+                      <div className="pencil__cap-base"></div>
+                      <div className="pencil__middle"></div>
+                      <div className="pencil__eraser"></div>
+                    </div>
+                    <div className="line" />
+                  </div>
+                )}
+                {progress === 2 && !loading && data.review && (
+                  <div className="paste-box">
+                    <span className="paste-text">
+                      Remember to <strong>Paste</strong> the review in next
+                      step!
+                    </span>
+                    <textarea
+                      className="review-text"
+                      value={data.review}
+                      onChange={(e) =>
+                        setData({ ...data, review: e?.target.value })
+                      }
+                    />
+                    <div className="paste-sub-text">
+                      We've crafted a review to save your time😀 modify as
+                      needed !
+                    </div>
                     <div className="hr-line"></div>
                   </div>
-                </div>
-              )}
-              {progress === 2 && loading && (
-                <div className="pen-loader">
-                  writing
-                  <div className="pencil">
-                    <div className="pencil__ball-point"></div>
-                    <div className="pencil__cap"></div>
-                    <div className="pencil__cap-base"></div>
-                    <div className="pencil__middle"></div>
-                    <div className="pencil__eraser"></div>
-                  </div>
-                  <div className="line" />
-                </div>
-              )}
-              {progress === 2 && !loading && data.review && (
-                <div className="paste-box">
-                  <span className="paste-text">
-                    Remember to <strong>Paste</strong> the review in next step!
-                  </span>
-                  <textarea
-                    className="review-text"
-                    value={data.review}
-                    onChange={(e) =>
-                      setData({ ...data, review: e?.target.value })
-                    }
-                  />
-                  <div className="paste-sub-text">
-                    We've crafted a review to save your time😀 modify as needed
-                    !
-                  </div>
-                  <div className="hr-line"></div>
-                </div>
-              )}
+                )}
 
-              {progress === 2 && !loading && !data.review && (
-                <div className="accordion-header" 
-                style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px'}}>
-                  <b style={{fontSize: '24px'}}>Card is not activated yet</b>
-
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-${params?.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {progress === 2 && !loading && !data.review && (
+                  <div
+                    className="accordion-header"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: "20px",
+                    }}
                   >
-                    <button
-                      className={cx("btn-shine", "btn-alt")}
-                      style={{
-                        backgroundColor: "#FFC72C",
-                        width: 'max-content',
-                        color: "#000000",
-                        boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 18px",
-                        height: "40px",
-                        textWrap: 'nowrap'
-                      }}
+                    <b style={{ fontSize: "24px" }}>
+                      Card is not activated yet
+                    </b>
+
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=8277740015&text=Hi,%20Please%20Activate%20my%20card%20and%20my%20ID%20is%20-${params?.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      Click to Activate it
-                    </button>
-                  </a>
-                </div>
-              )}
-
-              {!Boolean(data.review)  && isCardActivated && (
-                <div className="btn__container">
-                  <button
-                    className={cx("btn-shine", "btn-alt", "copy")}
-                    style={{ cursor: loading && "no-drop", height: "40px" }}
-                    disabled={loading}
-                    onClick={() => onButtonClick(true)}
-                  >
-                    {btnText}
-                    {progress === 2 && loading && (
-                      <div
+                      <button
+                        className={cx("btn-shine", "btn-alt")}
                         style={{
-                          marginLeft: "1rem",
+                          backgroundColor: "#FFC72C",
+                          width: "max-content",
+                          color: "#000000",
+                          boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 18px",
+                          height: "40px",
+                          textWrap: "nowrap",
                         }}
                       >
-                        <FontAwesomeIcon icon={faSpinner} spin color="#fff" />
-                      </div>
-                    )}
-                  </button>
-                </div>
-              )}
-              {!Boolean(data.review) && contact && (
-                <div className="btn__container">
-                  <button
-                    className={cx("btn-shine", "btn-alt", "copy")}
-                    style={{
-                      cursor: loading && "no-drop",
-                      height: "40px",
-                      marginTop: "20px",
-                    }}
-                    disabled={loading}
-                    onClick={() => onSaveContact(true)}
-                  >
-                    Save Contact
-                  </button>
-                </div>
-              )}
-              {Boolean(data.review) &&
-                data?.redirectTo
-                  ?.filter((ele) => ele?.type !== "contact")
-                  ?.map((ele) => (
-                    <div className="btn__container multi-button">
-                      <div style={{ flex: 9 }}>
-                        <button
-                          className={cx("btn-shine", "btn-alt", "copy")}
+                        Click to Activate it
+                      </button>
+                    </a>
+                  </div>
+                )}
+
+                {!Boolean(data.review) && progress === 1 && (
+                  <div className="btn__container">
+                    <button
+                      className={cx("btn-shine", "btn-alt", "copy")}
+                      style={{ cursor: loading && "no-drop", height: "40px" }}
+                      disabled={loading}
+                      onClick={() => onButtonClick(true)}
+                    >
+                      Write Review for me!
+                    </button>
+                  </div>
+                )}
+
+                {!Boolean(data.review) && loading && progress === 2 &&  (
+                  <div className="btn__container">
+                    <button
+                      className={cx("btn-shine", "btn-alt", "copy")}
+                      style={{ cursor: loading && "no-drop", height: "40px" }}
+                      disabled={loading}
+                    >
+                      {btnText}
+                      {loading && (
+                        <div
                           style={{
-                            cursor: loading && "no-drop",
-                            height: "40px",
+                            marginLeft: "1rem",
                           }}
-                          disabled={loading}
-                          onClick={(e) => handleCopy(e, ele.url)}
                         >
-                          <div className="copy-image">
-                            <img width={"24px"} height={"24px"} src={copy} />
-                          </div>
-                          <p>{btnText}</p>
-                        </button>
+                          <FontAwesomeIcon icon={faSpinner} spin color="#fff" />
+                        </div>
+                      )}
+                    </button>
+                  </div>
+                )}
+                {!Boolean(data.review) && contact && (
+                  <div className="btn__container">
+                    <button
+                      className={cx("btn-shine", "btn-alt", "copy")}
+                      style={{
+                        cursor: loading && "no-drop",
+                        height: "40px",
+                        marginTop: "20px",
+                      }}
+                      disabled={loading}
+                      onClick={() => onSaveContact(true)}
+                    >
+                      Save Contact
+                    </button>
+                  </div>
+                )}
+                {Boolean(data.review) &&
+                  data?.redirectTo
+                    ?.filter((ele) => ele?.type !== "contact")
+                    ?.map((ele) => (
+                      <div className="btn__container multi-button">
+                        <div style={{ flex: 9 }}>
+                          <button
+                            className={cx("btn-shine", "btn-alt", "copy")}
+                            style={{
+                              cursor: loading && "no-drop",
+                              height: "40px",
+                            }}
+                            disabled={loading}
+                            onClick={(e) => handleCopy(e, ele.url)}
+                          >
+                            <div className="copy-image">
+                              <img width={"24px"} height={"24px"} src={copy} />
+                            </div>
+                            <p>{btnText}</p>
+                          </button>
+                        </div>
+                        <div
+                          style={{
+                            backgroundColor: COLORS[ele.type],
+                            opacity: ele.type === "google" ? 1 : 0,
+                            visibility:
+                              ele.type === "google" ? "visible" : "hidden",
+                          }}
+                          className="social-icons"
+                        >
+                          <img height={"25px"} src={icons[ele.type]} />
+                        </div>
                       </div>
-                      <div
-                        style={{ backgroundColor: COLORS[ele.type], opacity: ele.type === 'google' ? 1 : 0, visibility:  ele.type === 'google' ? 'visible' : 'hidden'
-                         }}
-                        className="social-icons"
-                      >
-                        <img height={"25px"} src={icons[ele.type]} />
-                      </div>
-                    </div>
-                  ))}
+                    ))}
               </div>
               <div className="add-box">
                 <AdSense.Google
