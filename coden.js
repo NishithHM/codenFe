@@ -9,7 +9,7 @@ app.use(express.static('build'));
 
 
 app.get('/blogs', async(req, res) => {
-  const response = await fetch(`http://localhost:3002/api/coden/blog`);
+  const response = await fetch(`https://api.easy-revv.com/api/coden/blog`);
   const data = await response.json();
   console.log(data)
   const htmlCode = data?.htmlCode;
