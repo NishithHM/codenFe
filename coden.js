@@ -8,6 +8,15 @@ app.use(express.static('build'));
 // serve up the index.html if express does'nt recognize the route
 
 
+app.get('/blogs', async(req, res) => {
+  const response = await fetch(`http://localhost:3002/api/coden/blog`);
+  const data = await response.json();
+  console.log(data)
+  const htmlCode = data?.htmlCode;
+  res.send(htmlCode);
+});
+
+
 app.get('/blogs/:id', async(req, res) => {
   console.log('here')
   const response = await fetch(`https://api.easy-revv.com/api/coden/blog/${req?.params.id}`);
