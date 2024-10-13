@@ -32,9 +32,9 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
     });
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 777);
   }, []);
-  const showclassName = isLoad ? "show" : "";
+  const showClassName = isLoad ? "show" : "";
   return (
     <>
       <Helmet>
@@ -49,7 +49,7 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
       <div className="container-xxl bg-white p-0">
         <div
           id="spinner"
-          className={`${showclassName} bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center`}
+          className={`${showClassName} bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center`}
         >
           <div
             className="spinner-grow text-primary"
@@ -97,7 +97,7 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
             <div className="container px-lg-5">
               <div className="row g-5">
                 <div className="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                  <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
+                  <div className="title-section position-relative mb-4 pb-2 topPaddingMeduim">
                     <h6
                       className="position-relative text-primary ps-4"
                       title="Coden's about us"
@@ -163,6 +163,7 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
                     src="img/AboutCoden.png"
                     alt="Coden IT Services"
                     title="Coden IT Solutions Image"
+                    loading="eager"
                   />
                 </div>
               </div>
@@ -170,7 +171,6 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
           </div>
         </section>
 
-        <Services />
 
         <section id="faq">
           <div
@@ -179,7 +179,7 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
           >
             <div className="container py-5 px-lg-5">
               <div
-                className="section-title position-relative text-center mb-5 pb-2 wow fadeInUp"
+                className="title-section position-relative text-center mb-5 pb-2 wow fadeInUp"
                 data-wow-delay="0.1s"
               >
                 <h6
@@ -276,7 +276,7 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
           </div>
         </section>
 
-        <Footer />
+        <Footer setActiveTab={setActiveTab} scrollToSection={scrollToSection}/>
       </div>
     </>
   );

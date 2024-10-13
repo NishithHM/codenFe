@@ -34,14 +34,14 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
     });
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 777);
   }, []);
   const showClass = isLoad ? "show" : "";
   return (
     <>
     <Helmet>
-        <title>Software Company in Bangalore | Coden Technology</title>
-        <meta name="description" content="Coden Technologies is a leading software company in Bangalore, providing custom app development, website design, and IT consulting services." />
+        <title>Leading Software Company in Bangalore | Coden Technology</title>
+        <meta name="description" content="Coden Technologies, a top software company in Bangalore, offers custom app development, web design, and IT consulting services to boost your business." />
       </Helmet>
     <div className="container-xxl bg-white p-0">
       <div
@@ -64,10 +64,12 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
               <div>
                 <img
                   src="./img/logo.svg"
-                  alt="coden logo"
+                  alt="Coden Technologies logo"
                   className="codenImageTitle"
+                  loading='eager'
                 />
               </div>
+              
               <div>
                 <h1 className=" title logo-font codenTextTitle">oden</h1>
               </div>
@@ -103,8 +105,9 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                       {" "}
                       <img
                         src="./img/logo.svg"
-                        alt="coden logo"
+                        alt="Coden Technologies logo"
                         className="codenImage"
+                        loading="eager"
                       />
                     </div>
                     <div>
@@ -139,9 +142,9 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
           <div className="container px-lg-5">
             <div className="row g-5">
               <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div className="section-title position-relative mb-4 pb-2">
+                <div className="title-section position-relative mb-4 pb-2">
                   <h6
-                    className="position-relative text-primary ps-4"
+                    className="position-relative ps-4"
                     title="About Coden IT Services"
                   >
                     About Us
@@ -225,6 +228,8 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                   alt="Coden India providing IT solutions"
                   title="Coden IT Services and Solutions"
                   aria-hidden="true"
+                  loading="eager"
+
                 />
               </div>
             </div>
@@ -255,6 +260,8 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                     style={{ height: "50px", width: "50px" }}
                     alt="coden protantrix testimony"
                     title="coden protantrix"
+                    loading="lazy"
+
                   />
                   <div className="ps-3">
                     <h6 className="text-white mb-1">Protantrix</h6>
@@ -284,6 +291,8 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                     style={{ height: "50px", width: "50px" }}
                     alt="coden amith testimonial"
                     title="coden amith"
+                    loading="lazy"
+
                   />
                   <div className="ps-3">
                     <h6 className="text-white mb-1">Amith Meerja</h6>
@@ -313,6 +322,8 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                     style={{ height: "50px", width: "50px" }}
                     alt="coden kunal testimonial"
                     title="coden kunal"
+                    loading="lazy"
+
                   />
                   <div className="ps-3">
                     <h6 className="text-white mb-1">Kunal Kumar</h6>
@@ -343,6 +354,8 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                     style={{ height: "50px", width: "50px" }}
                     alt="coden ShreeKrishnaFarm&Nursery testimonial"
                     title="coden skfn"
+                    loading="lazy"
+
                   />
                   <div className="ps-3">
                     <h6 className="text-white mb-1">Shree Krishna Nursery</h6>
@@ -363,7 +376,7 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
         </div>
       </section>
 
-      <Footer />
+      <Footer setActiveTab={setActiveTab} scrollToSection={scrollToSection} />
     </div>
     </>
   );

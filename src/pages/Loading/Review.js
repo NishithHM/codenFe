@@ -279,6 +279,13 @@ const CustomerReview = () => {
     const blob = new Blob([contact], { type: "text/plain;charset=utf-8" });
     saveAs(blob, `${userResponse?.name}.vcf`);
   };
+
+  useEffect(() => {
+    if (!loading) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [loading]);
+
   return (
     <>
       <Helmet>
@@ -394,6 +401,7 @@ const CustomerReview = () => {
                 )}
 
                 {progress === 2 && !loading && !data.review && (
+                  <>
                   <div
                     className="accordion-header"
                     style={{
@@ -427,6 +435,9 @@ const CustomerReview = () => {
                       </button>
                     </a>
                   </div>
+                  
+                  </>
+                  
                 )}
 
                 {!Boolean(data.review) && progress === 1 && (
@@ -504,11 +515,14 @@ const CustomerReview = () => {
                             backgroundColor: COLORS[ele.type],
                             opacity: ele.type === "google" ? 1 : 0,
                             visibility:
-                              ele.type === "google" ? "visible" : "hidden",
+                              ele.type ? "visible" : "hidden",
                           }}
                           className="social-icons"
                         >
-                          <img height={"25px"} src={icons[ele.type]} />
+                          {ele.type === 'google' && <img height={"25px"} src={icons[ele.type]} />}
+                          {ele.type === 'tripadvisor' && <img height={"25px"} src={'/img/TripAdvisorLogo.png'} />}
+                          {ele.type === 'justdial' && <img height={"25px"} src={'/img/JustDialLogo.png'} />}
+                          
                         </div>
                       </div>
                     ))}
