@@ -2,14 +2,13 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Footer = ({ setActiveTab, scrollToSection }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleScrollToHome = () => {
-    navigate("/");
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  };
+  // const handleScrollToHome = () => {
+  //   navigate("/");
+  //   window.scrollTo(0, 0); // Scroll to the top of the page
+  // };
 
-  
   const wordWrapStyle = {
     wordBreak: "break-all",
     overflowWrap: "anywhere",
@@ -135,34 +134,40 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
             >
               Home
             </Link>
-            <Link onClick={() => {
+            <Link
+              onClick={() => {
                 setActiveTab("about");
                 sessionStorage.setItem("activeTab", "about");
-              }} className="btn btn-link" to="/about">
+              }}
+              className="btn btn-link"
+              to="/about"
+            >
               About Us
             </Link>
             <Link
               className="btn btn-link"
               onClick={() => {
                 setActiveTab("services");
-                sessionStorage.setItem("activeTab", "services");
+                sessionStorage.setItem("activeTab", "Services");
                 scrollToSection("Services");
               }}
               to="/"
             >
               Service
             </Link>
-            <Link onClick={() => {
+            <Link
+              onClick={() => {
                 setActiveTab("contact");
                 sessionStorage.setItem("activeTab", "contact");
-              }} className="btn btn-link" to="/contact">
+              }}
+              className="btn btn-link"
+              to="/contact"
+            >
               Contact Us
             </Link>
-            <Link onClick={() => {
-                sessionStorage.setItem("activeTab", "blog");
-              }} className="btn btn-link" to="https://codentechnologies.com/blogs">
+            <a href="https://codentechnologies.com/blogs" class="btn btn-link">
               Blog
-            </Link>
+            </a>
           </nav>
 
           <div className="col-md-6 col-lg-4">
@@ -174,11 +179,10 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
                   // target="_blank"
                   rel="noopener noreferrer"
                   title="coden-The Art of writing Custom Hooks"
-                  
                 >
                   <img
                     className="img-fluid"
-                    src="https://www.dnb.com/content/dam/english/image-library/Modernization/illustrations/DRSwdisclaimer.png"
+                    src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/b74ea202-fb39-4666-8098-4546cb5119aa.png"
                     alt="coden Dun & Bradstreet Verified"
                     loading="lazy"
                   />
@@ -194,7 +198,7 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
                 >
                   <img
                     className="img-fluid"
-                    src="https://upload.wikimedia.org/wikipedia/commons/a/a2/CERSAI_Logo.jpg"
+                    src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/003ae867-64f1-4c22-86d8-fe6a3f1ec9a5.jpg"
                     alt="coden KYC Registered"
                     loading="lazy"
                   />
@@ -212,7 +216,7 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
                 >
                   <img
                     className="img-fluid"
-                    src="https://5.imimg.com/data5/SELLER/Default/2021/10/YZ/TU/SZ/103001306/udyam-registration.jpg"
+                    src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/92fd41e4-38d3-471c-951d-4b9f9221ebfc.jpg"
                     alt="coden UDYAM Registered"
                     loading="lazy"
                   />
@@ -231,7 +235,8 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
               2024
             </div>
             <div className="col-md-6 text-center text-md-end">
-              Designed By <a href="/">Coden</a>
+              Designed By{" "}
+              <a href="https://codentechnologies.com/?scrollTo=home">Coden</a>
             </div>
           </div>
         </div>

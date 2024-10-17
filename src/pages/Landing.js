@@ -224,7 +224,7 @@ const Landing = ({ activeTab, setActiveTab, scrollToSection }) => {
                 <img
                   className="img-fluid wow zoomIn"
                   data-wow-delay="0.5s"
-                  src="img/about.jpg"
+                  src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/2b6f6330-343c-4d14-8435-6c3fd5969fca.jpg"
                   alt="Coden India providing IT solutions"
                   title="Coden IT Services and Solutions"
                   aria-hidden="true"

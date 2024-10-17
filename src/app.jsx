@@ -67,9 +67,9 @@ const App = () => {
                 />
               }
             />
-            <Route path="/privacy-policy" element={<Privacy />} />
+            {/* <Route path="/privacy-policy" element={<Privacy />} /> */}
             <Route path="/sales-policy" element={<SalesPolicy />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
+            {/* <Route path="/terms" element={<TermsAndConditions />} /> */}
             <Route
               path="/refund-and-cancellation"
               element={<RefundAndCancellation />}

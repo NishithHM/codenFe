@@ -20,7 +20,7 @@ const Navbar = ({ activeTab, setActiveTab, scrollToSection }) => {
       setActiveTab(scrollTo || sessionStorage.getItem("activeTab"));
       sessionStorage.setItem("activeTab", scrollTo);
     }
-  }; // Empty dependency array ensures this runs only once on initial load
+  };
 
   // Listen to route changes and update the active tab based on the path
   useEffect(() => {
@@ -33,18 +33,18 @@ const Navbar = ({ activeTab, setActiveTab, scrollToSection }) => {
       setActiveTab("about");
     } else if (pathname === "/contact") {
       setActiveTab("contact");
-    } 
+    }
 
-    
-  }, [location, setActiveTab]); // Listen to location changes
+  }, [location, setActiveTab]);
 
-  console.log('sessionStorage', sessionStorage.getItem("activeTab"))
+  console.log('sessionStorage', sessionStorage.getItem("activeTab"));
+  
   const navItems = [
     { name: "Home", path: "/", tab: "home", scrollTo: "home" },
     { name: "Service", path: "/", tab: "Services", scrollTo: "Services" },
     { name: "About Us", path: "/about", tab: "about" },
     { name: "Contact Us", path: "/contact", tab: "contact" },
-    { name: "Blog", path: "https://codentechnologies.com/blogs", tab: "blog" },
+    { name: "Blog", href: "https://codentechnologies.com/blogs", tab: "blog" }, // Blog with external link
   ];
 
   return (
@@ -54,20 +54,37 @@ const Navbar = ({ activeTab, setActiveTab, scrollToSection }) => {
       id="navbarCollapse"
     >
       <div className="navbar-nav ms-auto py-0">
-        {navItems.map(({ name, path, tab, scrollTo }) => (
-          <Link
-            key={tab}
-            to={path}
-            className={`nav-item nav-link ${activeTab === tab ? "active" : ""}`}
-            onClick={() => {
-              setActiveTab(tab);
-              sessionStorage.setItem("activeTab", tab);
-              if (scrollTo) scrollToSection(scrollTo);
-            }}
-            title={name}
-          >
-            {name}
-          </Link>
+        {navItems.map(({ name, path, href, tab, scrollTo }) => (
+          href ? ( // Check if it's an external link
+            <a
+              key={tab}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`nav-item nav-link ${activeTab === tab ? "active" : ""}`}
+              onClick={() => {
+                setActiveTab(tab);
+                sessionStorage.setItem("activeTab", tab);
+              }}
+              title={name}
+            >
+              {name}
+            </a>
+          ) : (
+            <Link
+              key={tab}
+              to={path}
+              className={`nav-item nav-link ${activeTab === tab ? "active" : ""}`}
+              onClick={() => {
+                setActiveTab(tab);
+                sessionStorage.setItem("activeTab", tab);
+                if (scrollTo) scrollToSection(scrollTo);
+              }}
+              title={name}
+            >
+              {name}
+            </Link>
+          )
         ))}
       </div>
     </nav>

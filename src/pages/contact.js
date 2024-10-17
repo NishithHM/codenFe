@@ -157,7 +157,7 @@ const Contact = ({ activeTab, setActiveTab, scrollToSection }) => {
                   <img
                     className="img-fluid wow zoomIn topPaddingLarge"
                     data-wow-delay="0.5s"
-                    src="img/contactUs.png"
+                    src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/bee71b30-bd33-4842-a2ed-e51432022827.png"
                     alt="Contact Coden Technologies"
                     title="Get in touch with Coden Technologies"
                     loading="eager"

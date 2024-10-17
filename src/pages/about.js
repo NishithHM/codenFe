@@ -160,7 +160,7 @@ const About = ({ activeTab, setActiveTab, scrollToSection }) => {
                   <img
                     className="img-fluid wow zoomIn topPaddingLarge"
                     data-wow-delay="0.5s"
-                    src="img/AboutCoden.png"
+                    src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/1b9b95e9-36fb-40da-b7b9-5c4dfaff8c46.png"
                     alt="Coden IT Services"
                     title="Coden IT Solutions Image"
                     loading="eager"
