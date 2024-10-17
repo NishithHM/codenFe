@@ -325,7 +325,7 @@ h6,
 
 
 /*** Section Title ***/
-.section-title::before {
+.title-section::before {
     position: absolute;
     content: "";
     width: 45px;
@@ -335,7 +335,7 @@ h6,
     background: var(--dark);
 }
 
-.section-title::after {
+.title-section::after {
     position: absolute;
     content: "";
     width: 4px;
@@ -345,18 +345,18 @@ h6,
     background: var(--dark);
 }
 
-.section-title.text-center::before {
+.title-section.text-center::before {
     left: 50%;
     margin-left: -25px;
 }
 
-.section-title.text-center::after {
+.title-section.text-center::after {
     left: 50%;
     margin-left: 25px;
 }
 
-.section-title h6::before,
-.section-title h6::after {
+.title-section h6::before,
+.title-section h6::after {
     position: absolute;
     content: "";
     width: 10px;
@@ -366,7 +366,7 @@ h6,
     background: rgba(33, 66, 177, .5);
 }
 
-.section-title h6::after {
+.title-section h6::after {
     top: 5px;
     left: 3px;
 }
