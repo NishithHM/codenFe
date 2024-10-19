@@ -51,8 +51,8 @@
         </div>
         <!-- Spinner End -->
         <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 custom-navbar">
+                <a href="https://codentechnologies.com/?scrollTo=home" class="navbar-brand p-0">
                     <div class="codenMerged">
                         <div> <img src="./img/logo.svg" alt="coden logo" class="codenImageTitle"></div>
                         <div>
@@ -65,11 +65,8 @@
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="index.html#Services" class="nav-item nav-link">Service</a>
-                        <a href="about.html" class="nav-item nav-link">About Us</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <div class="navbar-nav ms-auto py-0" id="nav-tabs-list">
+                        
                     </div>
                 </div>
             </nav>
@@ -85,7 +82,7 @@
                         <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="index.html">GO back to Home</a></li>
+                                <li class="breadcrumb-item"><a class="text-white" href="https://codentechnologies.com/?scrollTo=home">GO back to Home</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -95,80 +92,139 @@
         <!-- 404 not found end  -->
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <footer class="container-fluid text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-5">
+                    <address class="col-md-6 col-lg-5">
                         <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p><a href="https://goo.gl/maps/WNS9ZLtKtYN5aBHn8" target="_blank"
-                                class="fa fa-map-marker-alt me-3 text-white"> 904, Vara Vasundara, Uttarahalli
-                                Bangalore,
-                                560061</a>
+                        <p>
+                            <a href="https://goo.gl/maps/WNS9ZLtKtYN5aBHn8" target="_blank" rel="noopener noreferrer"
+                                class="fa fa-map-marker-alt me-3 text-white" aria-label="Find us on Google Maps">
+                                904, Vara Vasundara, Uttarahalli Bangalore, 560061
+                            </a>
                         </p>
-                        <p> <a href="tel:+91 8277611667" class="fa fa-phone-alt me-3 text-white">
-                                +91 8277611667</a></p>
-                        <p><a href="mailto:contactus@codentechnologies.com" class="fa fa-envelope me-3 text-white">
-                                contactus@codentechnologies.com</a></p>
+                        <p>
+                            <a href="tel:+91 8277611667" class="fa fa-phone-alt me-3 text-white"
+                                aria-label="Call us at +91 8277611667">
+                                +91 8277611667
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:contactus@codentechnologies.com" class="fa fa-envelope me-3 text-white"
+                                aria-label="Email us at contactus@codentechnologies.com">
+                                contactus@codentechnologies.com
+                            </a>
+                        </p>
+                        <p>
+                            <a href="#" class="fa me-3 text-white">
+                                GSTIN 29AGWPJ3637Q1ZA
+                            </a>
+                        </p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social"
-                                href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
-                                title="Whatsapp us Now !"><i class="fab fa-whatsapp"></i></a>
-                            <a class="btn btn-outline-light btn-social"
-                                href="https://www.linkedin.com/company/coden/" target="_blank"
-                                title="coden linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a
+                    class="btn btn-outline-light btn-social"
+                    href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
+                    title="Whatsapp us Now!"
+                    aria-label="Whatsapp us"
+                  >
+                    <i class="fab fa-whatsapp"></i>
+                  </a>  -->
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/coden/"
+                                target="_blank" rel="noopener noreferrer" title="coden linkedin"
+                                aria-label="Visit our LinkedIn page">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                             <a class="btn btn-outline-light btn-social"
                                 href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA==" target="_blank"
-                                title="coden instagram"><i class="fab fa-instagram"></i></a>
+                                rel="noopener noreferrer" title="coden instagram" aria-label="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                             <a class="btn btn-outline-light btn-social"
                                 href="https://www.facebook.com/profile.php?id=100090469839151" target="_blank"
-                                title="coden facebook"><i class="fab fa-facebook"></i></a>
+                                rel="noopener noreferrer" title="coden facebook" aria-label="Like us on Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a class="btn btn-outline-light btn-social" href="https://clutch.co/profile/coden-0#highlights"
+                                target="_blank" rel="noopener noreferrer" title="coden clutch"
+                                aria-label="Check us out on Clutch">
+                                <img src="./img/clutch-removebg-preview.png" alt="clutch logo" loading="lazy"
+                                    class="clutchLogoImage" />
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
+                    </address>
+    
+                    <nav class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Popular Link</h5>
-                        <a class="btn btn-link" href="#home">Home</a>
-                        <a class="btn btn-link" href="about.html">About Us</a>
-                        <a class="btn btn-link" href="#Services">Service</a>
-                        <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    </div>
+                        <a href="https://codentechnologies.com/?scrollTo=home" class="btn btn-link">
+                            Home
+                        </a>
+                        
+                        <a href="https://codentechnologies.com/about?scrollTo=about" class="btn btn-link">
+                            About Us
+                        </a>
+                        <a href="https://codentechnologies.com/?scrollTo=Services" class="btn btn-link">
+                            Service
+                        </a>
+                        <a href="https://codentechnologies.com/contact?scrollTo=contact" class="btn btn-link">
+                            Contact Us
+                        </a>
+                        <a href="https://codentechnologies.com/blogs" class="btn btn-link">
+                            Blog
+                        </a>
+                    </nav>
+    
                     <div class="col-md-6 col-lg-4">
-                        <h5 class="text-white mb-4">Blogs</h5>
+                        <h5 class="text-white mb-4">Certifications</h5>
                         <div class="row g-2">
                             <div class="col-4">
-                                <a href="https://medium.com/@blog.sureify/the-art-of-writing-custom-hooks-c0ffd538d181"
-                                    target="_blank" title="coden-The Art of writing Custom Hooks"> <img
-                                        class="img-fluid" src="img/portfolio-1.jpg" alt="coden portfolio-1"></a>
+                                <a href="#"
+                                    target="_blank" rel="noopener noreferrer" title="coden-The Art of writing Custom Hooks">
+                                    <img class="img-fluid"
+                                        src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/b74ea202-fb39-4666-8098-4546cb5119aa.png"
+                                        alt="coden Dun & Bradstreet Verified" loading="lazy" />
+                                </a>
+                                <p class="text-center">96-164-5717</p>
                             </div>
                             <div class="col-4">
-                                <a href="https://medium.com/@nhm987/reducing-react-native-android-app-size-like-a-champ-b9edf59a9932"
-                                    target="_blank" title="coden-Reducing React-Native Android App Size"><img
-                                        class="img-fluid" src="img/portfolio-2.jpg" alt="coden portfolio-2"></a>
+                                <a href="#"
+                                    target="_blank" rel="noopener noreferrer"
+                                    title="coden-Reducing React-Native Android App Size">
+                                    <img class="img-fluid"
+                                        src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/003ae867-64f1-4c22-86d8-fe6a3f1ec9a5.jpg"
+                                        alt="coden KYC Registered" loading="lazy" />
+                                </a>
+                                <p class="text-center mt-2 wordWrapStyle">
+                                    70041175906410
+                                </p>
                             </div>
                             <div class="col-4">
-                                <a href="https://medium.com/@nhm987/setting-up-bitbucket-ci-cd-for-react-native-android-project-18425a7ec4af"
-                                    target="_blank" title="coden Setting Up Bitbucket CI/CD"> <img class="img-fluid"
-                                        src="img/portfolio-3.jpg" alt="coden portfolio-3"></a>
+                                <a href="#"
+                                    target="_blank" rel="noopener noreferrer" title="coden Setting Up Bitbucket CI/CD">
+                                    <img class="img-fluid"
+                                        src="https://easyrevwebpublic.s3.ap-south-1.amazonaws.com/prod/blogs/92fd41e4-38d3-471c-951d-4b9f9221ebfc.jpg"
+                                        alt="coden UDYAM Registered" loading="lazy" />
+                                </a>
+                                <p class="text-center mt-2">UDYAM-KR-03-0272066</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="container px-lg-5">
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="index.html">Coden</a>, All Right Reserved.
+                            ©
+                            <Link to="/">codentechnologies.com</Link>, All Rights Reserved.
+                            2024
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
-                                <a href="index.html">Home</a>
-                            </div>
+                            Designed By <a href="https://codentechnologies.com/?scrollTo=home">Coden</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
         <!-- Footer End -->
 
 
