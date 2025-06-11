@@ -199,6 +199,18 @@ const Footer = () => {
               </div>
               <div className="col-md-6 text-center text-md-end">
                 Designed By <a href="#">Coden</a>
+                <span className="mx-2">|</span>
+                <Link to="/privacy-policy" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Privacy Policy
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/terms" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Terms &amp; Conditions
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/refund-and-cancellation" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Refund Policy
+                </Link>
               </div>
             </div>
           </div>
