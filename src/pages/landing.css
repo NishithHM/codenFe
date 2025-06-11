@@ -1,9 +1,22 @@
+
 @media (max-width: 500px) {
     .custom-navbar{
         background-color: white;
     }
-
     .service-item {
         height: max-content;
+    }
+    
+}
+
+@media (min-width: 750px) and (max-width: 1000px) {
+    .service-item {
+        height: 400px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .service-item {
+        height: 400px;
     }
 }
