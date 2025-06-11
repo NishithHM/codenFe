@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+
 const RefundAndCancellation = () => {
   const [isLoad, setLoading] = useState(true);
   useEffect(() => {
@@ -100,76 +102,114 @@ const RefundAndCancellation = () => {
                     className="position-relative text-primary ps-4"
                     title="coden's about us "
                   >
-                    Refund And Cancellation
+                    Refund, Return, and Shipping Policy
                   </h6>
-                  <h2 className="mt-2">Refund and Cancellation Policy</h2>
-                  <h4>Refunds</h4>
+                  <h2 className="mt-2">Refund, Return, and Shipping Policy</h2>
                 </div>
+                <h4>Refunds</h4>
                 <p className="mb-4">
-                  We value your satisfaction with our products. However, please
-                  note that we do not accept returns or offer refunds for
-                  products unless there is a manufacturer's defect in the item.
-                  If you believe that you have received a product with a
-                  manufacturing defect, please contact us immediately.
+                  We value your satisfaction with our products. However, we do not
+                  accept returns or offer refunds unless the product has a
+                  manufacturer's defect.
                 </p>
-                <p className="mb-4">Return Process for Defective Products</p>
+                <p className="mb-4">
+                  <strong>If you believe your product is defective:</strong>
+                  <br />
+                  You must contact us within three (3) business days of receiving
+                  the item.
+                  <br />
+                  After the 3-day period, we will no longer be able to process
+                  your request.
+                </p>
+                <h4>Return Process for Defective Products</h4>
                 <p className="mb-4">
                   To initiate a return for a defective product, please follow
                   these steps:
                 </p>
+                <ul className="mb-4">
+                  <li>
+                    Contact our customer support team within 3 business days of
+                    delivery to report the issue.
+                  </li>
+                  <li>
+                    Provide photographic or video evidence of the defect as
+                    requested by our team.
+                  </li>
+                  <li>
+                    If the product qualifies as defective, we will share return
+                    instructions.
+                  </li>
+                </ul>
                 <p className="mb-4">
-                  Contact our customer support team within three (3) business
-                  days of receiving the product to report the issue. Our team
-                  will guide you through the return process, which may include
-                  providing photographic evidence of the defect or other
-                  information as requested. If we determine that the product has
-                  a manufacturing defect, we will provide you with instructions
-                  on how to return the item. Please note that the following
-                  conditions apply to return requests for defective products:
+                  <strong>Return conditions:</strong>
+                </p>
+                <ul className="mb-4">
+                  <li>Item must be unused and in original condition.</li>
+                  <li>It must be returned in original packaging.</li>
+                  <li>A receipt or proof of purchase is required.</li>
+                </ul>
+                <p className="mb-4">
+                  Once the returned item is received and inspected, you’ll be
+                  notified of the approval or rejection of your refund. If
+                  approved, a refund will be processed within 7–10 business days
+                  to your original payment method.
+                </p>
+                <h4>Non-Returnable Items</h4>
+                <p className="mb-4">
+                  We do not accept returns or offer refunds for the following:
+                </p>
+                <ul className="mb-4">
+                  <li>
+                    Software solutions or services (non-tangible and non-returnable).
+                  </li>
+                  <li>Items marked as final sale or discounted products.</li>
+                </ul>
+                <h4>Cancellation Policy</h4>
+                <p className="mb-4">
+                  We understand you may need to cancel an order. If so, please
+                  reach out to our support team immediately.
                 </p>
                 <p className="mb-4">
-                  The item must be unused and in the same condition as when you
-                  received it. The item must be in its original packaging. To
-                  complete your return, we will require a receipt or proof of
-                  purchase. Once we receive and inspect the returned item, we
-                  will notify you of the approval or rejection of your refund.
-                  If approved, your refund will be processed, and a credit will
-                  automatically be applied to your original method of payment.
+                  <strong>Cancellation Guidelines:</strong>
                 </p>
-                <p className="mb-4">Non-Returnable Items</p>
+                <ul className="mb-4">
+                  <li>Orders can be cancelled only before shipment.</li>
+                  <li>Once shipped, the order cannot be cancelled.</li>
+                  <li>
+                    If cancelled before shipping, a refund will be issued within
+                    7–10 business days to the original payment method.
+                  </li>
+                </ul>
+                <h4>Gift Returns</h4>
                 <p className="mb-4">
-                  Please be aware that we do not accept returns or offer refunds
-                  for the following:
+                  If your item was marked as a gift and shipped directly to you:
                 </p>
-                <p className="mb-4">
-                  Any software solutions or services related to the product, as
-                  these are considered non-returnable and non-refundable. Sale
-                  items. Only regular-priced items are eligible for refunds.
-                  Cancellation Policy
-                </p>
-                <p className="mb-4">
-                  We understand that circumstances may change, and you may need
-                  to cancel an order. If you wish to cancel an order, please
-                  contact our customer support team as soon as possible.
-                </p>
-                <p className="mb-4">
-                  Please note the following regarding order cancellations:
-                </p>
-                <p className="mb-4">
-                  Orders can only be cancelled before they are shipped.
-                </p>
-                <p className="mb-4">
-                  Once an order has been shipped, it cannot be cancelled. If an
-                  order is cancelled before shipping, a refund will be issued to
-                  the original method of payment. Gift Returns
-                </p>
-                <p className="mb-4">
-                  If the item in question was marked as a gift when purchased
-                  and shipped directly to you, you will receive a gift credit
-                  for the value of your return. Gift credits are
-                  non-transferable and can only be used for future purchases on
-                  our website.
-                </p>
+                <ul className="mb-4">
+                  <li>A gift credit equal to the return value will be issued.</li>
+                  <li>
+                    Gift credits are non-transferable and can only be used for
+                    future purchases on our website.
+                  </li>
+                  <li>
+                    The return must still follow the 3-day defect reporting policy
+                    and packaging conditions.
+                  </li>
+                </ul>
+                <h4>Shipping Timeframes</h4>
+                <ul className="mb-4">
+                  <li>
+                    Standard product orders are processed within 2–3 business
+                    days.
+                  </li>
+                  <li>
+                    Delivery typically occurs within 5–7 business days after
+                    dispatch, depending on your location.
+                  </li>
+                  <li>
+                    Shipping delays due to courier or external factors are not
+                    under our control, but we will assist in tracking the order.
+                  </li>
+                </ul>
               </div>
               <div className="col-lg-4">
                 {/* <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s"
@@ -180,169 +220,7 @@ const RefundAndCancellation = () => {
         </div>
       </section>
 
-      <div
-        className="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn"
-        data-wow-delay="0.1s"
-      >
-        <div className="container py-5 px-lg-5">
-          <div className="row g-5">
-            <div className="col-md-6 col-lg-5">
-              <h5 className="text-white mb-4">Get In Touch</h5>
-              <p>
-                <a
-                  href="https://goo.gl/maps/WNS9ZLtKtYN5aBHn8"
-                  target="_blank"
-                  className="fa fa-map-marker-alt me-3 text-white"
-                >
-                  {" "}
-                  904, Vara Vasundara, Uttarahalli Bangalore, 560061
-                </a>
-              </p>
-              <p>
-                {" "}
-                <a
-                  href="tel:+91 8277611667"
-                  className="fa fa-phone-alt me-3 text-white"
-                >
-                  +91 8277611667
-                </a>
-              </p>
-              <p>
-                <a
-                  href="mailto:contactus@codentechnologies.com"
-                  className="fa fa-envelope me-3 text-white"
-                >
-                  contactus@codentechnologies.com
-                </a>
-              </p>
-              <div className="d-flex pt-2">
-                <a
-                  className="btn btn-outline-light btn-social"
-                  href="https://api.whatsapp.com/send?text=Hi, I'm interested in availing your services as I believe your expertise and professionalism would be a valuable investment for my needs&phone=8277611667"
-                  title="Whatsapp us Now !"
-                >
-                  <i className="fab fa-whatsapp"></i>
-                </a>
-                <a
-                  className="btn btn-outline-light btn-social"
-                  href="https://www.linkedin.com/company/coden/"
-                  target="_blank"
-                  title="coden linkedin"
-                >
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a
-                  className="btn btn-outline-light btn-social"
-                  href="https://instagram.com/coden_technologies?igshid=MzRlODBiNWFlZA=="
-                  target="_blank"
-                  title="coden instagram"
-                >
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a
-                  className="btn btn-outline-light btn-social"
-                  href="https://www.facebook.com/profile.php?id=100090469839151"
-                  target="_blank"
-                  title="coden facebook"
-                >
-                  <i className="fab fa-facebook"></i>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <h5 className="text-white mb-4">Popular Link</h5>
-              <Link className="btn btn-link" to="/">
-                Home
-              </Link>
-              <Link className="btn btn-link" to="/about">
-                About Us
-              </Link>
-              <Link className="btn btn-link" to="/#Services">
-                Service
-              </Link>
-              <Link className="btn btn-link" to="/contact">
-                Contact Us
-              </Link>
-              <Link className="btn btn-link" to="/privacy-policy">
-                Privacy Policy
-              </Link>
-              <Link className="btn btn-link" to="/terms">
-                Terms And Conditions
-              </Link>
-              <Link className="btn btn-link" to="/refund-and-cancellation">
-                Refund And Cancellation
-              </Link>
-              <Link className="btn btn-link" to="/sales-policy">
-                Sales Policy
-              </Link>
-            </div>
-            <div className="col-md-6 col-lg-4">
-              <h5 className="text-white mb-4">Blogs</h5>
-              <div className="row g-2">
-                <div className="col-4">
-                  <a
-                    href="https://medium.com/@blog.sureify/the-art-of-writing-custom-hooks-c0ffd538d181"
-                    target="_blank"
-                    title="coden-The Art of writing Custom Hooks"
-                  >
-                    {" "}
-                    <img
-                      className="img-fluid"
-                      src="img/portfolio-1.jpg"
-                      alt="coden portfolio-1"
-                    />
-                  </a>
-                </div>
-                <div className="col-4">
-                  <a
-                    href="https://medium.com/@nhm987/reducing-react-native-android-app-size-like-a-champ-b9edf59a9932"
-                    target="_blank"
-                    title="coden-Reducing React-Native Android App Size"
-                  >
-                    <img
-                      className="img-fluid"
-                      src="img/portfolio-2.jpg"
-                      alt="coden portfolio-2"
-                    />
-                  </a>
-                </div>
-                <div className="col-4">
-                  <a
-                    href="https://medium.com/@nhm987/setting-up-bitbucket-ci-cd-for-react-native-android-project-18425a7ec4af"
-                    target="_blank"
-                    title="coden Setting Up Bitbucket CI/CD"
-                  >
-                    {" "}
-                    <img
-                      className="img-fluid"
-                      src="img/portfolio-3.jpg"
-                      alt="coden portfolio-3"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container px-lg-5">
-          <div className="copyright">
-            <div className="row">
-              <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy;{" "}
-                <Link className="border-bottom" to="/">
-                  Coden
-                </Link>
-                , All Right Reserved.
-              </div>
-              <div className="col-md-6 text-center text-md-end">
-                <div className="footer-menu">
-                  <Link to="/">Home</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };

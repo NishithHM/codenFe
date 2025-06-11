@@ -228,7 +228,7 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
         </div>
       </div>
       <div className="container px-lg-5">
-        <div className="copyright">
+        {/* <div className="copyright">
           <div className="row">
             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
               © <Link to="/">codentechnologies.com</Link>, All Rights Reserved.
@@ -236,7 +236,28 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
             </div>
             <div className="col-md-6 text-center text-md-end">
               Designed By{" "}
-              <a href="https://codentechnologies.com/?scrollTo=home">Coden</a>
+              <a href="https://codentechnologies.com/?scrollTo=home">Coden</a> */}
+        <div className="container px-lg-5">
+          <div className="copyright">
+            <div className="row">
+              <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                © <Link to="/">codentechnologies.com</Link>, All Rights Reserved. 2024
+              </div>
+              <div className="col-md-6 text-center text-md-end">
+                Designed By <a href="#">Coden</a>
+                <span className="mx-2">|</span>
+                <Link to="/privacy-policy" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Privacy Policy
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/terms" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Terms &amp; Conditions
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/refund-and-cancellation" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Refund Policy
+                </Link>
+              </div>
             </div>
           </div>
         </div>
