@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 const Terms = () => (
   <div className="container py-5">
     <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
-      <h6 className="position-relative text-primary ps-4">Terms And Condition</h6>
-      <h2 className="mt-2">Terms And Condition</h2>
+      <h6 className="position-relative text-primary ps-4">Terms And Condition12</h6>
+      <h2 className="mt-2">Terms And Condition1</h2>
       <h4>Last Updated: 05-06-2025</h4>
     </div>
     <div>
