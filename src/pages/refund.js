@@ -100,116 +100,96 @@ const RefundAndCancellation = () => {
                 <div className="section-title position-relative mb-4 pb-2 topPaddingMeduim">
                   <h6
                     className="position-relative text-primary ps-4"
-                    title="coden's about us "
+                    title="coden's refund and return policy"
                   >
-                    Refund, Return, and Shipping Policy
+                    Refund and Return Policy
                   </h6>
-                  <h2 className="mt-2">Refund, Return, and Shipping Policy</h2>
+                  <h2 className="mt-2">Refund and Return Policy</h2>
+                  <p className="mt-2 mb-0">
+                    <strong>Effective Date: 12-06-2025</strong>
+                  </p>
                 </div>
-                <h4>Refunds</h4>
                 <p className="mb-4">
-                  We value your satisfaction with our products. However, we do not
-                  accept returns or offer refunds unless the product has a
-                  manufacturer's defect.
+                  At Coden Technologies, we are committed to delivering
+                  high-quality software services and digital products. Please read
+                  the following policy carefully to understand our refund and
+                  return terms.
                 </p>
+                <h4>1. Nature of Services</h4>
                 <p className="mb-4">
-                  <strong>If you believe your product is defective:</strong>
-                  <br />
-                  You must contact us within three (3) business days of receiving
-                  the item.
-                  <br />
-                  After the 3-day period, we will no longer be able to process
-                  your request.
+                  All our offerings — including websites, web applications, and
+                  software development services — are custom-built digital
+                  services. These are non-returnable once delivered or once
+                  development has commenced.
                 </p>
-                <h4>Return Process for Defective Products</h4>
-                <p className="mb-4">
-                  To initiate a return for a defective product, please follow
-                  these steps:
-                </p>
+                <h4>2. Refund Policy</h4>
                 <ul className="mb-4">
                   <li>
-                    Contact our customer support team within 3 business days of
-                    delivery to report the issue.
+                    <strong>a. Project Cancellation (Before Work Begins):</strong>
+                    <br />
+                    If the client cancels the project before any work has started,
+                    a 100% refund will be issued.
+                    <br />
+                    <em>Refund Credit Timeline:</em> The refund will be processed
+                    within 3–5 business days, and it may take an additional 5–7
+                    business days for the amount to reflect in your bank or credit
+                    account, depending on your payment provider.
                   </li>
-                  <li>
-                    Provide photographic or video evidence of the defect as
-                    requested by our team.
+                  <li className="mt-3">
+                    <strong>b. Project Cancellation (After Work Begins):</strong>
+                    <br />
+                    If the project is canceled after work has commenced, a partial
+                    refund may be provided based on work completed and resources
+                    allocated. A minimum 30% of the project fee is non-refundable.
+                    <br />
+                    <em>Refund Credit Timeline:</em> If approved, the partial refund
+                    will be processed within 7–10 business days, and it may take
+                    5–7 additional business days for the amount to appear in your
+                    account.
                   </li>
-                  <li>
-                    If the product qualifies as defective, we will share return
-                    instructions.
-                  </li>
-                </ul>
-                <p className="mb-4">
-                  <strong>Return conditions:</strong>
-                </p>
-                <ul className="mb-4">
-                  <li>Item must be unused and in original condition.</li>
-                  <li>It must be returned in original packaging.</li>
-                  <li>A receipt or proof of purchase is required.</li>
-                </ul>
-                <p className="mb-4">
-                  Once the returned item is received and inspected, you’ll be
-                  notified of the approval or rejection of your refund. If
-                  approved, a refund will be processed within 7–10 business days
-                  to your original payment method.
-                </p>
-                <h4>Non-Returnable Items</h4>
-                <p className="mb-4">
-                  We do not accept returns or offer refunds for the following:
-                </p>
-                <ul className="mb-4">
-                  <li>
-                    Software solutions or services (non-tangible and non-returnable).
-                  </li>
-                  <li>Items marked as final sale or discounted products.</li>
-                </ul>
-                <h4>Cancellation Policy</h4>
-                <p className="mb-4">
-                  We understand you may need to cancel an order. If so, please
-                  reach out to our support team immediately.
-                </p>
-                <p className="mb-4">
-                  <strong>Cancellation Guidelines:</strong>
-                </p>
-                <ul className="mb-4">
-                  <li>Orders can be cancelled only before shipment.</li>
-                  <li>Once shipped, the order cannot be cancelled.</li>
-                  <li>
-                    If cancelled before shipping, a refund will be issued within
-                    7–10 business days to the original payment method.
+                  <li className="mt-3">
+                    <strong>c. Non-Delivery or Missed Deadlines (Our Side):</strong>
+                    <br />
+                    If we fail to deliver the promised service and no extension is
+                    mutually agreed upon, a full or partial refund may be granted.
+                    <br />
+                    <em>Refund Credit Timeline:</em> Approved refunds in such cases
+                    will be processed within 7 business days, and credited within
+                    5–7 business days after processing.
                   </li>
                 </ul>
-                <h4>Gift Returns</h4>
-                <p className="mb-4">
-                  If your item was marked as a gift and shipped directly to you:
-                </p>
-                <ul className="mb-4">
-                  <li>A gift credit equal to the return value will be issued.</li>
-                  <li>
-                    Gift credits are non-transferable and can only be used for
-                    future purchases on our website.
-                  </li>
-                  <li>
-                    The return must still follow the 3-day defect reporting policy
-                    and packaging conditions.
-                  </li>
-                </ul>
-                <h4>Shipping Timeframes</h4>
+                <h4>3. No Refunds in the Following Cases</h4>
                 <ul className="mb-4">
                   <li>
-                    Standard product orders are processed within 2–3 business
-                    days.
+                    If the service is delivered as per agreed terms and scope.
                   </li>
                   <li>
-                    Delivery typically occurs within 5–7 business days after
-                    dispatch, depending on your location.
+                    Delays or issues caused by the client (e.g., late feedback or
+                    missing inputs).
                   </li>
                   <li>
-                    Shipping delays due to courier or external factors are not
-                    under our control, but we will assist in tracking the order.
+                    Change of mind or project direction mid-development.
+                  </li>
+                  <li>
+                    Third-party software issues (hosting, plugins, payment
+                    gateways, etc.).
                   </li>
                 </ul>
+                <h4>4. Subscription-Based Services</h4>
+                <ul className="mb-4">
+                  <li>For any subscriptions (e.g., maintenance or hosting):</li>
+                  <li>Cancel before the next billing cycle to avoid charges.</li>
+                  <li>
+                    No refunds will be issued once the subscription period starts.
+                  </li>
+                </ul>
+                <h4>5. Dispute Resolution</h4>
+                <p className="mb-4">
+                  If you're not satisfied with a service, contact us within 7 days
+                  of delivery at{" "}
+                  <a href="mailto:[your support email]">contactus@codentechnologies.com</a>.
+                  We will review your concern and aim to resolve it fairly.
+                </p>
               </div>
               <div className="col-lg-4">
                 {/* <img className="img-fluid wow zoomIn topPaddingLarge" data-wow-delay="0.5s"
