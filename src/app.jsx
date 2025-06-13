@@ -13,6 +13,8 @@ import RefundAndCancellation from "./pages/refund";
 import TestOrders from "./pages/testOrder";
 import SalesPolicy from "./pages/sales";
 import PaymentStatus from "./pages/PaymentStatus";
+import Pricing from "./pages/Pricing";
+
 const App = () => {
 
   const [activeTab, setActiveTab] = useState("home");
@@ -48,6 +50,7 @@ const App = () => {
                     <Route path="/orders" element={<Orders/>}/>
                     <Route path="/orders-test" element={<TestOrders/>}/>
                     <Route path="/payment-status/:id" element={<PaymentStatus />}/>
+                    <Route path="/pricing" element={<Pricing />} />
                     <Route path="*" element={<FallBack />} />
                 </Routes>
                 </ScrollPage>
