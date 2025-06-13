@@ -257,6 +257,10 @@ const Footer = ({ setActiveTab, scrollToSection }) => {
                 <Link to="/refund-and-cancellation" style={{ color: "#fff", textDecoration: "underline" }}>
                   Refund Policy
                 </Link>
+                <span className="mx-2">|</span>
+                <Link to="/pricing" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Pricing
+                </Link>
               </div>
             </div>
           </div>

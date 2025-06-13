@@ -13,6 +13,8 @@ import RefundAndCancellation from "./pages/refund";
 import TestOrders from "./pages/testOrder";
 import SalesPolicy from "./pages/sales";
 import PaymentStatus from "./pages/PaymentStatus";
+import Pricing from "./pages/Pricing";
+
 const App = () => {
   const [activeTab, setActiveTab] = useState(
     sessionStorage.getItem("activeTab") || "home"
@@ -31,61 +33,32 @@ const App = () => {
     }
   }, [activeTab]);
 
-
-  return (
-    <>
-      <BrowserRouter>
-        <ScrollPage>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Landing
-                  activeTab={activeTab}
-                  setActiveTab={setActiveTab}
-                  scrollToSection={scrollToSection}
-                />
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <About
-                  activeTab={activeTab}
-                  setActiveTab={setActiveTab}
-                  scrollToSection={scrollToSection}
-                />
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <Contact
-                  activeTab={activeTab}
-                  setActiveTab={setActiveTab}
-                  scrollToSection={scrollToSection}
-                />
-              }
-            />
-            <Route path="/privacy-policy" element={<Privacy />} />
-            <Route path="/sales-policy" element={<SalesPolicy />} />
-            <Route path="/terms" element={<TermsAndConditions />} />
-            <Route
-              path="/refund-and-cancellation"
-              element={<RefundAndCancellation />}
-            />
-            <Route path="/easy-rev/landing/:id" element={<CustomerReview />} />
-            <Route path="/easy-rev/landing" element={<CustomerReviewTest />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/orders-test" element={<TestOrders />} />
-            <Route path="/payment-status/:id" element={<PaymentStatus />} />
-            <Route path="*" element={<FallBack />} />
-          </Routes>
-        </ScrollPage>
-      </BrowserRouter>
-    </>
-  );
-};
+  
+    return (
+        <>
+            <BrowserRouter>
+            <ScrollPage>
+                <Routes>
+                    <Route path='/' element={<Landing  activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />} />
+                    <Route path='/about' element={<About activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />} />
+                    <Route path='/contact' element={<Contact activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection}/>} />
+                    <Route path="/privacy-policy" element={<Privacy />} />
+                    <Route path="/sales-policy" element={<SalesPolicy/>}/>
+                    <Route path="/terms" element={<TermsAndConditions />} />
+                    <Route path="/refund-and-cancellation" element={<RefundAndCancellation />} />
+                    <Route path="/easy-rev/landing/:id" element={<CustomerReview/>}/>
+                    <Route path="/easy-rev/landing" element={<CustomerReviewTest/>}/>
+                    <Route path="/orders" element={<Orders/>}/>
+                    <Route path="/orders-test" element={<TestOrders/>}/>
+                    <Route path="/payment-status/:id" element={<PaymentStatus />}/>
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="*" element={<FallBack />} />
+                </Routes>
+                </ScrollPage>
+            </BrowserRouter>
+        </>
+    )
+}
 
 export default App;
 
