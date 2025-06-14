@@ -51,6 +51,7 @@ const App = () => {
                     <Route path="/orders" element={<Orders/>}/>
                     <Route path="/orders-test" element={<TestOrders/>}/>
                     <Route path="/payment-status/:id" element={<PaymentStatus />}/>
+                    <Route path="/payment-status-easyrevv" element={<PaymentStatus type='easyrevv'/>}/>
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="*" element={<FallBack />} />
                 </Routes>

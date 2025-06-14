@@ -5,11 +5,21 @@ import { Oval } from 'react-loader-spinner'
 import axios from 'axios';
 const urlProd = "https://api.easy-revv.com"
 const urlDev = "https://apidevreview.codentechnologies.com"
-const PaymentStatus = () => {
+const PaymentStatus = (type) => {
     const match = useParams()
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
+
+    useEffect(() => {
+        if (type === 'easyrevv') {
+            window.location.href = `https://easy-revv.com/payment-status/${match?.id}`;
+            return;
+        }
+        const int = setInterval(() => {
+            checkPaymentStatus(int)
+        }, 5000)
+    }, [])
     const checkPaymentStatus = async (int) => {
         setLoading(true)
 
@@ -27,12 +37,6 @@ const PaymentStatus = () => {
             setLoading(true)
         }
     }
-    useEffect(() => {
-        const int = setInterval(() => {
-            checkPaymentStatus(int)
-        }, 5000)
-
-    }, [])
     // INIT FAILED SUCCESS
     return (
         <div className={styles.container}>
