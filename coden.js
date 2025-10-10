@@ -9,7 +9,7 @@ app.use(express.static('build'));
 
 
 app.get('/blogs', async(req, res) => {
-  const response = await fetch(`https://api.easy-revv.com/api/coden/blog`);
+  const response = await fetch(`https://api.codentechnologies.com/api/coden/blog`);
   const data = await response.json();
   console.log(data)
   const htmlCode = data?.htmlCode;
@@ -19,7 +19,7 @@ app.get('/blogs', async(req, res) => {
 
 app.get('/blogs/:id', async(req, res) => {
   console.log('here')
-  const response = await fetch(`https://api.easy-revv.com/api/coden/blog/${req?.params.id}`);
+  const response = await fetch(`https://api.codentechnologies.com/api/coden/blog/${req?.params.id}`);
   const data = await response.json();
   const htmlCode = data?.htmlCode;
   res.send(htmlCode);
@@ -27,7 +27,7 @@ app.get('/blogs/:id', async(req, res) => {
 
 
 app.get('/sitemap.xml', async (req, res)=>{
-  fetch('https://api.easy-revv.com/api/coden/sitemapxml')
+  fetch('https://api.codentechnologies.com/api/coden/sitemapxml')
   .then(response => response.text())
   .then(async(xml) => {
     const fs = require('fs');
