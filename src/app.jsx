@@ -15,6 +15,7 @@ import SalesPolicy from "./pages/sales";
 import PaymentStatus from "./pages/PaymentStatus";
 import Pricing from "./pages/Pricing";
 import EasyRevPaymentInitiate from "./pages/EasyRevPaymentInitiate";
+import MaxBeautyPaymentInitiate from "./pages/MaxbeautyPaymentInititate";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(
@@ -54,6 +55,7 @@ const App = () => {
                     <Route path="/payment-status/:id" element={<PaymentStatus />}/>
                     <Route path="/payment-status-easyrevv/:id" element={<PaymentStatus type='easyrevv'/>}/>
                     <Route path="easyrevv/initiate-payment" element={<EasyRevPaymentInitiate/>}/>
+                    <Route path="max-beauty/initiate-payment" element={<MaxBeautyPaymentInitiate/>}/>
 
                     <Route path="/pricing" element={<Pricing />} />
                     <Route path="*" element={<FallBack />} />
