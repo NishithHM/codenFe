@@ -22,12 +22,16 @@ const MaxBeautyPaymentInitiate = () => {
       const params = new URLSearchParams(location.search);
 
       const visitorId = params.get("visitorId");
+      const fbp = params.get("fbp");
+      const fbc = params.get("fbc");
 
       const res = await fetch(`https://api.codentechnologies.com/api/max-beauty/initiate-payment`, {
         method: 'POST',
         headers: {
           Authorization: '67ytgchbnuhgnbvsd',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          fbp: fbp,
+          fbc: fbc
         },
         body: JSON.stringify({ 
           visitorId,
