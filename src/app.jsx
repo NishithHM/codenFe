@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Landing from "./pages/Landing";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import FallBack from "./pages/fallBackRoute";
-import CustomerReview from "./pages/Loading/Review";
-import Orders from "./pages/orders";
-import CustomerReviewTest from "./pages/Loading/ReviewTest";
-import Privacy from "./pages/privacy";
-import TermsAndConditions from "./pages/termsAndConditions";
-import RefundAndCancellation from "./pages/refund";
-import TestOrders from "./pages/testOrder";
-import SalesPolicy from "./pages/sales";
-import PaymentStatus from "./pages/PaymentStatus";
-import Pricing from "./pages/Pricing";
-import EasyRevPaymentInitiate from "./pages/EasyRevPaymentInitiate";
-import MaxBeautyPaymentInitiate from "./pages/MaxbeautyPaymentInititate";
+
+// Lazy loaded components for code splitting
+const Landing = lazy(() => import("./pages/Landing"));
+const About = lazy(() => import("./pages/about"));
+const Contact = lazy(() => import("./pages/contact"));
+const FallBack = lazy(() => import("./pages/fallBackRoute"));
+const CustomerReview = lazy(() => import("./pages/Loading/Review"));
+const Orders = lazy(() => import("./pages/orders"));
+const CustomerReviewTest = lazy(() => import("./pages/Loading/ReviewTest"));
+const Privacy = lazy(() => import("./pages/privacy"));
+const TermsAndConditions = lazy(() => import("./pages/termsAndConditions"));
+const RefundAndCancellation = lazy(() => import("./pages/refund"));
+const TestOrders = lazy(() => import("./pages/testOrder"));
+const SalesPolicy = lazy(() => import("./pages/sales"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const PaymentStatus = lazy(() => import("./pages/PaymentStatus"));
+const EasyRevPaymentInitiate = lazy(() => import("./pages/EasyRevPaymentInitiate"));
+const MaxBeautyPaymentInitiate = lazy(() => import("./pages/MaxbeautyPaymentInititate"));
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(
@@ -41,24 +43,91 @@ const App = () => {
             <BrowserRouter>
             <ScrollPage>
                 <Routes>
-                    <Route path='/' element={<Landing  activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />} />
-                    <Route path='/about' element={<About activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />} />
-                    <Route path='/contact' element={<Contact activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection}/>} />
-                    <Route path="/privacy-policy" element={<Privacy />} />
-                    <Route path="/sales-policy" element={<SalesPolicy/>}/>
-                    <Route path="/terms" element={<TermsAndConditions />} />
-                    <Route path="/refund-and-cancellation" element={<RefundAndCancellation />} />
-                    <Route path="/easy-rev/landing/:id" element={<CustomerReview/>}/>
-                    <Route path="/easy-rev/landing" element={<CustomerReviewTest/>}/>
-                    <Route path="/orders" element={<Orders/>}/>
-                    <Route path="/orders-test" element={<TestOrders/>}/>
-                    <Route path="/payment-status/:id" element={<PaymentStatus />}/>
-                    <Route path="/payment-status-easyrevv/:id" element={<PaymentStatus type='easyrevv'/>}/>
-                    <Route path="easyrevv/initiate-payment" element={<EasyRevPaymentInitiate/>}/>
-                    <Route path="max-beauty/initiate-payment" element={<MaxBeautyPaymentInitiate/>}/>
-
-                    <Route path="/pricing" element={<Pricing />} />
-                    <Route path="*" element={<FallBack />} />
+                    <Route path='/' element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Landing activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />
+                        </Suspense>
+                    } />
+                    <Route path='/about' element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <About activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection} />
+                        </Suspense>
+                    } />
+                    <Route path='/contact' element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Contact activeTab={activeTab} setActiveTab={setActiveTab} scrollToSection={scrollToSection}/>
+                        </Suspense>
+                    } />
+                    <Route path="/privacy-policy" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Privacy />
+                        </Suspense>
+                    } />
+                    <Route path="/sales-policy" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <SalesPolicy/>
+                        </Suspense>
+                    }/>
+                    <Route path="/terms" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <TermsAndConditions />
+                        </Suspense>
+                    } />
+                    <Route path="/refund-and-cancellation" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <RefundAndCancellation />
+                        </Suspense>
+                    } />
+                    <Route path="/easy-rev/landing/:id" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <CustomerReview/>
+                        </Suspense>
+                    }/>
+                    <Route path="/easy-rev/landing" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <CustomerReviewTest/>
+                        </Suspense>
+                    }/>
+                    <Route path="/orders" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Orders/>
+                        </Suspense>
+                    }/>
+                    <Route path="/orders-test" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <TestOrders/>
+                        </Suspense>
+                    }/>
+                    <Route path="/payment-status/:id" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <PaymentStatus />
+                        </Suspense>
+                    }/>
+                    <Route path="/payment-status-easyrevv/:id" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <PaymentStatus type='easyrevv'/>
+                        </Suspense>
+                    }/>
+                    <Route path="easyrevv/initiate-payment" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <EasyRevPaymentInitiate/>
+                        </Suspense>
+                    }/>
+                    <Route path="max-beauty/initiate-payment" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <MaxBeautyPaymentInitiate/>
+                        </Suspense>
+                    }/>
+                    <Route path="/pricing" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Pricing />
+                        </Suspense>
+                    } />
+                    <Route path="*" element={
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <FallBack />
+                        </Suspense>
+                    } />
                 </Routes>
                 </ScrollPage>
             </BrowserRouter>
